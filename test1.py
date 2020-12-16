@@ -5,6 +5,7 @@ Created on Sat Nov 28 19:14:36 2020
 
 @author: xavier
 """
+from pathlib import Path
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,6 +16,9 @@ from scipy.fft import fft
 
 ###
 
+file_path = Path('./test1.wav')
+abs_filename = str(file_path.absolute())
+
 ps.start_recording()
 
 ps.use_synth(ps.PIANO)
@@ -23,11 +27,11 @@ ps.sleep(0.5)
 ps.play(79)
 
 ps.stop_recording()
-ps.save_recording('./test1.wav')
+ps.save_recording(abs_filename)
 
 ###
 
-y, sr = librosa.load('./test1.wav')
+y, sr = librosa.load(abs_filename)
 
 yf = fft(y)
 N = len(yf)
