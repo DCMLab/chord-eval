@@ -4,8 +4,9 @@
 import numpy as np
 import pretty_midi
 
-from librosa import stft
-from scipy.fft import fft
+from librosa import stft, cqt, vqt
+from librosa.feature import melspectrogram
+from scipy.signal import medfilt
 from scipy.spatial import distance
 
 from data_types import ChordType
@@ -75,7 +76,11 @@ def creat_chord(
 
 
 def get_dft_from_MIDI(
-    midi_object: pretty_midi.PrettyMIDI
+    midi_object: pretty_midi.PrettyMIDI,
+    transform: str = 'vqt',
+    hop_length: int = 512,
+    bins_per_octave: int = 60,
+    n_mels : int = 512
 ) -> np.ndarray:
     """
     Get the discret Fourier transform of the synthesized instrument's notes 
@@ -86,25 +91,130 @@ def get_dft_from_MIDI(
     midi_data : pretty_midi.PrettyMIDI
         MIDI object that should contain at least one intrument which should
         contain a program and at least one note.
-
+    transform : str
+        Indicates which transform to use to get the spectrogram of the 
+        synthesized instrument's notes. It can either be 'stft, 'cqt', 'vqt' 
+        or 'mel'/'melspectrogram'.
+        The default is 'vqt'
+    hop_length : int
+        Number of samples between successive CQT or VQT columns if transform is
+        'cqt' or 'vqt'.
+        the default is 512.
+    bin_per_octave : int
+        Number of bins per octave if transform is 'cqt' or 'vqt'.
+        the default is 60.
+    n_mels : int
+        Number of Mel bands to generate if transform is 'mel' or 'melspectrogram'.
+        the default is 512.
+    
     Returns
     -------
     ndarray
         The discret Fourier transform.
 
     """
-    x = midi_object.fluidsynth()
+    sr = 22050 # Librosa's default sampling rate
     
-    # dft = fft(x)
-    # dft = 2.0/len(dft) * np.abs(dft[0:len(dft)//2])
+    y = midi_object.fluidsynth(fs=sr) # The sampling rate has to match 
+                                         # Librosa's default sampling rate  
+                                                                           
+                                 
+    y = y[:sr]  # fuidsynth sythesizes the 1s-duration note and its release 
+                # for an additional second. One keep the first second of the 
+                # signal.
+    if transform == 'stft' :
+        dft = np.abs(stft(y))
+    elif transform == 'cqt' :
+        dft = np.abs(cqt(y, hop_length=hop_length,
+                         n_bins=bins_per_octave * 7,
+                         bins_per_octave=bins_per_octave))
+    elif transform == 'vqt' :
+        dft = np.abs(vqt(y, hop_length=hop_length, 
+                         n_bins=bins_per_octave * 7, 
+                         bins_per_octave=bins_per_octave))
+    elif transform == 'mel' or transform == 'melspectrogram' :
+        dft = np.abs(melspectrogram(y, n_mels=n_mels))
+    else:
+        raise ValueError("transform must be "
+                         "'stft', 'cqt', 'vqt', 'mel' or 'melspectrogram' ")
     
-    dft = np.abs(stft(x))
-    # middle = int(np.floor(dft.shape[1]/2))
-    # dft = dft[:,middle]
+    # Return only the middle frame of the spectrogram 
+    middle = int(np.floor(dft.shape[1]/2))
+    dft = dft[:,middle]
 
     return dft
 
 
+def filter_noise(
+    dft: np.ndarray,
+    size_med: int=41,
+    noise_factor: float=4.0,
+) -> np.ndarray: 
+    """
+    Filter the dicret fourier transform passed in argument : For each 
+    component of the spectrum, the median magnitude is calculated across a 
+    centred window (the fourier transform is zero-padded). If the magnitude
+    of that component is less that a noise-factor times the window’s median,
+    it is considered noise and removed.
+    
+    Parameters
+    ----------
+    dft : np.ndarray
+        The discret fourier transform.
+    size_med : int
+        The width of the centerd window over which the median is calculated
+        for each component of the spectrum. The default is 41 bins.
+    noise_factor : float
+        The noise threshold. The default is 4.0.
+
+    Returns
+    -------
+    The filtered discret fourier transform
+
+    """
+    noise_floor = medfilt(dft,size_med)
+    dft_filtered = [0 if x < noise_factor*med else x\
+                    for x, med in zip(dft, noise_floor)]
+        
+    return dft_filtered
+
+
+def find_peaks(
+    dft: np.ndarray
+) -> np.ndarray:
+    """
+    Isolate the peaks of a spectrum : If consecutive bins in the spectrum are 
+    non-zero, the function keep only the maximum of the bins and filter the 
+    others.
+    Parameters
+    ----------
+    dft : np.ndarray
+        The discret fourier transform.
+
+    Returns
+    -------
+    The filtered discret fourier transform.
+
+    """
+    dft_binary = np.append(np.append([0], dft), [0])
+    dft_binary = [1 if x > 0 else x for x in dft_binary]
+    dft_binary_diff = np.diff(dft_binary)
+    
+    peaks_start_idx = [idx for idx, diff in enumerate(dft_binary_diff)\
+                      if diff==1]
+    peaks_end_idx = [idx for idx, diff in enumerate(dft_binary_diff)\
+                    if diff==-1]
+
+    peak_idx = [idx+start for start, end in zip (peaks_start_idx,peaks_end_idx)\
+                for idx, peak in enumerate(dft[start:end-1])\
+                if peak==max(dft[start:end-1])]
+    
+    peaks = np.array([x if idx in peak_idx else 0\
+                  for idx, x in enumerate(dft)])
+        
+    return peaks
+
+    
 def chord_SPS(
     root1: int,
     root2: int,
@@ -113,11 +223,17 @@ def chord_SPS(
     inversion1: int = 0,
     inversion2: int = 0,
     program1: int = 0,
-    program2: int = 0
+    program2: int = 0,
+    transform: str = 'vqt',
+    hop_length: int = 512,
+    bins_per_octave: int = 60,
+    n_mels : int = 512,
+    noise_filtering: bool = False,
+    peak_picking: bool = False
 ) -> float : 
     """
     Get the spectral pitch similarity (SPS) between two chords (composed of
-    a root a ChordType  nd and inversion) using general MIDI programs
+    a root a ChordType and an inversion) using general MIDI programs.
 
     Parameters
     ----------
@@ -125,62 +241,140 @@ def chord_SPS(
         The root of the given first chord, as MIDI note number. If the chord 
         is some inversion, the root pitch will be on this MIDI note, but there 
         may be other pitches below it.
+        
     root2 : int
         The root of the given second chord, as MIDI note number. If the chord 
         is some inversion, the root pitch will be on this MIDI note, but there 
         may be other pitches below it.
+        
     chord_type1 : ChordType
         The chord type of the given first chord.
+        
     chord_type2 : ChordType
         The chord type of the given second chord.
+        
     inversion1 : int, optional
         The inversion of the first chord.
         The default is 0.
+        
     inversion2 : int, optional
         The inversion of the second chord.
         The default is 0.
+        
     program1 : int, optional
         The general MIDI program number used by the fluidsynth to synthesize 
         the wave form of the MIDI data of the first chord (it uses the 
         TimGM6mb.sf2 sound font file included with pretty_midi and synthesizes 
         at fs=44100hz by default)
-        
         The general MIDI program number (instrument index) is in [0, 127] : 
         https://pjb.com.au/muscript/gm.html
-        
         The default is 0.
+        
     program2 : int, optional
         The general MIDI program number used by the fluidsynth to synthesize 
         the wave form of the MIDI data of the second chord.
         The default is 0.
-
+    
+    transform : str
+        Indicates which transform to use to get the spectrogram of the 
+        synthesized instrument's notes. It can either be 'stft, 'cqt', 'vqt' 
+        or 'mel'/'melspectrogram'.
+        The default is 'vqt'
+    
+    hop_length : int
+        Number of samples between successive CQT or VQT columns if transform is
+        'cqt' or 'vqt'.
+        the default is 512.
+        
+    bin_per_octave : int
+        Number of bins per octave if transform is 'cqt' or 'vqt'.
+        the default is 60.
+        
+    n_mels : int
+        Number of Mel bands to generate if transform is 'mel' or 'melspectrogram'.
+        the default is 512.
+    
+    noise_filtering : bool, optional
+        If True, the function will filter out the noise of the two spectrums 
+        using the filter_noise function.
+        If peak_picking is True, it will automatically assign the True value 
+        to noise_filtering.
+        The default is False.
+    
+    peak_picking : bool, optional
+        If True, the function will isolate the peaks of each spectrum using 
+        the find_peaks function after filtering out the noise of each spectrum.
+        The default is False.
+    
+    
     Returns
     -------
     float 
-        The cosin distance beween the spectra of the two synthesized chords (SPS).
-        (in [0, 1])
+        The cosin distance beween the spectra of the two synthesized chords
+        (SPS) (in [0, 1]).
     """
     # MIDI object of the frist chord :
     pm1 = creat_chord(root=root1,
                       chord_type=chord_type1,
-                      inversion=inversion1)
+                      inversion=inversion1,
+                      program=program1)
     
     # MIDI object of the second chord :
     pm2 = creat_chord(root=root2,
                       chord_type=chord_type2,
-                      inversion=inversion2)
+                      inversion=inversion2,
+                      program=program2)
+    
+    # Creat a second instance of the second chord an octave below the fisrt one.
+    pm2_below = creat_chord(root=root2 - 12,
+                            chord_type=chord_type2,
+                            inversion=inversion2,
+                            program=program2)
+    
+    # Creat a third instance of the second chord an octave above the fisrt one.
+    pm2_above = creat_chord(root=root2 + 12,
+                            chord_type=chord_type2,
+                            inversion=inversion2,
+                            program=program2)
 
-    # Spectrum of the synthesized instrument's notes contained in the MIDI
-    # object :
-    dft1 = get_dft_from_MIDI(pm1)
-    dft2 = get_dft_from_MIDI(pm2)
+    # Spectrum of the synthesized instrument's notes of the MIDI object :
+    dft1 = get_dft_from_MIDI(pm1, transform,
+                             hop_length=hop_length, 
+                             bins_per_octave=bins_per_octave,
+                             n_mels=n_mels)
     
-    dist_list = []
-    for i in range(dft1.shape[1]):
-        dist = distance.cosine(dft1[:,i], dft2[:,i])
-        dist_list.append(dist)
+    dft2 = get_dft_from_MIDI(pm2, transform,
+                             hop_length=hop_length, 
+                             bins_per_octave=bins_per_octave,
+                             n_mels=n_mels)
+    
+    dft2_below = get_dft_from_MIDI(pm2_below, transform,
+                                   hop_length=hop_length, 
+                                   bins_per_octave=bins_per_octave,
+                                   n_mels=n_mels)
+    
+    dft2_above = get_dft_from_MIDI(pm2_above, transform,
+                                   hop_length=hop_length, 
+                                   bins_per_octave=bins_per_octave,
+                                   n_mels=n_mels)
+    
+    if peak_picking or noise_filtering : 
+        dft1 = filter_noise(dft1)
+        dft2 = filter_noise(dft2)
+        dft2_below = filter_noise(dft2_below)
+        dft2_above = filter_noise(dft2_above)
         
-    dist = np.mean(dist_list)  
-    #d = distance.cosine(dft1, dft2)
+        if peak_picking : 
+            dft1 = find_peaks(dft1)
+            dft2 = find_peaks(dft2)
+            dft2_below = filter_noise(dft2_below)
+            dft2_above = filter_noise(dft2_above)
     
-    return(dist)
+    dist = [distance.cosine(dft1, dft2)]
+    dist.append(distance.cosine(dft1, dft2_below))
+    dist.append(distance.cosine(dft1, dft2_above))
+    
+    # Return the smaller distance
+    dist = min(dist)
+
+    return dist 
