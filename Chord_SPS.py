@@ -229,7 +229,8 @@ def chord_SPS(
     bins_per_octave: int = 60,
     n_mels : int = 512,
     noise_filtering: bool = False,
-    peak_picking: bool = False
+    peak_picking: bool = False,
+    spectrogram: dict = None
 ) -> float : 
     """
     Get the spectral pitch similarity (SPS) between two chords (composed of
@@ -305,6 +306,10 @@ def chord_SPS(
         If True, the function will isolate the peaks of each spectrum using 
         the find_peaks function after filtering out the noise of each spectrum.
         The default is False.
+        
+    spectrogram : dict, optional
+        A dict containing the spectrograms of the chords.
+        The default is None
     
     
     Returns
@@ -313,66 +318,157 @@ def chord_SPS(
         The cosin distance beween the spectra of the two synthesized chords
         (SPS) (in [0, 1]).
     """
-    # MIDI object of the frist chord :
-    pm1 = creat_chord(root=root1,
-                      chord_type=chord_type1,
-                      inversion=inversion1,
-                      program=program1)
+    if spectrogram is None : 
+        spectrogram = {}
+        
     
-    # MIDI object of the second chord :
-    pm2 = creat_chord(root=root2,
-                      chord_type=chord_type2,
-                      inversion=inversion2,
-                      program=program2)
+    try : 
+        dft1_below, dft1, dft1_above = spectrogram[root1][chord_type1][inversion1]
+        
+    except KeyError :
     
-    # Creat a second instance of the second chord an octave below the fisrt one.
-    pm2_below = creat_chord(root=root2 - 12,
-                            chord_type=chord_type2,
-                            inversion=inversion2,
-                            program=program2)
+        # MIDI object of the frist chord :
+        pm1 = creat_chord(root=root1,
+                          chord_type=chord_type1,
+                          inversion=inversion1,
+                          program=program1)
+  
+        # Creat a second instance of the first chord an octave below the fisrt one.
+        pm1_below = creat_chord(root=root1 - 12,
+                                chord_type=chord_type1,
+                                inversion=inversion1,
+                                program=program1)
+        
+        # Creat a third instance of the first chord an octave above the fisrt one.
+        pm1_above = creat_chord(root=root1 + 12,
+                                chord_type=chord_type1,
+                                inversion=inversion1,
+                                program=program1)
+        
+        # Spectrum of the synthesized instrument's notes of the MIDI object :
+        dft1 = get_dft_from_MIDI(pm1, transform,
+                                 hop_length=hop_length, 
+                                 bins_per_octave=bins_per_octave,
+                                 n_mels=n_mels)
+        
+        dft1_below = get_dft_from_MIDI(pm1_below, transform,
+                                       hop_length=hop_length, 
+                                       bins_per_octave=bins_per_octave,
+                                       n_mels=n_mels)
+        
+        dft1_above = get_dft_from_MIDI(pm1_above, transform,
+                                       hop_length=hop_length, 
+                                       bins_per_octave=bins_per_octave,
+                                       n_mels=n_mels)
+        
+        # Add the spectrograms to the dict
+        try :
+            spectrogram[root1][chord_type1][inversion1] = [dft1_below,
+                                                           dft1,
+                                                           dft1_above]
+        except KeyError :
+            try :
+                spectrogram[root1][chord_type1] = {inversion1:[dft1_below,
+                                                               dft1,
+                                                               dft1_above]
+                                                   }
+            except KeyError :
+                spectrogram[root1] = {chord_type1:{inversion1:[dft1_below,
+                                                               dft1,
+                                                               dft1_above]
+                                                   }
+                                      }
+        
+        
+    try : 
+        dft2_below, dft2, dft2_above = spectrogram[root2][chord_type2][inversion2]
+        
+    except KeyError :
+             
+        # MIDI object of the second chord :
+        pm2 = creat_chord(root=root2,
+                          chord_type=chord_type2,
+                          inversion=inversion2,
+                          program=program2)
+        
+        # Creat a second instance of the second chord an octave below the fisrt one.
+        pm2_below = creat_chord(root=root2 - 12,
+                                chord_type=chord_type2,
+                                inversion=inversion2,
+                                program=program2)
+        
+        # Creat a third instance of the second chord an octave above the fisrt one.
+        pm2_above = creat_chord(root=root2 + 12,
+                                chord_type=chord_type2,
+                                inversion=inversion2,
+                                program=program2)
     
-    # Creat a third instance of the second chord an octave above the fisrt one.
-    pm2_above = creat_chord(root=root2 + 12,
-                            chord_type=chord_type2,
-                            inversion=inversion2,
-                            program=program2)
+        
+        # Spectrum of the synthesized instrument's notes of the MIDI object :
+        dft2 = get_dft_from_MIDI(pm2, transform,
+                                 hop_length=hop_length, 
+                                 bins_per_octave=bins_per_octave,
+                                 n_mels=n_mels)
+        
+        dft2_below = get_dft_from_MIDI(pm2_below, transform,
+                                       hop_length=hop_length, 
+                                       bins_per_octave=bins_per_octave,
+                                       n_mels=n_mels)
+        
+        dft2_above = get_dft_from_MIDI(pm2_above, transform,
+                                       hop_length=hop_length, 
+                                       bins_per_octave=bins_per_octave,
+                                       n_mels=n_mels)
 
-    # Spectrum of the synthesized instrument's notes of the MIDI object :
-    dft1 = get_dft_from_MIDI(pm1, transform,
-                             hop_length=hop_length, 
-                             bins_per_octave=bins_per_octave,
-                             n_mels=n_mels)
+        # Add the spectrograms to the dict
+        try :
+            spectrogram[root2][chord_type2][inversion2] = [dft2_below,
+                                                           dft2,
+                                                           dft2_above]
+        except KeyError :
+            try :
+                spectrogram[root2][chord_type2] = {inversion2:[dft2_below,
+                                                               dft2,
+                                                               dft2_above]
+                                                   }
+            except KeyError :
+                spectrogram[root2] = {chord_type2:{inversion2:[dft2_below,
+                                                               dft2,
+                                                               dft2_above]
+                                                   }
+                                      }
     
-    dft2 = get_dft_from_MIDI(pm2, transform,
-                             hop_length=hop_length, 
-                             bins_per_octave=bins_per_octave,
-                             n_mels=n_mels)
-    
-    dft2_below = get_dft_from_MIDI(pm2_below, transform,
-                                   hop_length=hop_length, 
-                                   bins_per_octave=bins_per_octave,
-                                   n_mels=n_mels)
-    
-    dft2_above = get_dft_from_MIDI(pm2_above, transform,
-                                   hop_length=hop_length, 
-                                   bins_per_octave=bins_per_octave,
-                                   n_mels=n_mels)
     
     if peak_picking or noise_filtering : 
         dft1 = filter_noise(dft1)
+        dft1_below = filter_noise(dft1_below)
+        dft1_above = filter_noise(dft1_above)
+        
         dft2 = filter_noise(dft2)
         dft2_below = filter_noise(dft2_below)
         dft2_above = filter_noise(dft2_above)
         
         if peak_picking : 
             dft1 = find_peaks(dft1)
+            dft1_below = filter_noise(dft1_below)
+            dft1_above = filter_noise(dft1_above)
+            
             dft2 = find_peaks(dft2)
             dft2_below = filter_noise(dft2_below)
             dft2_above = filter_noise(dft2_above)
     
-    dist = [distance.cosine(dft1, dft2)]
+    # SPS
+    dist = [distance.cosine(dft1_below, dft2)]
+    dist.append(distance.cosine(dft1_below, dft2_below))
+    dist.append(distance.cosine(dft1_below, dft2_above))
+    
+    dist.append(distance.cosine(dft1, dft2))
     dist.append(distance.cosine(dft1, dft2_below))
     dist.append(distance.cosine(dft1, dft2_above))
+    
+    dist.append(distance.cosine(dft1_above, dft2))
+    dist.append(distance.cosine(dft1_above, dft2_below))
+    dist.append(distance.cosine(dft1_above, dft2_above))
     
     # Return the smaller distance
     dist = min(dist)
