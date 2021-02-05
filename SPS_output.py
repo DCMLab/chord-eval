@@ -23,7 +23,9 @@ avg_7th_acc_list = []
 avg_inv_acc_list = []
 avg_sps_list = []
 
-for df_path in glob("output_sps_kse-100/**/*_results.tsv", recursive=True):
+spect = {}
+
+for df_path in glob("/Users/xavier/Documents/mac/dcml/git/output_sps_kse-100/**/*_results.tsv", recursive=True):
     results_df = pd.read_csv(df_path, sep='\t', index_col=0, converters={'duration': Fraction})
         
     results_df['gt_chord_type'] = results_df['gt_chord_type'].apply(lambda r : ChordType[r.split(".")[1]])
@@ -34,7 +36,8 @@ for df_path in glob("output_sps_kse-100/**/*_results.tsv", recursive=True):
                                                                        r.gt_chord_type,
                                                                        r.est_chord_type,
                                                                        r.gt_chord_inv,
-                                                                       r.est_chord_inv
+                                                                       r.est_chord_inv,
+                                                                       spectrogram=spect
                                                                       ), axis=1)
     
     path_list.append(df_path)
@@ -54,6 +57,7 @@ Chord_symbol_recall_df = pd.DataFrame({'path': path_list,
                                        'average_sps' : avg_sps_list
                                        })
 
-Chord_symbol_recall_df['name'] = Chord_symbol_recall_df.path.apply(lambda r : r[len('output_sps_kse-100/'):len(r)-len('_results.tsv')])
+Chord_symbol_recall_df['name'] = Chord_symbol_recall_df.path.apply(lambda r :
+                                    r[len('/Users/xavier/Documents/mac/dcml/git/output_sps_kse-100/'):len(r)-len('_results.tsv')])
 
-Chord_symbol_recall_df.to_csv('Chord_symbol_recall_df.csv')
+Chord_symbol_recall_df.to_csv('Chord_symbol_recall_df.csv', index=False)
