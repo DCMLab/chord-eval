@@ -26,7 +26,7 @@ The creat_chord() function creats a pretty_midi instance (MIDI object)
 with the list of the notes of the chord to synthezise with the GM program
 number.
 
-### octave picking : 
+### Octave picking : 
 
 The SPS between the two chords depends on where each chord is palyed.
 The function computes thus the SPS between the two chords for different
@@ -55,7 +55,16 @@ The function can also call the peak_picking() function that isolate the
 peaks of a spectrum : If consecutive bins in the spectrum are non-zero,
 the function keep only the maximum of the bins and filter out the others.
 
+### Caching
 
+A dict can be given in argument to the function for caching : the 
+spectrogram of each new chord encontered is sotered in it.
+
+
+
+## test.py
+
+A script to test the chord_SPS function
 
 ## data_reduc
 
@@ -77,3 +86,16 @@ picking.
 
 A jupyter note book that shows different plots to compare each SPS values
 between them.
+
+
+
+## output_sps_kse-100
+
+The folder containing the coprus
+
+
+
+## SPS_output.py
+
+Script that computes the mean accuracies (binary, SPS, ...) for each 
+pieces in the corpus.
