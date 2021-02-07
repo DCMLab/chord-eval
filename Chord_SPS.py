@@ -231,7 +231,7 @@ def chord_SPS(
     n_mels : int = 512,
     noise_filtering: bool = False,
     peak_picking: bool = False,
-    spectrogram: dict = defaultdict(lambda: defaultdict(dict))
+    spectrogram: dict = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
 ) -> float : 
     """
     Get the spectral pitch similarity (SPS) between two chords (composed of
@@ -320,7 +320,7 @@ def chord_SPS(
         (SPS) (in [0, 1]).
     """
     try : 
-        dft1_below, dft1, dft1_above = spectrogram[root1][chord_type1][inversion1]
+        dft1_below, dft1, dft1_above = spectrogram[program1][root1][chord_type1][inversion1]
         
     except KeyError :
     
@@ -360,18 +360,18 @@ def chord_SPS(
         
         # Add the spectrograms to the dict
         try :
-            spectrogram[root1][chord_type1][inversion1] = [dft1_below,
+            spectrogram[program1][root1][chord_type1][inversion1] = [dft1_below,
                                                            dft1,
                                                            dft1_above]
             
         except KeyError :
-            spectrogram = defaultdict(lambda: defaultdict(dict))
-            spectrogram[root1][chord_type1][inversion1] = [dft1_below,
+            spectrogram = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
+            spectrogram[program1][root1][chord_type1][inversion1] = [dft1_below,
                                                            dft1,
                                                            dft1_above]
         
     try : 
-        dft2_below, dft2, dft2_above = spectrogram[root2][chord_type2][inversion2]
+        dft2_below, dft2, dft2_above = spectrogram[program2][root2][chord_type2][inversion2]
         
     except KeyError :
              
@@ -412,13 +412,13 @@ def chord_SPS(
 
         # Add the spectrograms to the dict
         try :
-            spectrogram[root2][chord_type2][inversion2] = [dft2_below,
+            spectrogram[program2][root2][chord_type2][inversion2] = [dft2_below,
                                                            dft2,
                                                            dft2_above]
             
         except KeyError :
-            spectrogram = defaultdict(lambda: defaultdict(dict))
-            spectrogram[root2][chord_type2][inversion2] = [dft2_below,
+            spectrogram = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
+            spectrogram[program2][root2][chord_type2][inversion2] = [dft2_below,
                                                            dft2,
                                                            dft2_above]
 
