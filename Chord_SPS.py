@@ -8,6 +8,7 @@ from librosa import stft, cqt, vqt
 from librosa.feature import melspectrogram
 from scipy.signal import medfilt
 from scipy.spatial import distance
+from collections import defaultdict
 
 from data_types import ChordType
 from utils import get_chord_pitches
@@ -230,7 +231,7 @@ def chord_SPS(
     n_mels : int = 512,
     noise_filtering: bool = False,
     peak_picking: bool = False,
-    spectrogram: dict = None
+    spectrogram: dict = defaultdict(lambda: defaultdict(dict))
 ) -> float : 
     """
     Get the spectral pitch similarity (SPS) between two chords (composed of
@@ -318,10 +319,6 @@ def chord_SPS(
         The cosin distance beween the spectra of the two synthesized chords
         (SPS) (in [0, 1]).
     """
-    if spectrogram is None : 
-        spectrogram = {}
-        
-    
     try : 
         dft1_below, dft1, dft1_above = spectrogram[root1][chord_type1][inversion1]
         
@@ -366,19 +363,12 @@ def chord_SPS(
             spectrogram[root1][chord_type1][inversion1] = [dft1_below,
                                                            dft1,
                                                            dft1_above]
+            
         except KeyError :
-            try :
-                spectrogram[root1][chord_type1] = {inversion1:[dft1_below,
-                                                               dft1,
-                                                               dft1_above]
-                                                   }
-            except KeyError :
-                spectrogram[root1] = {chord_type1:{inversion1:[dft1_below,
-                                                               dft1,
-                                                               dft1_above]
-                                                   }
-                                      }
-        
+            spectrogram = defaultdict(lambda: defaultdict(dict))
+            spectrogram[root1][chord_type1][inversion1] = [dft1_below,
+                                                           dft1,
+                                                           dft1_above]
         
     try : 
         dft2_below, dft2, dft2_above = spectrogram[root2][chord_type2][inversion2]
@@ -425,19 +415,13 @@ def chord_SPS(
             spectrogram[root2][chord_type2][inversion2] = [dft2_below,
                                                            dft2,
                                                            dft2_above]
+            
         except KeyError :
-            try :
-                spectrogram[root2][chord_type2] = {inversion2:[dft2_below,
-                                                               dft2,
-                                                               dft2_above]
-                                                   }
-            except KeyError :
-                spectrogram[root2] = {chord_type2:{inversion2:[dft2_below,
-                                                               dft2,
-                                                               dft2_above]
-                                                   }
-                                      }
-    
+            spectrogram = defaultdict(lambda: defaultdict(dict))
+            spectrogram[root2][chord_type2][inversion2] = [dft2_below,
+                                                           dft2,
+                                                           dft2_above]
+
     
     if peak_picking or noise_filtering : 
         dft1 = filter_noise(dft1)
@@ -473,4 +457,4 @@ def chord_SPS(
     # Return the smaller distance
     dist = min(dist)
 
-    return dist 
+    return dist, spectrogram
