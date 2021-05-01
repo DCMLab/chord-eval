@@ -38,7 +38,7 @@ def get_chord_pitches(
         fifths (if pitch_type == PitchType.TPC). Depending on the inversion, other
         pitches may be below the root.
     """
-    # By default with root 0
+    # By default with root C (0 for MIDI, TPC_C for TPC)
     chord_pitches = np.array(CHORD_PITCHES[pitch_type][chord_type], dtype=int)
 
     if pitch_type == PitchType.TPC:
