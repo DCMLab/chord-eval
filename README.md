@@ -25,9 +25,9 @@ Three metric are implemented :
 
 This Repository contains, three folder :
 
-   · python_scripts : contains the python scripts of the different functions
-   · NoteBooks : contains jupyter notebooks that present the features of the different functions and few applications as well as notebooks used to create data files.
-   · Data : contains the files used by the different jupyter notebooks.
+   - python_scripts : contains the python scripts of the different functions
+   - NoteBooks : contains jupyter notebooks that present the features of the different functions and few applications as well as notebooks used to create data files.
+   - Data : contains the files used by the different jupyter notebooks.
 
 
 ## Conda environment and python packages :
