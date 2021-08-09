@@ -14,20 +14,20 @@ The pitch type specifies if the pitches of the chord are represented as MIDI not
 
 Three metric are implemented : 
 
-    1. the tone by tone metric : The similarity measure is the number of matches over the maximum possible number of matches between the two chords (The match between roots and basses can be weighted).
+   1. the tone by tone metric : The similarity measure is the number of matches over the maximum possible number of matches between the two chords (The match between roots and basses can be weighted).
        
-    2. The voice leading metric : The similarity measure is the number of semitones there are between each pair of pitches in the two chords (The match between basses can be weighted).
+   2. The voice leading metric : The similarity measure is the number of semitones there are between each pair of pitches in the two chords (The match between basses can be weighted).
        
-    3. The Spectral Pitche Simalirity (SPS) metric : The similarity measure is the cosine distance between the two spectrum of each chord. 
+   3. The Spectral Pitche Simalirity (SPS) metric : The similarity measure is the cosine distance between the two spectrum of each chord. 
 
 
 ## Repository’s folders : 
 
 This Repository contains, three folder :
 
-    • python_scripts : contains the python scripts of the different functions
-    • NoteBooks : contains jupyter notebooks that present the features of the different functions and few applications as well as notebooks used to create data files.
-    • Data : contains the files used by the different jupyter notebooks.
+   · python_scripts : contains the python scripts of the different functions
+   · NoteBooks : contains jupyter notebooks that present the features of the different functions and few applications as well as notebooks used to create data files.
+   · Data : contains the files used by the different jupyter notebooks.
 
 
 ## Conda environment and python packages :
