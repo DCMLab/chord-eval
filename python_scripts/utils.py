@@ -124,6 +124,7 @@ def get_chord_pitches(
                             f"Replaced pitch {orig} not in chord pitches: {chord_pitches}."
                             f"Skipping change {change}."
                         )
+                        continue
 
                 else:
                     try:
@@ -133,6 +134,7 @@ def get_chord_pitches(
                             f"Replaced pitch {orig} not in chord pitches: {chord_pitches}."
                             f"Skipping change {change}."
                         )
+                        continue
 
                     if index == 0 and new - chord_pitches[0] > 6:
                         # We need to handle the special case of a bass-note lower neighbor
