@@ -1,0 +1,95 @@
+	label	mc	mc_onset	color_name
+0	g:KeyMode.MINOR	1	0	green
+1	G:m, inv:0	1	0	green
+2	D:m, inv:1	1	1/2	green
+3	Eb:M, inv:0	2	0	red
+4	A:%7, inv:1	2	1/2	green
+5	D:M, inv:0	3	0	green
+6	--	3	1/2	red
+7	Bb:KeyMode.MAJOR	4	0	red
+8	F:Mm7, inv:1	4	0	red
+9	g:KeyMode.MINOR	4	1/2	green
+10	D:M, inv:0	4	1/2	yellow
+11	G:m, inv:0	5	0	green
+12	D:m, inv:1	5	3/4	red
+13	C:m, inv:1	6	0	red
+14	--	6	1/2	yellow
+15	Bb:KeyMode.MAJOR	7	0	red
+16	F:M, inv:0	7	0	green
+17	--	7	1/2	red
+18	g:KeyMode.MINOR	8	0	green
+19	G:m, inv:0	8	0	yellow
+20	--	8	1/2	red
+21	Eb:M, inv:1	8	3/4	red
+22	--	9	0	red
+23	D:m, inv:1	9	0	red
+24	--	9	1/2	green
+25	--	9	1/2	red
+26	C:m, inv:1	10	0	red
+27	--	10	1/2	red
+28	D:M, inv:0	11	0	yellow
+29	G:m, inv:0	11	1/2	green
+30	D:m, inv:0	12	0	red
+31	D:M, inv:0	13	0	green
+32	G:m, inv:0	14	0	red
+33	D:M, inv:0	14	1/4	green
+34	G:m, inv:0	15	0	green
+35	C:M, inv:0	16	0	green
+36	F:KeyMode.MAJOR	16	1/4	red
+37	C:Mm7, inv:3	16	1/4	yellow
+38	g:KeyMode.MINOR	16	1/2	red
+39	F:M, inv:1	16	1/2	green
+40	F:M, inv:0	16	3/4	yellow
+41	C:m, inv:0	17	0	green
+42	Bb:KeyMode.MAJOR	17	3/4	green
+43	F:Mm7, inv:0	17	3/4	red
+44	F:M, inv:0	18	0	yellow
+45	F:M, inv:1	18	3/8	yellow
+46	Bb:M, inv:0	18	1/2	green
+47	Eb:M, inv:0	19	0	yellow
+48	F:KeyMode.MAJOR	19	1/2	green
+49	C:Mm7, inv:1	19	1/2	green
+50	Bb:KeyMode.MAJOR	20	0	green
+51	F:M, inv:0	20	0	green
+52	--	20	1/2	red
+53	Bb:M, inv:0	20	3/4	green
+54	Eb:M, inv:0	21	0	red
+55	F:M, inv:0	21	1/2	green
+56	--	21	3/4	yellow
+57	Bb:M, inv:0	22	0	green
+58	F:M, inv:0	23	0	green
+59	C:m, inv:0	24	0	green
+60	G:m, inv:0	25	0	green
+61	g:KeyMode.MINOR	26	0	red
+62	D:M, inv:0	26	0	red
+63	--	26	1/2	green
+64	--	26	1/2	yellow
+65	Bb:KeyMode.MAJOR	27	0	red
+66	G:m, inv:1	27	0	green
+67	--	27	1/2	red
+68	--	27	3/4	yellow
+69	g:KeyMode.MINOR	28	0	green
+70	D:M, inv:1	28	0	yellow
+71	Bb:KeyMode.MAJOR	28	1/4	red
+72	G:m, inv:0	28	1/4	green
+73	Eb:M, inv:0	28	1/2	red
+74	c:KeyMode.MINOR	28	3/4	green
+75	G:Mm7, inv:1	28	3/4	yellow
+76	Bb:KeyMode.MAJOR	29	0	red
+77	C:m, inv:0	29	0	green
+78	Eb:KeyMode.MAJOR	29	1/4	red
+79	Bb:Mm7, inv:0	29	1/4	red
+80	Bb:KeyMode.MAJOR	29	1/2	red
+81	F:M, inv:1	29	1/2	red
+82	g:KeyMode.MINOR	30	0	green
+83	D:Mm7, inv:1	30	0	green
+84	--	30	1/2	yellow
+85	--	30	3/4	red
+86	Bb:KeyMode.MAJOR	31	0	red
+87	C:m, inv:1	31	0	red
+88	--	31	1/4	red
+89	g:KeyMode.MINOR	31	1/2	green
+90	D:M, inv:0	31	1/2	green
+91	--	31	3/4	yellow
+92	Bb:KeyMode.MAJOR	33	0	red
+93	G:m, inv:0	33	0	red
