@@ -18,7 +18,7 @@ For other OS, clic [here](https://github.com/FluidSynth/fluidsynth/wiki/Download
 
 Here are the steps to build a new conda environment with the needed python packages :
     - Download the 2 text files package_conda.txt and requirements.txt
-    - Run the following command:
+    - Run the following commands:
 	
 ```
 conda create --name <env> --file /path/to/package_conda.txt
