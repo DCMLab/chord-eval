@@ -1,2 +1,6 @@
-ms3==0.4.8
+ms3==0.4.9
+seaborn
+networkx
+pretty_midi
+librosa
 
