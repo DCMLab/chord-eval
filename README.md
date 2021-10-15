@@ -12,7 +12,7 @@ To download it, run the following command if you using Ubuntu or Debian:
 sudo apt-get install fluidsynth
 ```
 
-For other OS, clic [here](https://github.com/FluidSynth/fluidsynth/wiki/Download) to see the downloading procedure.
+For other OS, click [here](https://github.com/FluidSynth/fluidsynth/wiki/Download) to see the downloading procedure.
 
 ### Conda environment and python packages:
 
@@ -22,7 +22,8 @@ Here are the steps to build a new conda environment with the needed python packa
 	
 ```
 conda create --name <env> --file /path/to/package_conda.txt
-sudo pip install -r requirements.txt
+conda activate <env>
+pip install -r requirements.txt
 ```
 
 
