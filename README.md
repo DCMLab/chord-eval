@@ -70,3 +70,34 @@ The NoteBooks repository contains 8 notebooks:
 *automatic_chord_evaluation.ipynb*: The aim of this notebook is to compare different data set of an automatic chord evaluation algorithm with a given ground truth annotation. The different outputs are obtained with different input parameter values.
 
 And the notebooks *data_MF.ipynb*, *data_SA.ipynb*, *data_CA.ipynb*, *data_ACE.ipynb* used to build every csv files needed for the notebooks ‘metrics_features’, ‘sonatas_annotations’, ‘coprus_analysis’ and ‘automatic_chord_evaluation’ respectively.
+
+
+##Score processing for label annotation
+
+Here are the instructions to get the annotations of a sonata and write the labels on the scores :
+    • Download the folder Beethoven-labels in the *Data/sonatas_annotations folder*.
+    • Unzip this folder and put it in a folder *chord-eval/Data/sonatas_annotations*. This folder contains the labels of two annotations.
+    • Download the folder MS3 in the *Data/Beethoven_sonatas_scores* folder.
+    • Unzip this folder and put it in your folder *chord-eval/Data/sonatas_annotations*. This folder contains the scores of the sonatas.
+    • In your folder *chord-eval/Data/Beethoven_sonatas_scores* create the folder labels. It will contains the chord labels in the desired format that will be written in the scores.
+    • Download the Jupyter notebook *data_SA.ipynb* and *sonata_annotations.ipynb* **in the branch xavier** and unzip them in your folder *chord-eval/Notebooks*.
+    • Download the scripts in the folder *python_scripts* and unzip them in your folder *chord-eval/python_scipts*.
+      Now the general working directory should look like this :
+      chord-eval :
+        ◦ Data:	
+            ▪ sonatas_annotaions:
+                • Beethoven-labels
+            ▪ Beethoven_sonatas_scores:
+                • MS3
+                • labels
+        ◦ Notebooks:
+            ▪ sonatas_annotaions.ipynb
+            ▪ data_SA.ipynb
+        ◦ python_scripts :
+              with every python scripts of the repository   
+    • Run the Jupyter notebook *data_SA.ipynb* entirely to annotate the scores with the chord labels (and to create the needed csv. file for the *sonata_annotations.ipynb* notebook).
+    • Run the Jupyter notebook *sonata_annotations.ipynb* to have an appreciation of the differences between the two annotations.
+      
+
+                  
+
