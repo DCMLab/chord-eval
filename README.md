@@ -75,6 +75,7 @@ And the notebooks *data_MF.ipynb*, *data_SA.ipynb*, *data_CA.ipynb*, *data_ACE.i
 ## Score processing for label annotation
 
 Here are the instructions to get the annotations of a sonata and write the labels on the scores :
+
     - Download the folder Beethoven-labels in the *Data/sonatas_annotations folder*.
     - Unzip this folder and put it in a folder *chord-eval/Data/sonatas_annotations*. This folder contains the labels of two annotations.
     - Download the folder MS3 in the *Data/Beethoven_sonatas_scores* folder.
