@@ -116,7 +116,8 @@ def test_columns(
 
 def get_progression(
 		df1:pd.DataFrame,
-		df2:pd.DataFrame
+		df2:pd.DataFrame,
+        vl_kws={}, tbt_kws={},
 	) -> pd.DataFrame:
 	"""
 	Construct a pd.DataFrame where each row is a event : a chord change in one of 
@@ -203,7 +204,7 @@ def get_progression(
 	                                               inversion2=rdf2.chord_inversion,
 												   #changes1=df1.chord_suspension_midi[idx_df1-1],
 	                                               #changes2=rdf2.chord_suspension_midi,
-	                                               bass_weight = 3
+	                                               **vl_kws
 												   ))
 	
 			chords_tbt_dist.append(get_distance(distance = 'tone by tone',
@@ -215,8 +216,7 @@ def get_progression(
 	                                               inversion2=rdf2.chord_inversion,
 												   #changes1=df1.chord_suspension_midi[idx_df1-1],
 	                                               #changes2=rdf2.chord_suspension_midi,
-	                                               bass_weight = 3,
-	                                               root_weight = 3
+	                                               **tbt_kws
 												   ))
 	
 		while(idx_df1 < len(df1) and overlap(df1_interval[idx_df1], df2_interval[idx_df2])):
