@@ -682,8 +682,8 @@ def voice_leading_distance(
         Any alterations to the 2nd chord's pitches.	
 		
 	pitch_type : PitchType, optional
-		The pitch type of the given root. If PitchType.MIDI, the root is treated
-        as a MIDI note number with C4 = 60. If PitchType.TPC, the root is treated
+		The pitch type of the given root. If PitchType.MIDI, the pitches are treated
+        as a MIDI note number with C4 = 60. If PitchType.TPC, the pitches are treated
         as an interval above C along the circle of fifths (so G = 1, F = -1, etc.).
 		The default is PitchType.MIDI.
 		
