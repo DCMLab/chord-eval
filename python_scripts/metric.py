@@ -10,7 +10,6 @@ from librosa import stft, cqt, vqt
 from librosa.feature import melspectrogram
 from scipy.signal import medfilt
 from scipy.spatial import distance
-from collections import defaultdict
 from functools import lru_cache
 
 from data_types import ChordType, PitchType
@@ -23,7 +22,8 @@ def create_chord(
     root: int,
     chord_type: ChordType,
     inversion: int = 0,
-    program: int = 0
+    program: int = 0,
+	changes: str = None,
 ) -> pretty_midi.PrettyMIDI :
     """
     Create a pretty_midi object with an instrument and the given chord for a 1s 
@@ -38,7 +38,17 @@ def create_chord(
     chord_type : ChordType
         The chord type of the given chord.    
     inversion : int, optional
-        The inversion of the chord. The default is 0.    
+        The inversion of the chord. The default is 0.
+		
+	changes : str
+        Any alterations to the chord's pitches, as a semi-colon separated string.
+        Each alteration should be in the form "orig:new", where "orig" represents
+        the original pitch that has been altered to "new". "orig" can also be blank
+        for added pitches, and "new" can be prepended with "+" to indicate that a
+        pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
+        by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
+        representation of different octaves so any "+" is ignored.	
+		   
     program : int, optional
         The general MIDI program number used by the fluidsynth to synthesize 
         the wave form of the MIDI data of the first chord (it uses the 
@@ -66,7 +76,8 @@ def create_chord(
     notes = get_chord_pitches(root = root,
                               chord_type = chord_type,
 							  pitch_type = PitchType.MIDI,
-                              inversion= inversion) 
+                              inversion= inversion,
+							  changes = changes) 
     notes += 60 # centered around C4
     
     for note_number in notes:
@@ -157,6 +168,7 @@ def get_dft_from_chord(
     root: int,
     chord_type: ChordType,
     inversion: int = 0,
+	changes: str = None,
     program: int = 0,
 	transform: str = 'vqt',
     hop_length: int = 512,
@@ -183,6 +195,15 @@ def get_dft_from_chord(
         The inversion of the chord.
         The default is 0.
         
+	changes : str
+        Any alterations to the chord's pitches, as a semi-colon separated string.
+        Each alteration should be in the form "orig:new", where "orig" represents
+        the original pitch that has been altered to "new". "orig" can also be blank
+        for added pitches, and "new" can be prepended with "+" to indicate that a
+        pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
+        by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
+        representation of different octaves so any "+" is ignored.	
+		
     program : int, optional
         The general MIDI program number used by the fluidsynth to synthesize 
         the wave form of the MIDI data of the given chord (it uses the 
@@ -224,20 +245,23 @@ def get_dft_from_chord(
 	
 	# MIDI object of the chord :
 	pm = create_chord(root=root,
-				   chord_type=chord_type,
+				      chord_type=chord_type,
                       inversion=inversion,
+					  changes=changes,
                       program=program)
   
     # Second instance of the chord an octave below the fisrt one.
 	pm_below = create_chord(root=root - 12,
                             chord_type=chord_type,
                             inversion=inversion,
+							changes=changes,
                             program=program)
     
     # Third instance of the chord an octave above the fisrt one.
 	pm_above = create_chord(root=root + 12,
                             chord_type=chord_type,
                             inversion=inversion,
+							changes=changes,
                             program=program)
     
     
@@ -354,6 +378,8 @@ def SPS_distance(
     chord_type2: ChordType,
     inversion1: int = 0,
     inversion2: int = 0,
+	changes1: str = None,
+	changes2: str = None,
     program1: int = 0,
     program2: int = 0,
     transform: str = 'vqt',
@@ -392,6 +418,18 @@ def SPS_distance(
     inversion2 : int, optional
         The inversion of the second chord.
         The default is 0.
+		
+	changes1 : str
+        Any alterations to the 1st chord's pitches, as a semi-colon separated string.
+        Each alteration should be in the form "orig:new", where "orig" represents
+        the original pitch that has been altered to "new". "orig" can also be blank
+        for added pitches, and "new" can be prepended with "+" to indicate that a
+        pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
+        by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
+        representation of different octaves so any "+" is ignored.	
+		
+	changes2 : str
+        Any alterations to the 2nd chord's pitches.
         
     program1 : int, optional
         The general MIDI program number used by the fluidsynth to synthesize 
@@ -451,6 +489,7 @@ def SPS_distance(
     dft1_below, dft1, dft1_above = get_dft_from_chord(root=root1,
 													  chord_type=chord_type1,
 													  inversion=inversion1,
+													  changes=changes1,
 													  program=program1,
 													  transform=transform,
 													  hop_length=hop_length, 
@@ -460,6 +499,7 @@ def SPS_distance(
     dft2_below, dft2, dft2_above = get_dft_from_chord(root=root2,
 													  chord_type=chord_type2,
 													  inversion=inversion2,
+													  changes=changes2,
 													  program=program2,
 													  transform=transform,
 													  hop_length=hop_length, 
@@ -576,7 +616,7 @@ def find_notes_matching(
 	matching = nx.max_weight_matching(G, maxcardinality=True)
 	# We substract the length of the first chord to the second node of the
 	# matching to the index of the corresponding pitch within the second chord
-	matching = [(pair[0], pair[1]-len(notes1)) for pair in matching]
+	matching = [(pair[0], pair[1]-len(notes1)) if pair[0]<pair[1] else (pair[1], pair[0]-len(notes1)) for pair in matching]
 	
 	# Total distance	
 	total_steps = 0
@@ -594,6 +634,8 @@ def voice_leading_distance(
     chord_type2: ChordType,
     inversion1: int = 0,
     inversion2: int = 0,
+	changes1: str = None,
+	changes2: str = None,
 	pitch_type: PitchType = PitchType.MIDI,
 	only_bass_tpc: bool = True,
     duplicate_bass: bool = True,
@@ -626,6 +668,18 @@ def voice_leading_distance(
 		 
 	inversion2 : int, optional
 		The inversion of the second chord.. The default is 0.
+		
+	changes1 : str
+        Any alterations to the 1st chord's pitches, as a semi-colon separated string.
+        Each alteration should be in the form "orig:new", where "orig" represents
+        the original pitch that has been altered to "new". "orig" can also be blank
+        for added pitches, and "new" can be prepended with "+" to indicate that a
+        pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
+        by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
+        representation of different octaves so any "+" is ignored.	
+		
+	changes2 : str
+        Any alterations to the 2nd chord's pitches.	
 		
 	pitch_type : PitchType, optional
 		The pitch type of the given root. If PitchType.MIDI, the root is treated
@@ -679,12 +733,14 @@ def voice_leading_distance(
     notes1 = pd.Series(get_chord_pitches(root = root1,
                                          chord_type = chord_type1,
 										 pitch_type = pitch_type,
-                                         inversion = inversion1))
+                                         inversion = inversion1,
+										 changes = changes1))
     
     notes2 = pd.Series(get_chord_pitches(root = root2,
                                          chord_type = chord_type2,
 										 pitch_type = pitch_type,
-                                         inversion = inversion2))
+                                         inversion = inversion2,
+										 changes = changes2))
     
 	# Bass weighted similarity
     bass_steps = get_smallest_interval(notes1[0],notes2[0])
@@ -696,12 +752,14 @@ def voice_leading_distance(
         notes1 = pd.Series(get_chord_pitches(root = root1,
                                          chord_type = chord_type1,
 										 pitch_type = pitch_type,
-                                         inversion = inversion1))
+                                         inversion = inversion1,
+										 changes = changes1))
     
         notes2 = pd.Series(get_chord_pitches(root = root2,
                                          chord_type = chord_type2,
 										 pitch_type = pitch_type,
-                                         inversion = inversion2))
+                                         inversion = inversion2,
+										 changes = changes2))
     
 	# Specify if the bass can be duplicated
     if duplicate_bass :
@@ -757,6 +815,8 @@ def tone_by_tone_distance(
     chord_type2: ChordType,
     inversion1: int = 0,
     inversion2: int = 0,
+	changes1: str = None,
+	changes2: str = None,
     root_weight: int = 1,
     bass_weight: int = 1 
 ) -> float:
@@ -790,6 +850,18 @@ def tone_by_tone_distance(
     inversion2 : int, optional
         The inversion of the second chord.
         The default is 0.
+		
+	changes1 : str
+        Any alterations to the 1st chord's pitches, as a semi-colon separated string.
+        Each alteration should be in the form "orig:new", where "orig" represents
+        the original pitch that has been altered to "new". "orig" can also be blank
+        for added pitches, and "new" can be prepended with "+" to indicate that a
+        pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
+        by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
+        representation of different octaves so any "+" is ignored.	
+		
+	changes2 : str
+        Any alterations to the 2nd chord's pitches.	
         
     root_weight : int, optional
         The weight of the matching of the two chords' root.
@@ -809,12 +881,14 @@ def tone_by_tone_distance(
     notes1 = get_chord_pitches(root = root1,
                                chord_type = chord_type1,
 							   pitch_type = PitchType.MIDI,
-                               inversion = inversion1)%12
+                               inversion = inversion1,
+							   changes = changes1)%12
     
     notes2 = get_chord_pitches(root = root2,
                                chord_type = chord_type2,
 							   pitch_type = PitchType.MIDI,
-                               inversion = inversion2)%12
+                               inversion = inversion2,
+							   changes = changes2)%12
     
     matches = sum([1 if note in notes2 else 0 for note in notes1])
     
@@ -839,6 +913,8 @@ def get_distance(
     chord_type2: ChordType,
     inversion1: int = 0,
     inversion2: int = 0,
+	changes1: str = None,
+	changes2: str = None,
     triad_reduction: bool = False,
     **kwargs
 ) -> float:
@@ -877,6 +953,18 @@ def get_distance(
     inversion2 : int, optional
         The inversion of the second chord.
         The default is 0.
+		
+	changes1 : str
+        Any alterations to the 1st chord's pitches, as a semi-colon separated string.
+        Each alteration should be in the form "orig:new", where "orig" represents
+        the original pitch that has been altered to "new". "orig" can also be blank
+        for added pitches, and "new" can be prepended with "+" to indicate that a
+        pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
+        by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
+        representation of different octaves so any "+" is ignored.	
+		
+	changes2 : str
+        Any alterations to the 2nd chord's pitches.
         
     triad_reduction : bool, optional
         If True, the function will reduce every input chords to their triad
@@ -915,6 +1003,8 @@ def get_distance(
                          chord_type2=chord_type2,
                          inversion1=inversion1,
                          inversion2=inversion2,
+						 changes1=changes1,
+						 changes2=changes2,
                          **kwargs)
     
     elif distance == "voice leading":
@@ -924,6 +1014,8 @@ def get_distance(
                                       chord_type2=chord_type2,
                                       inversion1=inversion1,
                                       inversion2=inversion2,
+									  changes1=changes1,
+									  changes2=changes2,
                                       **kwargs)
     
     elif distance == "tone by tone":
@@ -933,16 +1025,12 @@ def get_distance(
                                      chord_type2=chord_type2,
                                      inversion1=inversion1,
                                      inversion2=inversion2,
+									 changes1=changes1,
+									 changes2=changes2,
                                      **kwargs)
 	
     elif distance == "binary":
-        return 1 if tone_by_tone_distance(root1=root1,
-                                     root2=root2,
-                                     chord_type1=chord_type1,
-                                     chord_type2=chord_type2,
-                                     inversion1=inversion1,
-                                     inversion2=inversion2,
-                                     **kwargs) > 0 else 0
+        return 0 if root1==root2 and chord_type1==chord_type2 and inversion1==inversion2 else 1
 	
     else:
         raise ValueError("distance must be "
