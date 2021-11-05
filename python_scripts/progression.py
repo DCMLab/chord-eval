@@ -116,11 +116,16 @@ def test_columns(
 
 def get_progression(
 		df1:pd.DataFrame,
-		df2:pd.DataFrame
+		df2:pd.DataFrame,
+		triad_reduction: bool = False,
+		sps_kws:dict={},
+		vl_kws:dict={},
+		tbt_kws:dict={}
 	) -> pd.DataFrame:
 	"""
 	Construct a pd.DataFrame where each row is a event : a chord change in one of 
 	the annotation.
+	
 
 	Parameters
 	----------
@@ -129,6 +134,21 @@ def get_progression(
 		
 	df2 : pd.DataFrame
 		The second annotation of the piece.
+		
+	triad_reduction : bool, optional
+        If True, the function will reduce every input chords to their triad
+        reduction.
+        The default is False.
+		
+	sps_kws: Dict
+		Dictionary of keyword arguments for SPS_distance(). The defautl is {}.
+		
+	vl_kws: Dict
+		Dictionary of keyword arguments for voice_leading_distance(). The defautl is {}.
+		
+	tbt_kws: Dict
+		Dictionary of keyword arguments for tone_by_tone_distance(). The defautl is {}.
+
 
 	Returns
 	-------
@@ -163,6 +183,7 @@ def get_progression(
 	binary = []
 		
 	time = []
+	durations = []
 		
 	chords_df2 = []
 	chords_df1 = []
@@ -171,11 +192,14 @@ def get_progression(
 	# other annotation it matches with
 	idx_df1 = 0
 	for idx_df2, rdf2 in df2.iterrows():
+		
 		matched_idx = []
 		matched_duration = []
+		
 		chords_sps_dist = []
 		chords_vl_dist = []
 		chords_tbt_dist = []
+		chords_bin_dist = []
 	        
 		if (idx_df1 > 0 and overlap(df1_interval[idx_df1-1], df2_interval[idx_df2])):
 	            
@@ -189,9 +213,11 @@ def get_progression(
 	                                               chord_type1=df1.chord_type[idx_df1-1],
 	                                               chord_type2=rdf2.chord_type,
 	                                               inversion1=df1.chord_inversion[idx_df1-1],
-	                                               inversion2=rdf2.chord_inversion#,
-												   #changes1=df1.chord_suspension_midi[idx_df1-1],
-	                                               #changes2=rdf2.chord_suspension_midi
+	                                               inversion2=rdf2.chord_inversion,
+												   changes1=df1.chord_suspension_midi[idx_df1-1],
+	                                               changes2=rdf2.chord_suspension_midi,
+												   triad_reduction=triad_reduction,
+												   **sps_kws
 												   ))
 	
 			chords_vl_dist.append(get_distance(distance = 'voice leading',
@@ -201,9 +227,10 @@ def get_progression(
 	                                               chord_type2=rdf2.chord_type,
 	                                               inversion1=df1.chord_inversion[idx_df1-1],
 	                                               inversion2=rdf2.chord_inversion,
-												   #changes1=df1.chord_suspension_midi[idx_df1-1],
-	                                               #changes2=rdf2.chord_suspension_midi,
-	                                               bass_weight = 3
+												   changes1=df1.chord_suspension_midi[idx_df1-1],
+	                                               changes2=rdf2.chord_suspension_midi,
+												   triad_reduction=triad_reduction,
+	                                               **vl_kws
 												   ))
 	
 			chords_tbt_dist.append(get_distance(distance = 'tone by tone',
@@ -213,11 +240,13 @@ def get_progression(
 	                                               chord_type2=rdf2.chord_type,
 	                                               inversion1=df1.chord_inversion[idx_df1-1],
 	                                               inversion2=rdf2.chord_inversion,
-												   #changes1=df1.chord_suspension_midi[idx_df1-1],
-	                                               #changes2=rdf2.chord_suspension_midi,
-	                                               bass_weight = 3,
-	                                               root_weight = 3
+												   changes1=df1.chord_suspension_midi[idx_df1-1],
+	                                               changes2=rdf2.chord_suspension_midi,
+												   triad_reduction=triad_reduction,
+												   **tbt_kws
 												   ))
+			
+			chords_bin_dist.append(0 if df1_full_chord[idx_df1-1]==df2_full_chord[idx_df2] else 1)
 	
 		while(idx_df1 < len(df1) and overlap(df1_interval[idx_df1], df2_interval[idx_df2])):
 	            
@@ -231,9 +260,11 @@ def get_progression(
 	                                               chord_type1=df1.chord_type[idx_df1],
 	                                               chord_type2=rdf2.chord_type,
 	                                               inversion1=df1.chord_inversion[idx_df1],
-	                                               inversion2=rdf2.chord_inversion#,
-												   #changes1=df1.chord_suspension_midi[idx_df1],
-	                                               #changes2=rdf2.chord_suspension_midi
+	                                               inversion2=rdf2.chord_inversion,
+												   changes1=df1.chord_suspension_midi[idx_df1],
+	                                               changes2=rdf2.chord_suspension_midi,
+												   triad_reduction=triad_reduction,
+												   **sps_kws
 												   ))
 	
 			chords_vl_dist.append(get_distance(distance = 'voice leading',
@@ -243,9 +274,10 @@ def get_progression(
 	                                               chord_type2=rdf2.chord_type,
 	                                               inversion1=df1.chord_inversion[idx_df1],
 	                                               inversion2=rdf2.chord_inversion,
-												   #changes1=df1.chord_suspension_midi[idx_df1],
-	                                               #changes2=rdf2.chord_suspension_midi,
-	                                               bass_weight = 3
+												   changes1=df1.chord_suspension_midi[idx_df1],
+	                                               changes2=rdf2.chord_suspension_midi,
+												   triad_reduction=triad_reduction,
+	                                               **vl_kws
 												   ))
 	
 			chords_tbt_dist.append(get_distance(distance = 'tone by tone',
@@ -255,20 +287,20 @@ def get_progression(
 	                                               chord_type2=rdf2.chord_type,
 	                                               inversion1=df1.chord_inversion[idx_df1],
 	                                               inversion2=rdf2.chord_inversion,
-												   #changes1=df1.chord_suspension_midi[idx_df1],
-	                                               #changes2=rdf2.chord_suspension_midi,
-	                                               bass_weight = 3,
-	                                               root_weight = 3
+												   changes1=df1.chord_suspension_midi[idx_df1],
+	                                               changes2=rdf2.chord_suspension_midi,
+												   triad_reduction=triad_reduction,
+	                                               **tbt_kws
 												   ))
+			
+			chords_bin_dist.append(0 if df1_full_chord[idx_df1]==df2_full_chord[idx_df2] else 1)
 	
 			idx_df1 += 1
-			
-		dist_bin = [0 if tbt == 0 else 1 for tbt in chords_tbt_dist]
 		    
 		sps+=chords_sps_dist
 		vl +=chords_vl_dist
 		tbt+=chords_tbt_dist
-		binary+=dist_bin
+		binary+=chords_bin_dist
 		    
 		if len(matched_idx)>0:
 		        
@@ -280,22 +312,23 @@ def get_progression(
 		        
 			chords_df2 += [df2_full_chord[idx_df2]]*len(matched_idx)
 			chords_df1 += [df1_full_chord[idx_df1] for idx_df1 in matched_idx]
+			
+		durations+=matched_duration
 	            
 	progression = pd.DataFrame({'time':time,
-		                            'annotation1_chord':chords_df1,
-		                            'annotation2_chord':chords_df2,
-		                            'sps':sps,
-		                            'vl':vl,
-		                            'tbt':tbt,
-		                            'binary':binary})
-
-	
+								 'matched_duration':durations,
+								 'annotation1_chord':chords_df1,
+								 'annotation2_chord':chords_df2,
+								 'sps':sps,
+								 'vl':vl,
+								 'tbt':tbt,
+								 'binary':binary})	
 	return progression
-
 
 
 def plot_comparison(
     progression:pd.DataFrame,
+	figsize:float=(22,10),
     rge:float=None,
     verbose:bool=False,
 	title:str=None,
@@ -310,6 +343,8 @@ def plot_comparison(
 	progression : pd.DataFrame
 		pd.DataFrame containg progressino the two annotaion and their distance for
 		each chord.
+	figsize:
+		Specifies the size of the figure. The default is (22,10)
 	rge : float, optional
 		the range in terms of whole note of the progression : a 2-element array. 
 		The default is None.
@@ -331,7 +366,7 @@ def plot_comparison(
 	if rge==None:
 		 rge=[progression.time[0],progression.time.iloc[-1]]
 
-	fig, axs = plt.subplots(2,1,figsize=(22,10), sharex=True)
+	fig, axs = plt.subplots(2,1,figsize=figsize, sharex=True)
 
 	sns.scatterplot(data=progression.query('time>=@rge[0] and time<@rge[1]'), x='time', y='sps',ax=axs[0], label='SPS')
 	sns.scatterplot(data=progression.query('time>=@rge[0] and time<@rge[1]'), x='time', y='tbt',ax=axs[0], label='tone by tone')
@@ -347,12 +382,12 @@ def plot_comparison(
 		limit1=progression.query('time>=@rge[0] and time<@rge[1]').index[0]
 		limit2=progression.query('time>=@rge[0] and time<@rge[1]').index[-1]
         
-		plt.text(progression.iloc[limit1].time, progression.iloc[limit1].vl-0.2, progression.iloc[limit1].annotation2_chord, horizontalalignment='center', verticalalignment='top', size='small', fontstretch ='normal', color='maroon')
+		plt.text(progression.loc[limit1].time, progression.loc[limit1].vl-0.2, progression.loc[limit1].annotation2_chord, horizontalalignment='center', verticalalignment='top', size='small', fontstretch ='normal', color='maroon')
 		for line in range(limit1+1,limit2):
 			 if progression.annotation2_chord[line] != progression.annotation2_chord[line-1]:
 				 plt.text(progression.time[line], progression.vl[line]-0.2, progression.annotation2_chord[line], horizontalalignment='center', verticalalignment='top', size='small', fontstretch ='normal', color='maroon')
 
-		plt.text(progression.iloc[limit1].time, progression.iloc[limit1].vl+0.2, progression.iloc[limit1].annotation1_chord, horizontalalignment='center', verticalalignment='bottom', size='small', fontstretch ='normal')
+		plt.text(progression.loc[limit1].time, progression.loc[limit1].vl+0.2, progression.loc[limit1].annotation1_chord, horizontalalignment='center', verticalalignment='bottom', size='small', fontstretch ='normal')
 		for line in range(limit1+1,limit2):
 			if progression.annotation1_chord[line] != progression.annotation1_chord[line-1]:
 				plt.text(progression.time[line], progression.vl[line]+0.2, progression.annotation1_chord[line], horizontalalignment='center', verticalalignment='bottom', size='small', fontstretch ='normal')
