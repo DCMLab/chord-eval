@@ -21947,6 +21947,10 @@ d-moll</text>
             <name>A_1_dcml</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>d.V6{</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -22085,113 +22089,9 @@ d-moll</text>
             <name>A7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <Accidental>
-                <subtype>accidentalSharp</subtype>
-                </Accidental>
-              <pitch>49</pitch>
-              <tpc>21</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          </voice>
-        </Measure>
-      <Measure>
-        <voice>
           <Harmony>
-            <name>d</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>d</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <pitch>50</pitch>
-              <tpc>16</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>A_2</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>A_2</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <pitch>52</pitch>
-              <tpc>18</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>d_1</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>d_1</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <pitch>53</pitch>
-              <tpc>13</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>A7_1</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>A7_1</name>
-            <color r="0" g="0" b="0" a="255"/>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22226,6 +22126,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -22251,6 +22155,134 @@ d-moll</text>
           <Harmony>
             <name>A_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <pitch>52</pitch>
+              <tpc>18</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>d_1</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>d_1</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <pitch>53</pitch>
+              <tpc>13</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>A7_1</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>A7_1</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                </Accidental>
+              <pitch>49</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Harmony>
+            <name>d</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>d</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <pitch>50</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>A_2</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>A_2</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22278,6 +22310,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -22303,6 +22339,10 @@ d-moll</text>
           <Harmony>
             <name>D7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22337,6 +22377,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -22362,6 +22406,10 @@ d-moll</text>
           <Harmony>
             <name>D_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22389,6 +22437,10 @@ d-moll</text>
             <name>g_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -22414,6 +22466,10 @@ d-moll</text>
           <Harmony>
             <name>abo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>It6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22445,6 +22501,11 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#764)</name>
+            <offset x="-0.562089" y="5.31369"/>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -22460,6 +22521,11 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V|HC}{</name>
+            <offset x="-0.449671" y="5.3135"/>
             </Harmony>
           <Fermata>
             <subtype>fermataBelow</subtype>
@@ -22491,6 +22557,11 @@ d-moll</text>
           <Harmony>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/III</name>
+            <offset x="-0.224836" y="5.09132"/>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -22628,6 +22699,11 @@ d-moll</text>
             <name>C7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65/III</name>
+            <offset x="-1" y="-6"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -22652,6 +22728,10 @@ d-moll</text>
             <name>F</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III(4)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -22664,6 +22744,10 @@ d-moll</text>
               <tpc>14</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22677,6 +22761,10 @@ d-moll</text>
           <Harmony>
             <name>D7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22705,6 +22793,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv(4)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -22717,6 +22809,10 @@ d-moll</text>
               <tpc>16</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22730,6 +22826,10 @@ d-moll</text>
           <Harmony>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22773,6 +22873,10 @@ d-moll</text>
           <Harmony>
             <name>dbo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22863,6 +22967,10 @@ d-moll</text>
             <name>abo7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -22947,6 +23055,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23425,6 +23537,11 @@ d-moll</text>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            <offset x="0" y="6.76012"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -23468,6 +23585,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}{</name>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -24159,6 +24280,10 @@ d-moll</text>
           <Harmony>
             <name>A7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -24350,6 +24475,10 @@ d-moll</text>
             <name>dbo_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
             <actualNotes>3</actualNotes>
@@ -24465,6 +24594,10 @@ d-moll</text>
             <name>A7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
             <actualNotes>3</actualNotes>
@@ -24873,6 +25006,10 @@ d-moll</text>
           <Harmony>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -25073,6 +25210,10 @@ d-moll</text>
             <name>E_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>v.V6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -25284,6 +25425,10 @@ d-moll</text>
             <name>F_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -25482,6 +25627,11 @@ d-moll</text>
           <Harmony>
             <name>abo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            <offset x="-0.337254" y="3.94967"/>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -25702,6 +25852,10 @@ d-moll</text>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -25747,6 +25901,10 @@ d-moll</text>
           <Harmony>
             <name>ebo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -25831,6 +25989,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V[V|HC}{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25853,6 +26015,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -25930,6 +26096,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25952,6 +26122,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26021,6 +26195,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26043,6 +26221,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26112,6 +26294,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26134,6 +26320,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26161,6 +26351,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26180,6 +26374,10 @@ d-moll</text>
               <tpc>18</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -26233,93 +26431,9 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            <Note>
-              <pitch>60</pitch>
-              <tpc>14</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>64</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          <Beam>
-            <StemDirection>down</StemDirection>
-            </Beam>
-          <Chord>
-            <BeamMode>begin</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>65</pitch>
-              <tpc>13</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>64</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            <Note>
-              <pitch>60</pitch>
-              <tpc>14</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>64</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          </voice>
-        </Measure>
-      <Measure>
-        <voice>
           <Harmony>
-            <name>E</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Beam>
-            <StemDirection>down</StemDirection>
-            </Beam>
-          <Chord>
-            <BeamMode>begin</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>52</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>64</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>a</name>
-            <color r="0" g="0" b="0" a="255"/>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26386,6 +26500,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26408,6 +26526,10 @@ d-moll</text>
           <Harmony>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26474,6 +26596,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26496,6 +26622,106 @@ d-moll</text>
           <Harmony>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            <Note>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <StemDirection>down</StemDirection>
+            </Beam>
+          <Chord>
+            <BeamMode>begin</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            <Note>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Harmony>
+            <name>E</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
+          <Beam>
+            <StemDirection>down</StemDirection>
+            </Beam>
+          <Chord>
+            <BeamMode>begin</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>52</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>a</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26520,6 +26746,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26542,6 +26772,10 @@ d-moll</text>
           <Harmony>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26574,6 +26808,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26596,6 +26834,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26642,6 +26884,10 @@ d-moll</text>
             <name>abo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio65]</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -26835,6 +27081,10 @@ d-moll</text>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7|HC}{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -26879,6 +27129,10 @@ d-moll</text>
             <name>abo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -26915,6 +27169,10 @@ d-moll</text>
           <Harmony>
             <name>abo_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio64</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -26969,6 +27227,10 @@ d-moll</text>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6|IAC}{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -27012,6 +27274,11 @@ d-moll</text>
           <Harmony>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
+            <offset x="0.224836" y="6.74604"/>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -27102,6 +27369,11 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            <offset x="0" y="5.97319"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -27113,6 +27385,11 @@ d-moll</text>
           <Harmony>
             <name>abo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            <offset x="0.337254" y="5.65803"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27167,6 +27444,10 @@ d-moll</text>
           <Harmony>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27233,6 +27514,10 @@ d-moll</text>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -27295,6 +27580,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -27306,6 +27595,11 @@ d-moll</text>
           <Harmony>
             <name>abo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            <offset x="0.996012" y="-3.45079"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27342,6 +27636,10 @@ d-moll</text>
           <Harmony>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27406,6 +27704,10 @@ d-moll</text>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -27478,6 +27780,10 @@ d-moll</text>
             <name>B_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -27509,6 +27815,10 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -27583,6 +27893,10 @@ d-moll</text>
             <name>A_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64/iv</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -27613,6 +27927,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <location>
             <fractions>1/4</fractions>
             </location>
@@ -27623,6 +27941,10 @@ d-moll</text>
           <Harmony>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/iv</name>
             </Harmony>
           </voice>
         <voice>
@@ -27682,6 +28004,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -27710,6 +28036,10 @@ d-moll</text>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -27740,6 +28070,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(964)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -27759,6 +28093,10 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27824,6 +28162,10 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -27847,6 +28189,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -27871,6 +28217,10 @@ d-moll</text>
           <Harmony>
             <name>dbo7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio2/iv</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -27913,6 +28263,10 @@ d-moll</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -27933,6 +28287,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv64</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -27944,6 +28302,10 @@ d-moll</text>
           <Harmony>
             <name>abo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27967,6 +28329,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28005,6 +28371,10 @@ d-moll</text>
           <Harmony>
             <name>dbo7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio2/iv</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -28043,6 +28413,10 @@ d-moll</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -28063,6 +28437,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv64</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -28074,6 +28452,10 @@ d-moll</text>
           <Harmony>
             <name>abo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28097,6 +28479,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28136,6 +28522,10 @@ d-moll</text>
             <name>dbo7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio2/iv</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -28173,6 +28563,10 @@ d-moll</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -28193,6 +28587,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv64</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -28204,6 +28602,11 @@ d-moll</text>
           <Harmony>
             <name>abo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
+            <offset x="-0.284575" y="-5.72739"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28235,6 +28638,10 @@ d-moll</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7/III</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -28309,6 +28716,10 @@ d-moll</text>
             <name>bo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/III</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -28335,6 +28746,10 @@ d-moll</text>
           <Harmony>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -28376,6 +28791,10 @@ d-moll</text>
           <Harmony>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III6-V(64)</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -28425,6 +28844,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -28492,6 +28915,10 @@ d-moll</text>
             <name>abo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -28518,6 +28945,10 @@ d-moll</text>
           <Harmony>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -28582,6 +29013,10 @@ d-moll</text>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -28608,6 +29043,10 @@ d-moll</text>
           <Harmony>
             <name>b%7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii%65</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -28669,6 +29108,10 @@ d-moll</text>
             <name>b%7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii%43</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -28696,6 +29139,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -28775,6 +29222,10 @@ d-moll</text>
             <name>a_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -28804,6 +29255,10 @@ d-moll</text>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -28854,6 +29309,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -28869,6 +29328,10 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -28924,6 +29387,10 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|IAC}{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -28946,6 +29413,11 @@ d-moll</text>
           <Harmony>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            <offset x="0" y="-6.80374"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -28970,6 +29442,11 @@ d-moll</text>
             <name>abo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            <offset x="0" y="-6.5741"/>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -28999,6 +29476,11 @@ d-moll</text>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            <offset x="0" y="-6.68892"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -29026,6 +29508,10 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -29049,6 +29535,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -29067,6 +29557,10 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -29095,6 +29589,10 @@ d-moll</text>
               <tpc>16</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>}</name>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Note>
@@ -29109,6 +29607,10 @@ d-moll</text>
           <Harmony>
             <name>a_2</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64){</name>
             </Harmony>
           <Rest>
             <offset x="0" y="-1"/>
@@ -29143,12 +29645,20 @@ d-moll</text>
             <name>E7</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(13)</name>
+            </Harmony>
           <location>
             <fractions>1/4</fractions>
             </location>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29215,6 +29725,10 @@ d-moll</text>
             <name>a_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(134)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -29247,6 +29761,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -29269,6 +29787,10 @@ d-moll</text>
           <location>
             <fractions>1/4</fractions>
             </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -29325,6 +29847,10 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -29347,6 +29873,10 @@ d-moll</text>
           <Harmony>
             <name>a_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -29371,6 +29901,11 @@ d-moll</text>
             <name>E_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6(13)</name>
+            <offset x="0" y="-7.26303"/>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -29400,6 +29935,11 @@ d-moll</text>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            <offset x="0" y="-7.26"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -29427,6 +29967,11 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(119)</name>
+            <offset x="0" y="-7.26"/>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -29449,6 +29994,11 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            <offset x="0" y="-7.26"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -29491,6 +30041,10 @@ d-moll</text>
               <tpc>18</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -29513,6 +30067,10 @@ d-moll</text>
           <Harmony>
             <name>a_2</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Rest>
             <offset x="0" y="-1"/>
@@ -29547,12 +30105,20 @@ d-moll</text>
             <name>E7</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(13)</name>
+            </Harmony>
           <location>
             <fractions>1/4</fractions>
             </location>
           <Harmony>
             <name>E7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29619,6 +30185,10 @@ d-moll</text>
             <name>a_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(134)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -29651,6 +30221,10 @@ d-moll</text>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -29673,6 +30247,10 @@ d-moll</text>
           <location>
             <fractions>1/4</fractions>
             </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -29728,6 +30306,10 @@ d-moll</text>
           <Harmony>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29766,6 +30348,10 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29833,6 +30419,10 @@ d-moll</text>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -29856,6 +30446,10 @@ d-moll</text>
           <Harmony>
             <name>E</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29912,6 +30506,10 @@ d-moll</text>
           <Harmony>
             <name>a</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30049,6 +30647,10 @@ d-moll</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.iv-iio6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -30071,6 +30673,10 @@ d-moll</text>
               <tpc>15</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -30087,6 +30693,10 @@ d-moll</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -30095,6 +30705,10 @@ d-moll</text>
               <tpc>18</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -30103,6 +30717,10 @@ d-moll</text>
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -30188,6 +30806,10 @@ d-moll</text>
           <Harmony>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.iv-iio6</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -30336,6 +30958,10 @@ d-moll</text>
             <name>D_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/iv{</name>
+            </Harmony>
           <Rest>
             <visible>0</visible>
             <durationType>16th</durationType>
@@ -30469,6 +31095,11 @@ d-moll</text>
             <name>co7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7/#vii</name>
+            <offset x="-3.34023" y="-6"/>
+            </Harmony>
           <Rest>
             <visible>0</visible>
             <durationType>16th</durationType>
@@ -30583,6 +31214,11 @@ d-moll</text>
             <visible>0</visible>
             <durationType>16th</durationType>
             </Rest>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#iii.V(64)}</name>
+            <offset x="0.449671" y="5.07385"/>
+            </Harmony>
           <Rest>
             <visible>0</visible>
             <durationType>eighth</durationType>
@@ -30620,6 +31256,10 @@ d-moll</text>
           <Harmony>
             <name>gb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i{</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -30797,6 +31437,10 @@ d-moll</text>
             <name>Db7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -30941,6 +31585,10 @@ d-moll</text>
             <name>Db7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -30975,6 +31623,10 @@ d-moll</text>
           <Harmony>
             <name>gb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -31045,6 +31697,10 @@ d-moll</text>
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -31077,6 +31733,10 @@ d-moll</text>
           <Harmony>
             <name>b</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -31176,6 +31836,10 @@ d-moll</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -31242,6 +31906,10 @@ d-moll</text>
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.VI</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -31271,6 +31939,11 @@ d-moll</text>
           <Harmony>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VII</name>
+            <offset x="0.112418" y="5.7548"/>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -31366,6 +32039,10 @@ d-moll</text>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -31432,6 +32109,10 @@ d-moll</text>
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -31461,6 +32142,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -31548,6 +32233,10 @@ d-moll</text>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio6/V</name>
+            </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
             <actualNotes>3</actualNotes>
@@ -31705,6 +32394,10 @@ d-moll</text>
           <Harmony>
             <name>Ab</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>It6</name>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -31866,6 +32559,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V|HC}</name>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -31877,6 +32574,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -32020,6 +32721,10 @@ d-moll</text>
             <name>b%7_3</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -32043,6 +32748,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#964)</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -32080,139 +32789,9 @@ d-moll</text>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
-          <Beam>
-            <StemDirection>down</StemDirection>
-            </Beam>
-          <Chord>
-            <BeamMode>begin</BeamMode>
-            <durationType>eighth</durationType>
-            <Spanner type="Slur">
-              <Slur>
-                </Slur>
-              <next>
-                <location>
-                  <fractions>3/8</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Note>
-              <Accidental>
-                <subtype>accidentalSharp</subtype>
-                </Accidental>
-              <pitch>61</pitch>
-              <tpc>21</tpc>
-              </Note>
-            <Note>
-              <pitch>64</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>61</pitch>
-              <tpc>21</tpc>
-              </Note>
-            <Note>
-              <pitch>64</pitch>
-              <tpc>18</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <durationType>eighth</durationType>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <fractions>-3/8</fractions>
-                  </location>
-                </prev>
-              </Spanner>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
           <Harmony>
-            <name>b%7_3</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Beam>
-            <StemDirection>down</StemDirection>
-            </Beam>
-          <Chord>
-            <BeamMode>begin</BeamMode>
-            <durationType>eighth</durationType>
-            <Spanner type="Slur">
-              <Slur>
-                </Slur>
-              <next>
-                <location>
-                  <fractions>3/8</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Note>
-              <pitch>62</pitch>
-              <tpc>16</tpc>
-              </Note>
-            <Note>
-              <pitch>65</pitch>
-              <tpc>13</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <Accidental>
-                <subtype>accidentalNatural</subtype>
-                </Accidental>
-              <pitch>59</pitch>
-              <tpc>19</tpc>
-              </Note>
-            <Note>
-              <pitch>62</pitch>
-              <tpc>16</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <durationType>eighth</durationType>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <fractions>-3/8</fractions>
-                  </location>
-                </prev>
-              </Spanner>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          </voice>
-        </Measure>
-      <Measure>
-        <voice>
-          <Harmony>
-            <name>A</name>
-            <color r="255" g="0" b="0" a="255"/>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -32279,6 +32858,10 @@ d-moll</text>
             <name>b%7_3</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -32311,6 +32894,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#964)</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -32347,6 +32934,156 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
+          <Beam>
+            <StemDirection>down</StemDirection>
+            </Beam>
+          <Chord>
+            <BeamMode>begin</BeamMode>
+            <durationType>eighth</durationType>
+            <Spanner type="Slur">
+              <Slur>
+                </Slur>
+              <next>
+                <location>
+                  <fractions>3/8</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Note>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                </Accidental>
+              <pitch>61</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>61</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <durationType>eighth</durationType>
+            <Spanner type="Slur">
+              <prev>
+                <location>
+                  <fractions>-3/8</fractions>
+                  </location>
+                </prev>
+              </Spanner>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>b%7_3</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
+          <Beam>
+            <StemDirection>down</StemDirection>
+            </Beam>
+          <Chord>
+            <BeamMode>begin</BeamMode>
+            <durationType>eighth</durationType>
+            <Spanner type="Slur">
+              <Slur>
+                </Slur>
+              <next>
+                <location>
+                  <fractions>3/8</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Note>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#964)</name>
+            </Harmony>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                </Accidental>
+              <pitch>59</pitch>
+              <tpc>19</tpc>
+              </Note>
+            <Note>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <durationType>eighth</durationType>
+            <Spanner type="Slur">
+              <prev>
+                <location>
+                  <fractions>-3/8</fractions>
+                  </location>
+                </prev>
+              </Spanner>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Harmony>
+            <name>A</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -32485,6 +33222,10 @@ d-moll</text>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -32528,6 +33269,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -32563,6 +33308,11 @@ d-moll</text>
           <Harmony>
             <name>abo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio6(2)/V</name>
+            <offset x="-0.284575" y="-3.16622"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -32604,6 +33354,10 @@ d-moll</text>
           <Harmony>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -32680,6 +33434,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -32715,6 +33473,10 @@ d-moll</text>
           <Harmony>
             <name>abo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio6(2)/V</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -32756,6 +33518,10 @@ d-moll</text>
           <Harmony>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -32832,6 +33598,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -32867,6 +33637,11 @@ d-moll</text>
           <Harmony>
             <name>abo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio6(2)/V</name>
+            <offset x="-0.142287" y="-3.3085"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -32908,6 +33683,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V[V</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -33071,6 +33850,10 @@ d-moll</text>
             <name>b%7_3</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -33106,6 +33889,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#964)</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -33139,6 +33926,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -33205,6 +33996,10 @@ d-moll</text>
             <name>b%7_3</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -33240,6 +34035,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#964)</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -33273,6 +34072,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -33339,6 +34142,10 @@ d-moll</text>
             <name>b%7_3</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -33374,6 +34181,11 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#964)</name>
+            <offset x="0.142287" y="-5.44281"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -33407,6 +34219,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -33434,6 +34250,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>whole</durationType>
             <Note>
@@ -33452,6 +34272,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -33476,6 +34300,10 @@ d-moll</text>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI6</name>
+            </Harmony>
           <Chord>
             <durationType>whole</durationType>
             <Note>
@@ -33498,6 +34326,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V]</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -33569,6 +34401,10 @@ d-moll</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI-iv6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -33592,6 +34428,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33607,6 +34447,10 @@ d-moll</text>
           <Harmony>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv-iio6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -33624,6 +34468,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33635,6 +34483,10 @@ d-moll</text>
           <Harmony>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -33650,6 +34502,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -33667,6 +34523,10 @@ d-moll</text>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33682,6 +34542,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv-iio6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33694,6 +34558,10 @@ d-moll</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI-iv6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33705,6 +34573,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -33722,6 +34594,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv-iio6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33734,6 +34610,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -33745,6 +34625,10 @@ d-moll</text>
           <Harmony>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -33760,6 +34644,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -33788,6 +34676,10 @@ d-moll</text>
           <Harmony>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6}{</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -33838,6 +34730,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Rest>
             <durationType>measure</durationType>
             <duration>4/4</duration>
@@ -33850,6 +34746,10 @@ d-moll</text>
             <name>dbo_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            </Harmony>
           <Rest>
             <durationType>measure</durationType>
             <duration>4/4</duration>
@@ -33861,6 +34761,10 @@ d-moll</text>
           <Harmony>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Rest>
             <durationType>half</durationType>
@@ -33879,116 +34783,9 @@ d-moll</text>
             <name>A7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <Accidental>
-                <subtype>accidentalSharp</subtype>
-                </Accidental>
-              <pitch>49</pitch>
-              <tpc>21</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          </voice>
-        </Measure>
-      <Measure>
-        <voice>
           <Harmony>
-            <name>d</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>d</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <pitch>50</pitch>
-              <tpc>16</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>A_2</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>A_2</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <pitch>52</pitch>
-              <tpc>18</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>d_1</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>d_1</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Chord>
-            <durationType>quarter</durationType>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <Articulation>
-              <subtype>articStaccatoAbove</subtype>
-              </Articulation>
-            <StemDirection>down</StemDirection>
-            <Note>
-              <pitch>53</pitch>
-              <tpc>13</tpc>
-              </Note>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>A7_1</name>
-            <color r="255" g="0" b="0" a="255"/>
-            </Harmony>
-          <Harmony>
-            <name>A7_1</name>
-            <color r="0" g="0" b="0" a="255"/>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -34023,6 +34820,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -34048,6 +34849,10 @@ d-moll</text>
           <Harmony>
             <name>A_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -34075,6 +34880,137 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <pitch>53</pitch>
+              <tpc>13</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>A7_1</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>A7_1</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                </Accidental>
+              <pitch>49</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Harmony>
+            <name>d</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>d</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <pitch>50</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>A_2</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>A_2</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64</name>
+            </Harmony>
+          <Chord>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <Articulation>
+              <subtype>articStaccatoAbove</subtype>
+              </Articulation>
+            <StemDirection>down</StemDirection>
+            <Note>
+              <pitch>52</pitch>
+              <tpc>18</tpc>
+              </Note>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>d_1</name>
+            <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <name>d_1</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -34100,6 +35036,10 @@ d-moll</text>
           <Harmony>
             <name>D7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -34134,6 +35074,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -34159,6 +35103,10 @@ d-moll</text>
           <Harmony>
             <name>D_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V64/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -34186,6 +35134,10 @@ d-moll</text>
             <name>g_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -34211,6 +35163,10 @@ d-moll</text>
           <Harmony>
             <name>abo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>It6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -34242,6 +35198,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(#764)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -34257,6 +35217,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V|HC}{</name>
             </Harmony>
           <Fermata>
             <subtype>fermataBelow</subtype>
@@ -34288,6 +35252,10 @@ d-moll</text>
           <Harmony>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/III</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -34447,6 +35415,10 @@ d-moll</text>
             <name>bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv/III</name>
+            </Harmony>
           <Rest>
             <durationType>measure</durationType>
             <duration>4/4</duration>
@@ -34462,6 +35434,10 @@ d-moll</text>
           <Harmony>
             <name>f_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6/III}{</name>
             </Harmony>
           <Fermata>
             <subtype>fermataAbove</subtype>
@@ -34488,6 +35464,10 @@ d-moll</text>
             <name>Db_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/#iii</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -34633,6 +35613,10 @@ d-moll</text>
           <Harmony>
             <name>gb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#iii</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -34833,6 +35817,10 @@ d-moll</text>
             <name>D_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -34972,6 +35960,10 @@ d-moll</text>
           <Harmony>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -35151,6 +36143,10 @@ d-moll</text>
             <name>dbo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -35312,6 +36308,10 @@ d-moll</text>
           <Harmony>
             <name>abo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -35369,6 +36369,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V[V|HC}{</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -35391,6 +36395,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -35457,6 +36465,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -35479,6 +36491,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -35541,6 +36557,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -35563,6 +36583,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -35629,6 +36653,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -35651,6 +36679,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -35675,6 +36707,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -35694,6 +36730,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -35747,93 +36787,9 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>62</pitch>
-              <tpc>16</tpc>
-              </Note>
-            <Note>
-              <pitch>65</pitch>
-              <tpc>13</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>69</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Beam>
-            <StemDirection>up</StemDirection>
-            </Beam>
-          <Chord>
-            <BeamMode>begin</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>70</pitch>
-              <tpc>12</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>69</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>62</pitch>
-              <tpc>16</tpc>
-              </Note>
-            <Note>
-              <pitch>65</pitch>
-              <tpc>13</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>69</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          </voice>
-        </Measure>
-      <Measure>
-        <voice>
           <Harmony>
-            <name>A</name>
-            <color r="0" g="0" b="0" a="255"/>
-            </Harmony>
-          <Beam>
-            <StemDirection>up</StemDirection>
-            </Beam>
-          <Chord>
-            <BeamMode>begin</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <BeamMode>mid</BeamMode>
-            <durationType>eighth</durationType>
-            <Note>
-              <pitch>69</pitch>
-              <tpc>17</tpc>
-              </Note>
-            </Chord>
-          <Harmony>
-            <name>d</name>
-            <color r="0" g="0" b="0" a="255"/>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -35900,6 +36856,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -35922,6 +36882,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -35988,6 +36952,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -36010,6 +36978,106 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <StemDirection>up</StemDirection>
+            </Beam>
+          <Chord>
+            <BeamMode>begin</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>70</pitch>
+              <tpc>12</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Harmony>
+            <name>A</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
+          <Beam>
+            <StemDirection>up</StemDirection>
+            </Beam>
+          <Chord>
+            <BeamMode>begin</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <BeamMode>mid</BeamMode>
+            <durationType>eighth</durationType>
+            <Note>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Harmony>
+            <name>d</name>
+            <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -36034,6 +37102,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -36056,6 +37128,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -36088,6 +37164,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -36110,6 +37190,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -36153,6 +37237,10 @@ d-moll</text>
             <name>dbo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio65]</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -36339,6 +37427,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7|HC}{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -36385,6 +37477,10 @@ d-moll</text>
             <name>dbo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -36418,6 +37514,10 @@ d-moll</text>
           <Harmony>
             <name>dbo_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio64</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -36472,6 +37572,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6|IAC}{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -36515,6 +37619,10 @@ d-moll</text>
           <Harmony>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -36613,6 +37721,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -36624,6 +37736,11 @@ d-moll</text>
           <Harmony>
             <name>dbo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            <offset x="0.711437" y="-6.01196"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -36678,6 +37795,10 @@ d-moll</text>
           <Harmony>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -36750,6 +37871,10 @@ d-moll</text>
           <Harmony>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -36850,6 +37975,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -36861,6 +37990,11 @@ d-moll</text>
           <Harmony>
             <name>dbo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            <offset x="0.142287" y="-4.4468"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -36906,6 +38040,10 @@ d-moll</text>
           <Harmony>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -36969,6 +38107,10 @@ d-moll</text>
           <Harmony>
             <name>EbM7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bIIM65</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -37042,6 +38184,10 @@ d-moll</text>
             <name>E7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65/V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -37073,6 +38219,10 @@ d-moll</text>
           <Harmony>
             <name>dm7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i43</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -37150,6 +38300,10 @@ d-moll</text>
             <name>D7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43/iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -37181,6 +38335,10 @@ d-moll</text>
             <name>g_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -37204,6 +38362,10 @@ d-moll</text>
           <Harmony>
             <name>D7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37232,6 +38394,10 @@ d-moll</text>
             <name>g</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -37259,6 +38425,10 @@ d-moll</text>
           <Harmony>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37293,6 +38463,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(964)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -37312,6 +38486,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37368,6 +38546,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -37394,6 +38576,10 @@ d-moll</text>
               <tpc>16</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -37412,6 +38598,10 @@ d-moll</text>
           <Harmony>
             <name>gbo7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio2/iv</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -37453,6 +38643,10 @@ d-moll</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -37473,6 +38667,10 @@ d-moll</text>
             <name>g_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv64</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -37484,6 +38682,10 @@ d-moll</text>
           <Harmony>
             <name>dbo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37507,6 +38709,10 @@ d-moll</text>
           <Harmony>
             <name>D</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37545,6 +38751,10 @@ d-moll</text>
           <Harmony>
             <name>gbo7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio2/iv</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -37586,6 +38796,10 @@ d-moll</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -37606,6 +38820,10 @@ d-moll</text>
             <name>g_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv64</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -37617,6 +38835,10 @@ d-moll</text>
           <Harmony>
             <name>dbo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37640,6 +38862,10 @@ d-moll</text>
           <Harmony>
             <name>D</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37678,6 +38904,10 @@ d-moll</text>
           <Harmony>
             <name>gbo7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio2/iv</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -37719,6 +38949,10 @@ d-moll</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -37739,6 +38973,10 @@ d-moll</text>
             <name>g_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv64</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -37750,6 +38988,11 @@ d-moll</text>
           <Harmony>
             <name>dbo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
+            <offset x="-0.142287" y="-4.30451"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -37781,6 +39024,10 @@ d-moll</text>
           <Harmony>
             <name>C7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7/III</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -37850,6 +39097,10 @@ d-moll</text>
             <name>eo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/III</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -37876,6 +39127,10 @@ d-moll</text>
           <Harmony>
             <name>F</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -37914,6 +39169,10 @@ d-moll</text>
           <Harmony>
             <name>F_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III6-V(64)</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -37963,6 +39222,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -38030,6 +39293,10 @@ d-moll</text>
             <name>dbo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -38056,6 +39323,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -38117,6 +39388,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -38143,6 +39418,10 @@ d-moll</text>
           <Harmony>
             <name>e%7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii%65</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -38204,6 +39483,10 @@ d-moll</text>
             <name>e%7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii%43</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -38230,6 +39513,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -38316,6 +39603,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -38345,6 +39636,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -38392,6 +39687,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -38407,6 +39706,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -38459,6 +39762,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -38481,6 +39788,10 @@ d-moll</text>
           <Harmony>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -38505,6 +39816,10 @@ d-moll</text>
             <name>dbo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -38530,6 +39845,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -38558,6 +39877,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -38581,6 +39904,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -38599,6 +39926,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -38644,6 +39975,10 @@ d-moll</text>
           <Harmony>
             <name>d_2</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -38677,12 +40012,20 @@ d-moll</text>
             <name>A7</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(13)</name>
+            </Harmony>
           <location>
             <fractions>1/4</fractions>
             </location>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -38746,6 +40089,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(134)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -38778,6 +40125,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -38800,6 +40151,10 @@ d-moll</text>
           <location>
             <fractions>1/4</fractions>
             </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -38853,6 +40208,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -38875,6 +40234,10 @@ d-moll</text>
           <Harmony>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -38899,6 +40262,10 @@ d-moll</text>
             <name>A_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6(13)</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -38924,6 +40291,10 @@ d-moll</text>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -38952,6 +40323,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(119)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -38974,6 +40349,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -39016,6 +40395,10 @@ d-moll</text>
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -39038,6 +40421,10 @@ d-moll</text>
           <Harmony>
             <name>d_2</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -39071,12 +40458,20 @@ d-moll</text>
             <name>A7</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(13)</name>
+            </Harmony>
           <location>
             <fractions>1/4</fractions>
             </location>
           <Harmony>
             <name>A7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -39140,6 +40535,10 @@ d-moll</text>
             <name>d_2</name>
             <color r="255" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(134)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -39172,6 +40571,10 @@ d-moll</text>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -39194,6 +40597,10 @@ d-moll</text>
           <location>
             <fractions>1/4</fractions>
             </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -39246,6 +40653,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -39282,6 +40693,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -39346,6 +40761,10 @@ d-moll</text>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -39369,6 +40788,10 @@ d-moll</text>
           <Harmony>
             <name>A</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -39422,6 +40845,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -39501,6 +40928,10 @@ d-moll</text>
             <name>d_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -39936,6 +41367,10 @@ d-moll</text>
           <Harmony>
             <name>d</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>

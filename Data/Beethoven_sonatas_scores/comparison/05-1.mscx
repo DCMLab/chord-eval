@@ -14872,6 +14872,10 @@ I. Allegro molto e con brio</text>
             <name>c_dcml</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>c.i{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>quarter</durationType>
@@ -14976,6 +14980,10 @@ I. Allegro molto e con brio</text>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -15017,6 +15025,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio65</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -15137,6 +15149,10 @@ I. Allegro molto e con brio</text>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -15215,6 +15231,10 @@ I. Allegro molto e con brio</text>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -15249,6 +15269,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15313,6 +15337,10 @@ I. Allegro molto e con brio</text>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -15332,6 +15360,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15404,6 +15436,10 @@ I. Allegro molto e con brio</text>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43(4)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -15423,6 +15459,16 @@ I. Allegro molto e con brio</text>
               <tpc>19</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
+          <location>
+            <fractions>1/4</fractions>
+            </location>
           <Harmony>
             <name>c_1</name>
             <color r="255" g="0" b="0" a="255"/>
@@ -15430,6 +15476,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15455,6 +15505,10 @@ I. Allegro molto e con brio</text>
             <name>bo_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6(2)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -15467,6 +15521,16 @@ I. Allegro molto e con brio</text>
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            </Harmony>
+          <location>
+            <fractions>1/4</fractions>
+            </location>
           <Harmony>
             <name>Ab_1</name>
             <color r="255" g="0" b="0" a="255"/>
@@ -15474,6 +15538,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15498,6 +15566,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15526,6 +15598,10 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -15552,6 +15628,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
+            <offset x="-0.224836" y="3.5"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -15613,6 +15694,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -15675,6 +15760,10 @@ I. Allegro molto e con brio</text>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -15726,6 +15815,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15795,6 +15888,10 @@ I. Allegro molto e con brio</text>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -15833,6 +15930,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -15908,6 +16009,10 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -15991,6 +16096,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -16041,6 +16150,10 @@ I. Allegro molto e con brio</text>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -16077,6 +16190,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -16120,6 +16237,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -16166,6 +16287,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -16229,6 +16354,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III.V/IV{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16268,6 +16397,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2/IV</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -16314,6 +16447,10 @@ I. Allegro molto e con brio</text>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16346,6 +16483,10 @@ I. Allegro molto e con brio</text>
             <name>Eb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43/IV</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16374,6 +16515,10 @@ I. Allegro molto e con brio</text>
             <name>Ab</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV(4)</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16394,6 +16539,13 @@ I. Allegro molto e con brio</text>
               <tpc>11</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV}</name>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -16405,6 +16557,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2/ii{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -16451,6 +16607,10 @@ I. Allegro molto e con brio</text>
             <name>f_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16490,6 +16650,11 @@ I. Allegro molto e con brio</text>
             <name>C7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43/ii</name>
+            <offset x="0" y="-6.8"/>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16521,6 +16686,11 @@ I. Allegro molto e con brio</text>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii(4)</name>
+            <offset x="0" y="-6.8"/>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16537,6 +16707,14 @@ I. Allegro molto e con brio</text>
               <tpc>10</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>ii}</name>
+            <offset x="0" y="-6.8"/>
+            </Harmony>
           </voice>
         <voice>
           <Chord>
@@ -16558,6 +16736,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Ab7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2/bVII{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -16609,6 +16791,10 @@ I. Allegro molto e con brio</text>
             <name>Db_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bVII6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16641,6 +16827,11 @@ I. Allegro molto e con brio</text>
             <name>Ab7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43/bVII</name>
+            <offset x="0.112418" y="7.12107"/>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16669,6 +16860,11 @@ I. Allegro molto e con brio</text>
             <name>Db</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bVII(4)</name>
+            <offset x="0" y="-6.81365"/>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16685,6 +16881,14 @@ I. Allegro molto e con brio</text>
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bVII</name>
+            <offset x="0" y="-7.32218"/>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -16696,6 +16900,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>F7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>Fr6</name>
+            <offset x="0" y="-6.50853"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -16729,6 +16938,10 @@ I. Allegro molto e con brio</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(4)</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -16738,6 +16951,13 @@ I. Allegro molto e con brio</text>
               <tpc>12</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -16749,6 +16969,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>ao7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -16780,6 +17004,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V[V|HC}{</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -16846,6 +17074,11 @@ I. Allegro molto e con brio</text>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            <offset x="0.786925" y="4.41472"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -16903,6 +17136,10 @@ I. Allegro molto e con brio</text>
             <name>g_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii6(4)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -16911,6 +17148,11 @@ I. Allegro molto e con brio</text>
               <tpc>15</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii6</name>
+            <offset x="0.449671" y="4.28692"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -16962,6 +17204,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -17017,6 +17263,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(4)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -17025,6 +17275,11 @@ I. Allegro molto e con brio</text>
               <tpc>11</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            <offset x="0.899343" y="4.51176"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -17072,6 +17327,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(9)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -17129,6 +17388,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>g_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -17189,6 +17452,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7]</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -17252,6 +17519,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I|IAC}{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17368,6 +17639,10 @@ I. Allegro molto e con brio</text>
             <name>Bb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43(4)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17422,6 +17697,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17484,6 +17763,10 @@ I. Allegro molto e con brio</text>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17522,6 +17805,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -17546,6 +17833,10 @@ I. Allegro molto e con brio</text>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17585,6 +17876,10 @@ I. Allegro molto e con brio</text>
             <name>Bb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -17611,6 +17906,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(4)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -17666,6 +17965,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17835,6 +18138,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43(4)</name>
+            <offset x="0" y="-6.46972"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -17890,6 +18198,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -17952,6 +18264,10 @@ I. Allegro molto e con brio</text>
             <name>Bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -18067,6 +18383,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I|EC}{</name>
             </Harmony>
           <Rest>
             <durationType>eighth</durationType>
@@ -18124,6 +18444,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18187,6 +18511,10 @@ I. Allegro molto e con brio</text>
             <name>Ab</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -18248,6 +18576,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>ao</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18314,6 +18646,10 @@ I. Allegro molto e con brio</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -18375,6 +18711,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18438,6 +18778,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I|IAC}</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -18476,6 +18820,10 @@ I. Allegro molto e con brio</text>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -18514,6 +18862,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I64</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -18538,6 +18890,10 @@ I. Allegro molto e con brio</text>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -18576,6 +18932,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I64</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -18603,6 +18963,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Ab</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18643,6 +19007,10 @@ I. Allegro molto e con brio</text>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV6</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -18669,6 +19037,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>ao</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18712,6 +19084,11 @@ I. Allegro molto e con brio</text>
             <name>ao_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio6/V</name>
+            <offset x="-0.899343" y="4.45878"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -18738,6 +19115,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18789,6 +19170,11 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6(6)/vi</name>
+            <offset x="-1.34901" y="11.1554"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -18818,6 +19204,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>vi</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18858,6 +19248,10 @@ I. Allegro molto e con brio</text>
             <name>ao</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -18895,6 +19289,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -18955,6 +19353,11 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6(6)/vi</name>
+            <offset x="-0.786925" y="10.8243"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -18984,6 +19387,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>vi</name>
+            <offset x="0.562089" y="9.07729"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -19028,6 +19436,10 @@ I. Allegro molto e con brio</text>
             <name>ao</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -19065,6 +19477,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19117,6 +19533,10 @@ I. Allegro molto e con brio</text>
             <name>gbo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43/iii</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -19163,6 +19583,10 @@ I. Allegro molto e con brio</text>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
@@ -19205,6 +19629,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>gbo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio65/iii</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19264,6 +19692,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19349,6 +19781,10 @@ I. Allegro molto e con brio</text>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -19360,6 +19796,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I|PAC}</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -19373,6 +19813,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V{</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -19443,6 +19887,10 @@ I. Allegro molto e con brio</text>
             <name>Bb7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -19475,6 +19923,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
             </Harmony>
           </voice>
         <voice>
@@ -19526,6 +19978,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(6)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -19544,6 +20000,10 @@ I. Allegro molto e con brio</text>
               <tpc>11</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -19571,6 +20031,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19616,6 +20080,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(9)</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -19625,6 +20093,10 @@ I. Allegro molto e con brio</text>
             <placement>above</placement>
             <offset x="0.42864" y="-1.30046"/>
             </Dynamic>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -19694,6 +20166,10 @@ I. Allegro molto e con brio</text>
             <name>Bb7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -19717,6 +20193,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            <offset x="0.224836" y="7.3861"/>
             </Harmony>
           </voice>
         <voice>
@@ -19768,6 +20249,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(6)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -19787,6 +20272,10 @@ I. Allegro molto e con brio</text>
               <tpc>11</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -19814,6 +20303,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19865,6 +20358,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(9)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -19883,6 +20380,11 @@ I. Allegro molto e con brio</text>
               <tpc>11</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            <offset x="0.337254" y="3.94967"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -19910,6 +20412,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19955,6 +20461,10 @@ I. Allegro molto e con brio</text>
             <name>Eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(974)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -19999,6 +20509,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I|PAC}</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -20024,6 +20538,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.I{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -20081,6 +20599,10 @@ I. Allegro molto e con brio</text>
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -20135,6 +20657,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20200,6 +20726,10 @@ I. Allegro molto e con brio</text>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -20248,6 +20778,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>eo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv.#viio65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20307,6 +20841,11 @@ I. Allegro molto e con brio</text>
             <name>eo_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            <offset x="3.9338e-7" y="3.45439"/>
+            </Harmony>
           <Rest>
             <durationType>measure</durationType>
             <duration>3/4</duration>
@@ -20318,6 +20857,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>eo</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -20338,6 +20881,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}{</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -20455,6 +21002,10 @@ I. Allegro molto e con brio</text>
             <name>C7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -20516,6 +21067,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -20582,6 +21137,10 @@ I. Allegro molto e con brio</text>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -20646,6 +21205,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -20712,6 +21275,10 @@ I. Allegro molto e con brio</text>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(4)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -20766,6 +21333,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i}</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -20812,6 +21383,11 @@ I. Allegro molto e con brio</text>
             <name>F7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>vii.V2{</name>
+            <offset x="-0.899343" y="5.84902"/>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -20841,6 +21417,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bb_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            <offset x="0" y="4.57439"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -20906,6 +21487,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -20972,6 +21557,11 @@ I. Allegro molto e con brio</text>
             <name>F7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            <offset x="0" y="-6.40187"/>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -21033,6 +21623,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>F7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
+            <offset x="0" y="-6.5741"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -21098,6 +21693,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>F</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -21164,6 +21763,10 @@ I. Allegro molto e con brio</text>
             <name>F7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -21229,6 +21832,11 @@ I. Allegro molto e con brio</text>
             <name>bb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(4)</name>
+            <offset x="0" y="-6.31576"/>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -21286,6 +21894,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i}</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -21324,6 +21936,10 @@ I. Allegro molto e con brio</text>
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -21350,6 +21966,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Ab7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bII.V7</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -21473,6 +22093,10 @@ I. Allegro molto e con brio</text>
             <name>Db</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I|IAC}{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -21509,6 +22133,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>f_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21564,6 +22192,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Db_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
+            <offset x="0.461432" y="3.26193"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21665,6 +22298,10 @@ I. Allegro molto e con brio</text>
             <name>Db</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -21733,6 +22370,11 @@ I. Allegro molto e con brio</text>
             <name>ao</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv.#viio/iv</name>
+            <offset x="-0.786925" y="2.83709"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -21763,6 +22405,12 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bb</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            <minDistance>-6.91958</minDistance>
+            <offset x="0.112418" y="2.5439"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21817,6 +22465,10 @@ I. Allegro molto e con brio</text>
             <name>go</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -21856,6 +22508,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21899,6 +22555,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            <offset x="-0.224836" y="3.975"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21946,6 +22607,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            <offset x="0.562089" y="3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22000,6 +22666,10 @@ I. Allegro molto e con brio</text>
             <name>do</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.iio</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -22035,6 +22705,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22077,6 +22751,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22119,6 +22797,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|IAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22168,6 +22850,10 @@ I. Allegro molto e con brio</text>
             <name>Ab</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -22213,6 +22899,10 @@ I. Allegro molto e con brio</text>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -22249,6 +22939,10 @@ I. Allegro molto e con brio</text>
             <name>do</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -22284,6 +22978,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22326,6 +23024,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22350,6 +23052,10 @@ I. Allegro molto e con brio</text>
             <name>bo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -22373,6 +23079,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -22392,6 +23102,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22413,6 +23127,10 @@ I. Allegro molto e con brio</text>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv(97)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -22428,6 +23146,12 @@ I. Allegro molto e con brio</text>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
+            <minDistance>0.275164</minDistance>
+            <offset x="-0.112418" y="4.02329"/>
+            </Harmony>
           <location>
             <fractions>1/4</fractions>
             </location>
@@ -22438,6 +23162,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>gbo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22461,6 +23189,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V[V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22495,6 +23227,10 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6{</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22510,6 +23246,10 @@ I. Allegro molto e con brio</text>
             <name>f_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22525,6 +23265,10 @@ I. Allegro molto e con brio</text>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22535,6 +23279,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22551,6 +23299,10 @@ I. Allegro molto e con brio</text>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22561,6 +23313,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22577,6 +23333,10 @@ I. Allegro molto e con brio</text>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22587,6 +23347,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22610,6 +23374,10 @@ I. Allegro molto e con brio</text>
             <name>f_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22625,6 +23393,10 @@ I. Allegro molto e con brio</text>
             <name>Eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22635,6 +23407,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22651,6 +23427,10 @@ I. Allegro molto e con brio</text>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22661,6 +23441,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22677,6 +23461,10 @@ I. Allegro molto e con brio</text>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22687,6 +23475,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            <offset x="-0.449671" y="3.3123"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22707,6 +23500,10 @@ I. Allegro molto e con brio</text>
             <name>f_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -22717,6 +23514,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22736,6 +23537,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7]</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -22757,6 +23562,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -22858,6 +23667,10 @@ I. Allegro molto e con brio</text>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -22892,6 +23705,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio65</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23012,6 +23829,10 @@ I. Allegro molto e con brio</text>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -23089,6 +23910,10 @@ I. Allegro molto e con brio</text>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -23115,6 +23940,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23186,6 +24015,10 @@ I. Allegro molto e con brio</text>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -23205,6 +24038,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23283,6 +24120,10 @@ I. Allegro molto e con brio</text>
             <name>bo7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43(4)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -23302,6 +24143,16 @@ I. Allegro molto e con brio</text>
               <tpc>19</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio43</name>
+            </Harmony>
+          <location>
+            <fractions>1/4</fractions>
+            </location>
           <Harmony>
             <name>c_1</name>
             <color r="255" g="0" b="0" a="255"/>
@@ -23309,6 +24160,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23334,6 +24189,10 @@ I. Allegro molto e con brio</text>
             <name>bo_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6(2)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>down</StemDirection>
@@ -23346,6 +24205,16 @@ I. Allegro molto e con brio</text>
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio6</name>
+            </Harmony>
+          <location>
+            <fractions>1/4</fractions>
+            </location>
           <Harmony>
             <name>Ab_1</name>
             <color r="255" g="0" b="0" a="255"/>
@@ -23353,6 +24222,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI6</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23377,6 +24250,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23405,6 +24282,11 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            <offset x="0.786925" y="4.51176"/>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -23431,6 +24313,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -23491,6 +24377,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -23553,6 +24443,10 @@ I. Allegro molto e con brio</text>
             <name>do_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iio6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -23604,6 +24498,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23673,6 +24571,10 @@ I. Allegro molto e con brio</text>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -23707,6 +24609,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23758,6 +24664,10 @@ I. Allegro molto e con brio</text>
             <name>Db</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>bV.V{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -23802,6 +24712,10 @@ I. Allegro molto e con brio</text>
             <name>Db7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -23853,6 +24767,10 @@ I. Allegro molto e con brio</text>
             <name>Gb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -23892,6 +24810,10 @@ I. Allegro molto e con brio</text>
             <name>Db7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -23920,6 +24842,10 @@ I. Allegro molto e con brio</text>
             <name>Gb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(4)</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -23947,7 +24873,14 @@ I. Allegro molto e con brio</text>
               </Note>
             </Chord>
           <location>
-            <fractions>0</fractions>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I}</name>
+            </Harmony>
+          <location>
+            <fractions>1/4</fractions>
             </location>
           <Clef>
             <concertClefType>G</concertClefType>
@@ -23964,6 +24897,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Db7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -24022,6 +24959,10 @@ I. Allegro molto e con brio</text>
             <name>Gb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24061,6 +25002,11 @@ I. Allegro molto e con brio</text>
             <name>Db7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            <offset x="0" y="-6.55"/>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24089,6 +25035,11 @@ I. Allegro molto e con brio</text>
             <name>Gb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(4)</name>
+            <offset x="0" y="-6.55"/>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24116,6 +25067,14 @@ I. Allegro molto e con brio</text>
               <tpc>9</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I}</name>
+            <offset x="0.112418" y="4.12885"/>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -24127,6 +25086,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Bb7_3</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.V2/III{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -24180,6 +25143,10 @@ I. Allegro molto e con brio</text>
             <name>eb_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii6</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24216,6 +25183,10 @@ I. Allegro molto e con brio</text>
             <name>Bb7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43/iii</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24241,6 +25212,10 @@ I. Allegro molto e con brio</text>
             <name>eb</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii(4)</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24257,6 +25232,13 @@ I. Allegro molto e con brio</text>
               <tpc>8</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iii</name>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -24268,6 +25250,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>Fr6/iv</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -24297,6 +25283,10 @@ I. Allegro molto e con brio</text>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv.V(4)</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -24314,6 +25304,14 @@ I. Allegro molto e con brio</text>
               <tpc>15</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            <offset x="0.112418" y="7.0924"/>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -24325,6 +25323,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>bo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>#viio7/V</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -24361,6 +25363,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V[V|HC}{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24428,6 +25434,11 @@ I. Allegro molto e con brio</text>
             <name>C7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            <offset x="2.24836" y="7.78121"/>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -24481,6 +25492,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III6(4)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24541,6 +25556,10 @@ I. Allegro molto e con brio</text>
             <name>C</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -24560,6 +25579,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24597,6 +25620,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>F_2</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(4)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24652,6 +25679,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7</name>
             <color r="255" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7(9)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24710,6 +25741,10 @@ I. Allegro molto e con brio</text>
             <name>Ab_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>III6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -24724,6 +25759,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>CM7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VM7</name>
+            <offset x="-0.112418" y="4.17451"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24779,6 +25819,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7]</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24845,6 +25889,10 @@ I. Allegro molto e con brio</text>
             <name>F</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>IV.I|PAC}{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -24967,6 +26015,10 @@ I. Allegro molto e con brio</text>
             <name>C7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43(4)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25024,6 +26076,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25089,6 +26145,10 @@ I. Allegro molto e con brio</text>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25130,6 +26190,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>F</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -25154,6 +26218,10 @@ I. Allegro molto e con brio</text>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25196,6 +26264,10 @@ I. Allegro molto e con brio</text>
             <name>C7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -25222,6 +26294,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>F</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I(4)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -25280,6 +26356,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25458,6 +26538,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43(4)</name>
+            <offset x="0" y="-7.66"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -25513,6 +26598,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43}</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25574,6 +26663,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6{</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -25696,6 +26789,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i.iv</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -25813,6 +26910,10 @@ I. Allegro molto e con brio</text>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -25874,6 +26975,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -25946,6 +27051,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|IAC}{</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26062,6 +27171,10 @@ I. Allegro molto e con brio</text>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43(4)</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26116,6 +27229,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26178,6 +27295,10 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26219,6 +27340,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -26243,6 +27368,10 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26285,6 +27414,10 @@ I. Allegro molto e con brio</text>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -26311,6 +27444,11 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(4)</name>
+            <offset x="0" y="-6.56936"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -26366,6 +27504,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26535,6 +27677,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43(4)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -26590,6 +27736,10 @@ I. Allegro molto e con brio</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26652,6 +27802,10 @@ I. Allegro molto e con brio</text>
             <name>G_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -26773,6 +27927,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|EC}{</name>
             </Harmony>
           <Rest>
             <durationType>eighth</durationType>
@@ -26847,6 +28005,10 @@ I. Allegro molto e con brio</text>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/iv</name>
+            </Harmony>
           <Spanner type="HairPin">
             <prev>
               <location>
@@ -26920,6 +28082,12 @@ I. Allegro molto e con brio</text>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            <minDistance>-1.18627</minDistance>
+            <offset x="0.449671" y="3.99373"/>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -26981,6 +28149,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>gbo</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -27050,6 +28222,10 @@ I. Allegro molto e con brio</text>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
             </Beam>
@@ -27111,6 +28287,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -27177,6 +28357,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|IAC}</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -27214,6 +28398,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i6{</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -27276,6 +28464,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/iv</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -27342,6 +28534,10 @@ I. Allegro molto e con brio</text>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -27403,6 +28599,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>gbo</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -27471,6 +28671,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -27547,6 +28751,10 @@ I. Allegro molto e con brio</text>
             <name>Ab</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>VI</name>
+            </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>
@@ -27589,6 +28797,10 @@ I. Allegro molto e con brio</text>
             <name>gbo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -27626,6 +28838,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -27679,6 +28895,10 @@ I. Allegro molto e con brio</text>
             <name>C_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V6/iv</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -27708,6 +28928,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>f</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>iv</name>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -27748,6 +28972,10 @@ I. Allegro molto e con brio</text>
             <name>gbo</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio/V</name>
+            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -27785,6 +29013,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27834,6 +29066,10 @@ I. Allegro molto e con brio</text>
             <name>gbo7_1</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>Ger6</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -27877,6 +29113,10 @@ I. Allegro molto e con brio</text>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
+            </Harmony>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -27919,6 +29159,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>gbo7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -27965,6 +29209,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V(64)</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -28046,6 +29294,10 @@ I. Allegro molto e con brio</text>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           </voice>
         </Measure>
       <Measure>
@@ -28057,6 +29309,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -28070,6 +29326,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V{</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -28141,6 +29401,10 @@ I. Allegro molto e con brio</text>
             <name>G7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -28164,6 +29428,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
             </Harmony>
           </voice>
         <voice>
@@ -28215,6 +29483,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(6)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -28233,6 +29505,10 @@ I. Allegro molto e con brio</text>
               <tpc>14</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -28260,6 +29536,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28305,6 +29585,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(9)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -28325,6 +29609,10 @@ I. Allegro molto e con brio</text>
               <tpc>14</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -28356,6 +29644,10 @@ I. Allegro molto e con brio</text>
             <name>G7_3</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V2</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>
@@ -28371,6 +29663,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7_2</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V43</name>
             </Harmony>
           </voice>
         <voice>
@@ -28423,6 +29719,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(6)</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -28442,6 +29742,10 @@ I. Allegro molto e con brio</text>
               <tpc>14</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>up</StemDirection>
@@ -28469,6 +29773,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28514,6 +29822,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i(9)</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <StemDirection>up</StemDirection>
@@ -28526,6 +29838,16 @@ I. Allegro molto e con brio</text>
               <tpc>15</tpc>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/4</fractions>
+            </location>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i</name>
+            </Harmony>
+          <location>
+            <fractions>1/4</fractions>
+            </location>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
@@ -28578,6 +29900,10 @@ I. Allegro molto e con brio</text>
             <name>G7</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -28623,6 +29949,10 @@ I. Allegro molto e con brio</text>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
             </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <StemDirection>down</StemDirection>
@@ -28648,6 +29978,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>G</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28689,6 +30023,10 @@ I. Allegro molto e con brio</text>
           <Harmony>
             <name>c</name>
             <color r="0" g="0" b="0" a="255"/>
+            </Harmony>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>i|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
