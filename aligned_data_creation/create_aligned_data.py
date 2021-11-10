@@ -92,7 +92,8 @@ if __name__ == "__main__":
             logging.error(f"No matching DCML file_id found for score {music_xml_path}. Skipping.")
             continue
 
-        fh_score = piece.get_score_piece_from_music_xml(music_xml_path, label_csv_path)
+        # No need to recreate fh labels each time
+        # fh_score = piece.get_score_piece_from_music_xml(music_xml_path, label_csv_path)
 
         if len(df) > 1:
             logging.error(
@@ -116,8 +117,9 @@ if __name__ == "__main__":
             )
             continue
 
-        fh_label_df = get_labels_df(fh_score, tpc_c=0)
-        fh_label_df.to_csv(OUTPUT_DIR / f"fh-{number}-{movement[-1]}.tsv", index=False, sep="\t")
+        # No need to recreate fh labels each time
+        # fh_label_df = get_labels_df(fh_score, tpc_c=0)
+        # fh_label_df.to_csv(OUTPUT_DIR / f"fh-{number}-{movement[-1]}.tsv", index=False, sep="\t")
 
         dcml_label_df = get_labels_df(dcml_score, tpc_c=0)
         dcml_label_df.to_csv(
