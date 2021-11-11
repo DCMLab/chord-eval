@@ -26,6 +26,16 @@ conda activate <env>
 pip install -r requirements.txt
 ```
 
+## Producing Aligned Scores
+To produce the aligned functional harmony (FH) and DCML data files and MS3 score files, do the following:
+
+- `cd` into the [aligned_data_creation](aligned_data_creation) directory.
+- Run `python create_aligned_data --annotations DCML_Beethoven_sonata_dir`
+  - You can set the FH data directory using `-fh FH`, but the default is as provided in [aligned_data_creation/FH](aligned_data_creation/FH). Note that we have made some small changes, like removing repeats, from the raw data [https://gitlab.com/algomus.fr/functional-harmony](here).
+  - You can set a different tmp directory using `-tmp dir` (defaults to `beethoven_corpus_data`).
+  - You can set a different output directory usint `-o dir` (defaults to `Data/sonatas_annotations/Beethoven-labels`).
+  - This script only produces new DCML data tsvs. The provided FH tsvs (in the [Data/sonatas_annotations/Beethoven-labels](default output directory)) will not change.
+- Execute all cells in [NoteBooks/data_SA.ipynb](NoteBooks/data_SA.ipynb).
 
 ## Implementation
 
