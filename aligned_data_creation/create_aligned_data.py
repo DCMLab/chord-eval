@@ -2,6 +2,7 @@
 # The code in this directory is adapted from https://github.com/apmcleod/harmonic-inference v1.0.0
 
 import argparse
+from fractions import Fraction
 from glob import glob
 import logging
 from pathlib import Path
@@ -122,6 +123,34 @@ if __name__ == "__main__":
         # fh_label_df.to_csv(OUTPUT_DIR / f"fh-{number}-{movement[-1]}.tsv", index=False, sep="\t")
 
         dcml_label_df = get_labels_df(dcml_score, tpc_c=0)
+
+        # Manual duration changes for 3 pieces to align with FH scores
+        if number == "03":
+            dcml_label_df = dcml_label_df.drop(
+                dcml_label_df.index[
+                    (dcml_label_df["mc"].isin([233, 234])) &
+                    (dcml_label_df["duration"] == Fraction(1, 4))
+                ]
+            )
+
+        elif number == "17":
+            dcml_label_df = dcml_label_df.drop(
+                dcml_label_df.index[
+                    (dcml_label_df["mc"].isin([97, 99, 101])) &
+                    (dcml_label_df["duration"] == Fraction(1, 16))
+                ]
+            )
+
+        elif number == "23":
+            # NOTE: This will likely be fixed in the score at some point
+            dcml_label_df.loc[
+                (
+                    (dcml_label_df["mc"].isin([21, 23, 158, 160, 162])) &
+                    (dcml_label_df["mn_onset"] == Fraction(11, 8))
+                ),
+                "duration"
+            ] = Fraction(1, 8)
+
         dcml_label_df.to_csv(
             OUTPUT_DIR / f"dcml-{number}-{movement[-1]}.tsv", index=False, sep="\t"
         )

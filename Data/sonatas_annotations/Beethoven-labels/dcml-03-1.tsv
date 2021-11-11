@@ -2148,9 +2148,7 @@ chord_root_tpc	chord_root_midi	chord_type	chord_inversion	chord_suspension_tpc	c
 6	6	ChordType.DIM7	0			1	7	KeyMode.MAJOR	1/12	232	5/6	viio7/V
 6	6	ChordType.DIM7	0			1	7	KeyMode.MAJOR	1/12	232	11/12	viio7/V
 1	7	ChordType.MAJOR	0	2:-3;5:0	2:3;11:0	0	0	KeyMode.MINOR	1/2	233	0	V(64)
-1	7	ChordType.MAJOR	0	2:-3;5:0	2:3;11:0	0	0	KeyMode.MINOR	1/4	233	1/2	V(64)
 1	7	ChordType.MAJ_MIN7	0			0	0	KeyMode.MINOR	1/2	234	1/4	V7
-1	7	ChordType.MAJ_MIN7	0			0	0	KeyMode.MINOR	1/4	234	3/4	V7
 0	0	ChordType.MAJOR	0			0	0	KeyMode.MINOR	1/2	235	0	I|IAC}{
 0	0	ChordType.MAJOR	0			0	0	KeyMode.MINOR	1/16	235	1/2	I|IAC}{
 0	0	ChordType.MAJOR	0			0	0	KeyMode.MINOR	1/16	235	9/16	I|IAC}{
