@@ -24,7 +24,7 @@ if __name__ == "__main__":
             "`-fh`/data/BPS/scores/*.mxl"
         ),
         type=Path,
-        default=Path("../functional-harmony")
+        default=Path("FH")
     )
 
     parser.add_argument(
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         "--output",
         help="The output directory for the generated data files.",
         type=Path,
-        default=Path("Beethoven-labels"),
+        default=Path("../Data/sonatas_annotations/Beethoven-labels/"),
     )
 
     ARGS = parser.parse_args()
