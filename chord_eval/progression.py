@@ -6,7 +6,8 @@ from fractions import Fraction
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from metric import get_distance
+
+from chord_eval.metric import get_distance
 
 PITCH_TO_STRING = {
     0: "C",

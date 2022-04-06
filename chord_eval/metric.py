@@ -2,18 +2,20 @@
 # -*- coding: utf-8 -*-
 
 from functools import lru_cache
+from typing import Tuple
 
 import networkx as nx
 import numpy as np
 import pandas as pd
 import pretty_midi
-from constants import TRIAD_REDUCTION
-from data_types import ChordType, PitchType
 from librosa import cqt, stft, vqt
 from librosa.feature import melspectrogram
 from scipy.signal import medfilt
 from scipy.spatial import distance
-from utils import get_chord_pitches
+
+from chord_eval.constants import TRIAD_REDUCTION
+from chord_eval.data_types import ChordType, PitchType
+from chord_eval.utils import get_chord_pitches
 
 
 def create_chord(
@@ -22,6 +24,7 @@ def create_chord(
     inversion: int = 0,
     program: int = 0,
     changes: str = None,
+    pitches: Tuple[int] = None,
 ) -> pretty_midi.PrettyMIDI:
     """
     Create a pretty_midi object with an instrument and the given chord for a 1s
@@ -58,6 +61,13 @@ def create_chord(
 
         The default is 0 for piano.
 
+    pitches : Tuple[int]
+        A Tuple of possible absolute MIDI pitch numbers to use in this chord.
+        If given, only a subset of these pitches will be included in the returned
+        chord. Specifically, those which share a pitch class with any of the
+        default chord tones. Note that this means that some default chord tones might
+        not be present in the returned chord.
+
     Returns
     -------
     pm : pretty_midi.PrettyMIDI
@@ -79,6 +89,9 @@ def create_chord(
         changes=changes,
     )
     notes += 60  # centered around C4
+
+    if pitches is not None:
+        notes = [pitch for pitch in pitches if np.any(notes % 12 == pitch % 12)]
 
     for note_number in notes:
         # Note instance of 1s
@@ -176,19 +189,20 @@ def get_dft_from_chord(
     chord_type: ChordType,
     inversion: int = 0,
     changes: str = None,
+    pitches: Tuple[int] = None,
     program: int = 0,
     transform: str = "vqt",
     hop_length: int = 512,
     bins_per_octave: int = 60,
     n_mels: int = 512,
-) -> np.ndarray:
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
-        Get the discrete Fourier transform of the given chord and its discrete Fourier
-        transform an octave below and above (since the spectrum content is different
+    Get the discrete Fourier transform of the given chord and its discrete Fourier
+    transform an octave below and above (since the spectrum content is different
     from one octave to the other), by creating a pretty_MIDI object and calling
-        the get_dft_from_MIDI function.
+    the get_dft_from_MIDI function.
 
-     Parameters
+    Parameters
     ----------
     root : int
         The root of the given chord, as MIDI note number. If the chord
@@ -202,7 +216,7 @@ def get_dft_from_chord(
         The inversion of the chord.
         The default is 0.
 
-        changes : str
+    changes : str
         Any alterations to the chord's pitches, as a semi-colon separated string.
         Each alteration should be in the form "orig:new", where "orig" represents
         the original pitch that has been altered to "new". "orig" can also be blank
@@ -210,6 +224,13 @@ def get_dft_from_chord(
         pitch occurs in an upper octave (e.g., a C7 chord with a 9th is represented
         by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
         representation of different octaves so any "+" is ignored.
+
+    pitches : Tuple[int]
+        A Tuple of possible absolute MIDI pitch numbers to use in this chord.
+        If given, only a subset of these pitches will be included in the generated
+        chord. Specifically, those which share a pitch class with any of the
+        default chord tones. Note that this means that some default chord tones might
+        not be present in the generated chord.
 
     program : int, optional
         The general MIDI program number used by the fluidsynth to synthesize
@@ -239,17 +260,15 @@ def get_dft_from_chord(
         Number of Mel bands to generate if transform is 'mel' or 'melspectrogram'.
         the default is 512.
 
-        Returns
-        -------
-        dft_below : np.ndarray
-                the discrete Fourier transform of the chord an octave below.
-        dft : np.ndarray
-                the discrete Fourier transform of the chord.
-        dft_above : np.ndarray
-                the discrete Fourier transform of the chord an octave above.
-
+    Returns
+    -------
+    dft_below : np.ndarray
+            the discrete Fourier transform of the chord an octave below.
+    dft : np.ndarray
+            the discrete Fourier transform of the chord.
+    dft_above : np.ndarray
+            the discrete Fourier transform of the chord an octave above.
     """
-
     # MIDI object of the chord :
     pm = create_chord(
         root=root,
@@ -257,6 +276,7 @@ def get_dft_from_chord(
         inversion=inversion,
         changes=changes,
         program=program,
+        pitches=pitches,
     )
 
     # Second instance of the chord an octave below the fisrt one.
@@ -266,6 +286,7 @@ def get_dft_from_chord(
         inversion=inversion,
         changes=changes,
         program=program,
+        pitches=pitches,
     )
 
     # Third instance of the chord an octave above the fisrt one.
@@ -275,6 +296,7 @@ def get_dft_from_chord(
         inversion=inversion,
         changes=changes,
         program=program,
+        pitches=pitches,
     )
 
     # Spectrum of the synthesized instrument's notes of the MIDI object :
@@ -349,14 +371,14 @@ def filter_noise(
 def find_peaks(dft: np.ndarray) -> np.ndarray:
     """
     Isolate the peaks of a spectrum : If there are multiple non-zero consecutive
-        frequency bins in the spectrum, the function keeps only the maximum of all
-        these bins and filter out all the others by setting their value to 0.
+    frequency bins in the spectrum, the function keeps only the maximum of all
+    these bins and filter out all the others by setting their value to 0.
 
-        This function should be use after having used the filter_noise function.
+    This function should be use after having used the filter_noise function.
 
-        function inspired by the noiseSignal function from the Music-Perception-Toolbox
-        by Andrew J. Milne, The MARCS Institute, Western Sydney University :
-        https://github.com/andymilne/Music-Perception-Toolbox/blob/master/noiseSignal.m
+    function inspired by the noiseSignal function from the Music-Perception-Toolbox
+    by Andrew J. Milne, The MARCS Institute, Western Sydney University :
+    https://github.com/andymilne/Music-Perception-Toolbox/blob/master/noiseSignal.m
 
     Parameters
     ----------
@@ -399,6 +421,8 @@ def SPS_distance(
     changes2: str = None,
     program1: int = 0,
     program2: int = 0,
+    pitches1: Tuple[int] = None,
+    pitches2: Tuple[int] = None,
     transform: str = "vqt",
     hop_length: int = 512,
     bins_per_octave: int = 60,
@@ -436,7 +460,7 @@ def SPS_distance(
         The inversion of the second chord.
         The default is 0.
 
-        changes1 : str
+    changes1 : str
         Any alterations to the 1st chord's pitches, as a semi-colon separated string.
         Each alteration should be in the form "orig:new", where "orig" represents
         the original pitch that has been altered to "new". "orig" can also be blank
@@ -445,8 +469,18 @@ def SPS_distance(
         by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
         representation of different octaves so any "+" is ignored.
 
-        changes2 : str
+    changes2 : str
         Any alterations to the 2nd chord's pitches.
+
+    pitches1 : Tuple[int]
+        A Tuple of possible absolute MIDI pitch numbers to use in this chord.
+        If given, only a subset of these pitches will be included in the generated
+        chord. Specifically, those which share a pitch class with any of the
+        default chord tones. Note that this means that some default chord tones might
+        not be present in the generated chord.
+
+    pitches2 : Tuple[int]
+        The pitches for the 2nd chord.
 
     program1 : int, optional
         The general MIDI program number used by the fluidsynth to synthesize
@@ -509,6 +543,7 @@ def SPS_distance(
         inversion=inversion1,
         changes=changes1,
         program=program1,
+        pitches=pitches1,
         transform=transform,
         hop_length=hop_length,
         bins_per_octave=bins_per_octave,
@@ -520,6 +555,7 @@ def SPS_distance(
         chord_type=chord_type2,
         inversion=inversion2,
         changes=changes2,
+        pitches=pitches2,
         program=program2,
         transform=transform,
         hop_length=hop_length,

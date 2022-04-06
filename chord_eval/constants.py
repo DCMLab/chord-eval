@@ -1,4 +1,4 @@
-from data_types import ChordType, PitchType
+from chord_eval.data_types import ChordType, PitchType
 
 TPC_NATURAL_PITCHES = 7
 TPC_ACCIDENTALS = 5  # bb, b, natural, #, ##. natural must be in the exact middle

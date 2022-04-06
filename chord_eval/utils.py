@@ -1,9 +1,9 @@
 import logging
-from typing import List
 
 import numpy as np
-from constants import CHORD_PITCHES, NUM_PITCHES, TPC_C
-from data_types import ChordType, PitchType
+
+from chord_eval.constants import CHORD_PITCHES, NUM_PITCHES, TPC_C
+from chord_eval.data_types import ChordType, PitchType
 
 
 def get_chord_pitches(
@@ -12,7 +12,7 @@ def get_chord_pitches(
     pitch_type: PitchType,
     inversion: int = 0,
     changes: str = None,
-) -> List[int]:
+) -> np.ndarray:
     """
     Get the MIDI note numbers of a given chord root, type, and inversion.
 
@@ -41,7 +41,7 @@ def get_chord_pitches(
 
     Returns
     -------
-    chord_pitches : List[int]
+    chord_pitches : np.ndarray
         A List of pitches of the notes in the given chord, whose root
         pitch is at the given root. The pitches will either be MIDI note numbers
         (if pitch_type == PitchType.MIDI) or intervals above C along the circle of
