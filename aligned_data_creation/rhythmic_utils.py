@@ -3,12 +3,13 @@ from fractions import Fraction
 from typing import Tuple
 
 import pandas as pd
-
 from corpus_constants import MEASURE_OFFSET, NOTE_ONSET_BEAT
 
 
 def get_range_length(
-    range_start: Tuple[int, Fraction], range_end: Tuple[int, Fraction], measures: pd.DataFrame
+    range_start: Tuple[int, Fraction],
+    range_end: Tuple[int, Fraction],
+    measures: pd.DataFrame,
 ) -> Fraction:
     """
     Get the length of a range in whole notes.
@@ -109,12 +110,14 @@ def get_rhythmic_info_as_proportion_of_range(
     onset_to_end = abs(note["mc"] - range_end[0])
     if onset_to_start <= onset_to_end:
         onset = (
-            get_range_length(range_start, (note["mc"], note[NOTE_ONSET_BEAT]), measures) / range_len
+            get_range_length(range_start, (note["mc"], note[NOTE_ONSET_BEAT]), measures)
+            / range_len
         )
     else:
         onset = (
             1
-            - get_range_length((note["mc"], note[NOTE_ONSET_BEAT]), range_end, measures) / range_len
+            - get_range_length((note["mc"], note[NOTE_ONSET_BEAT]), range_end, measures)
+            / range_len
         )
     offset = onset + duration
 
@@ -177,7 +180,9 @@ def get_metrical_level(beat: Fraction, measure: pd.Series) -> int:
         1: sub-beat
         0: lower
     """
-    measure_length, beat_length, sub_beat_length = get_metrical_level_lengths(measure["timesig"])
+    measure_length, beat_length, sub_beat_length = get_metrical_level_lengths(
+        measure["timesig"]
+    )
 
     if beat % measure_length == 0:
         return 3

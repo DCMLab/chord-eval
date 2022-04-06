@@ -6,10 +6,8 @@ from typing import DefaultDict, Dict, Tuple, Union
 
 import numpy as np
 import pandas as pd
-
 from corpus_constants import CHORD_ONSET_BEAT, MEASURE_OFFSET
 from data_types import NO_REDUCTION, ChordType, KeyMode, PitchType
-from key import Key
 from harmonic_constants import (
     CHORD_PITCHES,
     DIATONIC_CHORDS,
@@ -32,6 +30,7 @@ from harmonic_utils import (
     tpc_interval_to_midi_interval,
     transpose_pitch,
 )
+from key import Key
 from rhythmic_utils import get_metrical_level
 
 
@@ -297,7 +296,9 @@ class Chord:
         chord : np.ndarray
             The vector of this Chord.
         """
-        key_tonic = self.key_tonic if relative_to is None else relative_to.relative_tonic
+        key_tonic = (
+            self.key_tonic if relative_to is None else relative_to.relative_tonic
+        )
         key_mode = self.key_mode if relative_to is None else relative_to.relative_mode
 
         if self.pitch_type == PitchType.MIDI:
@@ -541,13 +542,17 @@ class Chord:
                 # bass_interval = hu.tpc_interval_to_midi_interval(bass_interval)
 
             # Absolute root and bass
-            root = transpose_pitch(key.local_tonic, root_interval, pitch_type=pitch_type)
+            root = transpose_pitch(
+                key.local_tonic, root_interval, pitch_type=pitch_type
+            )
             # A bug in the corpus data makes this incorrect for half-diminished chords
             # bass = hu.transpose_pitch(key.local_tonic, bass_interval, pitch_type=pitch_type)
 
             # Additional chord info
             chord_type = reduction[get_chord_type_from_string(chord_row["chord_type"])]
-            inversion = get_chord_inversion(chord_row["figbass"]) if use_inversion else 0
+            inversion = (
+                get_chord_inversion(chord_row["figbass"]) if use_inversion else 0
+            )
 
             # Bugfix for inversion too high (e.g., for augmented 6th chords)
             inversion %= len(CHORD_PITCHES[pitch_type][chord_type])
@@ -561,7 +566,10 @@ class Chord:
             for i, (mc, beat) in enumerate(
                 zip(
                     [chord_row["mc"], chord_row["mc_next"]],
-                    [chord_row[CHORD_ONSET_BEAT], chord_row[f"{CHORD_ONSET_BEAT}_next"]],
+                    [
+                        chord_row[CHORD_ONSET_BEAT],
+                        chord_row[f"{CHORD_ONSET_BEAT}_next"],
+                    ],
                 )
             ):
                 measure = measures_df.loc[measures_df["mc"] == mc].squeeze()
@@ -584,7 +592,9 @@ class Chord:
 
             duration = chord_row["duration"]
 
-            suspension = chord_row["changes"] if not pd.isna(chord_row["changes"]) else None
+            suspension = (
+                chord_row["changes"] if not pd.isna(chord_row["changes"]) else None
+            )
 
             return Chord(
                 root,
@@ -600,7 +610,7 @@ class Chord:
                 duration,
                 pitch_type,
                 suspension=suspension,
-                label=chord_row["label"]
+                label=chord_row["label"],
             )
 
         except Exception as exception:
@@ -717,12 +727,20 @@ class Chord:
             inversion = inversion % len(CHORD_PITCHES[PitchType.TPC][chord_type])
 
             # Metrical info
-            onset_measure = measures_df.loc[measures_df["start"] <= chord_row["on"]].iloc[-1]
-            offset_measure = measures_df.loc[measures_df["start"] <= chord_row["off"]].iloc[-1]
+            onset_measure = measures_df.loc[
+                measures_df["start"] <= chord_row["on"]
+            ].iloc[-1]
+            offset_measure = measures_df.loc[
+                measures_df["start"] <= chord_row["off"]
+            ].iloc[-1]
 
-            onset_beat = onset_measure[MEASURE_OFFSET] + chord_row["on"] - onset_measure["start"]
+            onset_beat = (
+                onset_measure[MEASURE_OFFSET] + chord_row["on"] - onset_measure["start"]
+            )
             offset_beat = (
-                offset_measure[MEASURE_OFFSET] + chord_row["off"] - offset_measure["start"]
+                offset_measure[MEASURE_OFFSET]
+                + chord_row["off"]
+                - offset_measure["start"]
             )
 
             levels = [None, None]

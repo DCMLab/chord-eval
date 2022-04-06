@@ -1,11 +1,10 @@
 """Utility functions for evaluating model outputs."""
 from typing import Tuple
 
-import numpy as np
-import pandas as pd
-
 import harmonic_constants as hc
 import harmonic_utils as hu
+import numpy as np
+import pandas as pd
 from chord import Chord
 from data_types import PitchType
 from piece import Piece
@@ -125,22 +124,22 @@ def get_labels_df(piece: Piece, tpc_c: int = hc.TPC_C) -> pd.DataFrame:
 
         chord_label_str[start:end] = chord.label
 
-    chord_labels[chord_changes[-1]:] = chords[-1].get_one_hot_index(
+    chord_labels[chord_changes[-1] :] = chords[-1].get_one_hot_index(
         relative=False, use_inversion=True, pad=False
     )
 
     tpc_string, midi_string = get_suspension_strings(chords[-1])
 
-    chord_suspensions_tpc[chord_changes[-1]:] = tpc_string
-    chord_suspensions_midi[chord_changes[-1]:] = midi_string
-    chord_label_str[chord_changes[-1]:] = chords[-1].label
+    chord_suspensions_tpc[chord_changes[-1] :] = tpc_string
+    chord_suspensions_midi[chord_changes[-1] :] = midi_string
+    chord_label_str[chord_changes[-1] :] = chords[-1].label
 
     keys = piece.get_keys()
     key_changes = piece.get_key_change_input_indices()
     key_labels = np.zeros(len(piece.get_inputs()), dtype=int)
     for key, start, end in zip(keys, key_changes, key_changes[1:]):
         key_labels[start:end] = key.get_one_hot_index()
-    key_labels[key_changes[-1]:] = keys[-1].get_one_hot_index()
+    key_labels[key_changes[-1] :] = keys[-1].get_one_hot_index()
 
     chord_labels_list = hu.get_chord_from_one_hot_index(
         slice(len(hu.get_chord_label_list(PitchType.TPC))), PitchType.TPC
@@ -149,7 +148,15 @@ def get_labels_df(piece: Piece, tpc_c: int = hc.TPC_C) -> pd.DataFrame:
         slice(len(hu.get_key_label_list(PitchType.TPC))), PitchType.TPC
     )
 
-    for duration, chord_label, key_label, suspension_tpc, suspension_midi, onset, label_str in zip(
+    for (
+        duration,
+        chord_label,
+        key_label,
+        suspension_tpc,
+        suspension_midi,
+        onset,
+        label_str,
+    ) in zip(
         piece.get_duration_cache(),
         chord_labels,
         key_labels,

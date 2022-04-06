@@ -8,18 +8,19 @@ from typing import Dict, List, Tuple, Union
 import music21
 import numpy as np
 import pandas as pd
-from music21.converter import parse
-from tqdm import tqdm
-
 import rhythmic_utils as ru
 from chord import Chord
 from corpus_constants import MEASURE_OFFSET
 from data_types import NO_REDUCTION, ChordType, PieceType, PitchType
 from key import Key
+from music21.converter import parse
 from note import Note
+from tqdm import tqdm
 
 
-def get_reduction_mask(inputs: List[Union[Chord, Key]], kwargs: Dict = None) -> List[bool]:
+def get_reduction_mask(
+    inputs: List[Union[Chord, Key]], kwargs: Dict = None
+) -> List[bool]:
     """
     Return a boolean mask that will remove repeated inputs when applied to the given inputs list
     as inputs[mask].
@@ -155,14 +156,18 @@ def get_chord_note_input(
     )
 
     # Place the note vectors within the final tensor and return
-    chord_input = np.zeros((window_offset_index - window_onset_index, note_vectors.shape[1]))
+    chord_input = np.zeros(
+        (window_offset_index - window_onset_index, note_vectors.shape[1])
+    )
     start = 0 + (first_note_index - window_onset_index)
     end = len(chord_input) - (window_offset_index - last_note_index)
     chord_input[start:end] = note_vectors
     return chord_input
 
 
-def get_range_start(onset: Union[float, Tuple[int, Fraction]], notes: List[Note]) -> int:
+def get_range_start(
+    onset: Union[float, Tuple[int, Fraction]], notes: List[Note]
+) -> int:
     """
     Get the index of the first note whose offset is after the given range onset.
 
@@ -278,14 +283,19 @@ class Piece:
         chord_change_indices = self.get_chord_change_indices()
 
         start_index = bisect.bisect_left(chord_change_indices, start)
-        if start_index == len(chord_change_indices) or chord_change_indices[start_index] != start:
+        if (
+            start_index == len(chord_change_indices)
+            or chord_change_indices[start_index] != start
+        ):
             # Subtract 1 to get end of partial chord if exact match is not found
             start_index -= 1
 
         if stop is None:
             return chords[start_index:]
 
-        end_index = bisect.bisect_left(chord_change_indices, stop, lo=max(start_index, 0))
+        end_index = bisect.bisect_left(
+            chord_change_indices, stop, lo=max(start_index, 0)
+        )
 
         return chords[start_index:end_index]
 
@@ -417,7 +427,9 @@ class ScorePiece(Piece):
         self.notes = np.array(notes)
         self.chords = np.array(chords) if chords is not None else None
         self.keys = np.array(keys) if keys is not None else None
-        self.chord_changes = np.array(chord_changes) if chord_changes is not None else None
+        self.chord_changes = (
+            np.array(chord_changes) if chord_changes is not None else None
+        )
         self.chord_ranges = np.array(chord_ranges) if chord_ranges is not None else None
         self.key_changes = np.array(key_changes) if key_changes is not None else None
 
@@ -438,7 +450,9 @@ class ScorePiece(Piece):
 
             self.duration_cache = np.array(
                 [
-                    ru.get_range_length(prev_note.onset, next_note.onset, self.measures_df)
+                    ru.get_range_length(
+                        prev_note.onset, next_note.onset, self.measures_df
+                    )
                     for prev_note, next_note in zip(
                         self.notes, list(self.notes[1:]) + [fake_last_note]
                     )
@@ -729,7 +743,9 @@ def get_score_piece_from_data_frames(
     )
 
     # Remove accidentally repeated keys
-    non_repeated_mask = get_reduction_mask(keys_list, kwargs={"use_relative": use_relative})
+    non_repeated_mask = get_reduction_mask(
+        keys_list, kwargs={"use_relative": use_relative}
+    )
     keys = keys_list[non_repeated_mask]
     key_changes = key_changes[non_repeated_mask]
 
@@ -880,7 +896,9 @@ def get_notes_from_music_xml(
         if measure.measureNumber not in measures_df["mn"].values:
             continue
 
-        measure_mc = measures_df.loc[measures_df["mn"] == measure.measureNumber, "mc"].iloc[0]
+        measure_mc = measures_df.loc[
+            measures_df["mn"] == measure.measureNumber, "mc"
+        ].iloc[0]
 
         for note in measure.recurse().notes:
             if note.isChord:
@@ -969,7 +987,9 @@ def get_score_piece_from_music_xml(
     labels_df["off"] /= 4
 
     diff = (
-        labels_df.iloc[-1]["off"] - measures_df.iloc[-1]["start"] - measures_df.iloc[-1]["act_dur"]
+        labels_df.iloc[-1]["off"]
+        - measures_df.iloc[-1]["start"]
+        - measures_df.iloc[-1]["act_dur"]
     )
     if diff != 0:
         print(music_xml_path)
@@ -988,7 +1008,9 @@ def get_score_piece_from_music_xml(
     levels_cache = defaultdict(dict)
     chords = np.array(
         [
-            Chord.from_labels_csv_row(row, measures_df, PitchType.TPC, levels_cache=levels_cache)
+            Chord.from_labels_csv_row(
+                row, measures_df, PitchType.TPC, levels_cache=levels_cache
+            )
             for _, row in labels_df.iterrows()
         ]
     )

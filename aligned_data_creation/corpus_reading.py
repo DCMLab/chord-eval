@@ -4,10 +4,8 @@ from glob import glob
 from pathlib import Path
 from typing import Dict, Iterable, Union
 
-import pandas as pd
-from tqdm import tqdm
-
 import corpus_utils as cu
+import pandas as pd
 from corpus_constants import (
     CHORD_ONSET_BEAT,
     CONVERTERS,
@@ -15,6 +13,7 @@ from corpus_constants import (
     MEASURE_OFFSET,
     NOTE_ONSET_BEAT,
 )
+from tqdm import tqdm
 
 
 def read_dump(
@@ -54,7 +53,9 @@ def read_dump(
         types.update(dtypes)
     if converters is not None:
         conv.update(converters)
-    return pd.read_csv(file, sep="\t", index_col=index_col, dtype=types, converters=conv, **kwargs)
+    return pd.read_csv(
+        file, sep="\t", index_col=index_col, dtype=types, converters=conv, **kwargs
+    )
 
 
 def load_clean_corpus_dfs(dir_path: Union[str, Path], count: int = None):
@@ -111,7 +112,9 @@ def load_clean_corpus_dfs(dir_path: Union[str, Path], count: int = None):
     measures_df = measures_df.loc[files_df.index]
     notes_df = notes_df.loc[files_df.index]
     if chords_df is not None:
-        chords_df = chords_df.loc[chords_df.index.get_level_values(0).isin(files_df.index)]
+        chords_df = chords_df.loc[
+            chords_df.index.get_level_values(0).isin(files_df.index)
+        ]
     # End bugfix
 
     # Incomplete column renaming
@@ -137,7 +140,9 @@ def load_clean_corpus_dfs(dir_path: Union[str, Path], count: int = None):
     if chords_df is not None:
         chords_df = cu.remove_unmatched(chords_df, measures_df)
         chords_df = chords_df.drop(
-            chords_df.loc[(chords_df.numeral == "@none") | chords_df.numeral.isnull()].index
+            chords_df.loc[
+                (chords_df.numeral == "@none") | chords_df.numeral.isnull()
+            ].index
         )
 
     # Remove notes with invalid onset times
@@ -149,13 +154,21 @@ def load_clean_corpus_dfs(dir_path: Union[str, Path], count: int = None):
     )
 
     valid_onsets = (note_measures[MEASURE_OFFSET] <= note_measures[NOTE_ONSET_BEAT]) & (
-        note_measures[NOTE_ONSET_BEAT] < note_measures["act_dur"] + note_measures[MEASURE_OFFSET]
+        note_measures[NOTE_ONSET_BEAT]
+        < note_measures["act_dur"] + note_measures[MEASURE_OFFSET]
     )
     if not valid_onsets.all():
         with pd.option_context("display.max_rows", None, "display.max_columns", None):
             invalid_string = note_measures.loc[
                 ~valid_onsets,
-                ["file_id", "note_id", "mc", NOTE_ONSET_BEAT, MEASURE_OFFSET, "act_dur"],
+                [
+                    "file_id",
+                    "note_id",
+                    "mc",
+                    NOTE_ONSET_BEAT,
+                    MEASURE_OFFSET,
+                    "act_dur",
+                ],
             ]
             logging.debug(
                 f"{(~valid_onsets).sum()} notes have invalid onset times:\n{invalid_string}"
@@ -171,15 +184,26 @@ def load_clean_corpus_dfs(dir_path: Union[str, Path], count: int = None):
             on=["file_id", "mc"],
         )
 
-        valid_onsets = (chord_measures[MEASURE_OFFSET] <= chord_measures[CHORD_ONSET_BEAT]) & (
+        valid_onsets = (
+            chord_measures[MEASURE_OFFSET] <= chord_measures[CHORD_ONSET_BEAT]
+        ) & (
             chord_measures[CHORD_ONSET_BEAT]
             < chord_measures["act_dur"] + chord_measures[MEASURE_OFFSET]
         )
         if not valid_onsets.all():
-            with pd.option_context("display.max_rows", None, "display.max_columns", None):
+            with pd.option_context(
+                "display.max_rows", None, "display.max_columns", None
+            ):
                 invalid_string = chord_measures.loc[
                     ~valid_onsets,
-                    ["file_id", "chord_id", "mc", CHORD_ONSET_BEAT, MEASURE_OFFSET, "act_dur"],
+                    [
+                        "file_id",
+                        "chord_id",
+                        "mc",
+                        CHORD_ONSET_BEAT,
+                        MEASURE_OFFSET,
+                        "act_dur",
+                    ],
                 ]
                 logging.debug(
                     f"{(~valid_onsets).sum()} chords have invalid onset times:\n{invalid_string}"
@@ -201,10 +225,18 @@ def load_clean_corpus_dfs(dir_path: Union[str, Path], count: int = None):
     if chords_df is not None:
         invalid_dur = chords_df["duration"] <= 0
         if invalid_dur.any():
-            with pd.option_context("display.max_rows", None, "display.max_columns", None):
+            with pd.option_context(
+                "display.max_rows", None, "display.max_columns", None
+            ):
                 invalid_string = chords_df.loc[
                     invalid_dur,
-                    ["mc", CHORD_ONSET_BEAT, "mc_next", f"{CHORD_ONSET_BEAT}_next", "duration"],
+                    [
+                        "mc",
+                        CHORD_ONSET_BEAT,
+                        "mc_next",
+                        f"{CHORD_ONSET_BEAT}_next",
+                        "duration",
+                    ],
                 ]
                 logging.debug(
                     f"{(invalid_dur).sum()} chords have invalid durations:\n{invalid_string}"
@@ -261,21 +293,27 @@ def aggregate_annotation_dfs(
         file_name = file_path.name
 
         try:
-            chord_df = pd.read_csv(Path(base_path, "harmonies", file_name), dtype=str, sep="\t")
+            chord_df = pd.read_csv(
+                Path(base_path, "harmonies", file_name), dtype=str, sep="\t"
+            )
             chord_indexes.append(len(files_dict["file_name"]))
         except Exception:
             logging.info("Error parsing harmonies for file %s", file_name)
             chord_df = None
 
         try:
-            note_df = pd.read_csv(Path(base_path, "notes", file_name), dtype=str, sep="\t")
+            note_df = pd.read_csv(
+                Path(base_path, "notes", file_name), dtype=str, sep="\t"
+            )
             note_indexes.append(len(files_dict["file_name"]))
         except Exception:
             logging.info("Error parsing notes for file %s", file_name)
             note_df = None
 
         try:
-            measure_df = pd.read_csv(Path(base_path, "measures", file_name), dtype=str, sep="\t")
+            measure_df = pd.read_csv(
+                Path(base_path, "measures", file_name), dtype=str, sep="\t"
+            )
             measure_indexes.append(len(files_dict["file_name"]))
         except Exception:
             logging.info("Error parsing measures for file %s", file_name)
@@ -309,11 +347,16 @@ def aggregate_annotation_dfs(
         chords_df.to_csv(Path(out_dir, "chords.tsv"), sep="\t")
 
     if note_df_list:
-        notes_df = pd.concat(note_df_list, keys=note_indexes, axis=0, names=["file_id", "note_id"])
+        notes_df = pd.concat(
+            note_df_list, keys=note_indexes, axis=0, names=["file_id", "note_id"]
+        )
         notes_df.to_csv(Path(out_dir, "notes.tsv"), sep="\t")
 
     if measure_df_list:
         measures_df = pd.concat(
-            measure_df_list, keys=measure_indexes, axis=0, names=["file_id", "measure_id"]
+            measure_df_list,
+            keys=measure_indexes,
+            axis=0,
+            names=["file_id", "measure_id"],
         )
         measures_df.to_csv(Path(out_dir, "measures.tsv"), sep="\t")

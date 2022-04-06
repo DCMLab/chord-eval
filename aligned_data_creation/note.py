@@ -7,15 +7,11 @@ from typing import Dict, Tuple, Union
 import music21
 import numpy as np
 import pandas as pd
-
 from corpus_constants import MEASURE_OFFSET, NOTE_ONSET_BEAT
 from data_types import PitchType
 from harmonic_constants import NUM_PITCHES, TPC_C
 from harmonic_utils import get_pitch_from_string, get_pitch_string
-from rhythmic_utils import (
-    get_metrical_level,
-    get_rhythmic_info_as_proportion_of_range,
-)
+from rhythmic_utils import get_metrical_level, get_rhythmic_info_as_proportion_of_range
 
 
 class Note:
@@ -270,7 +266,9 @@ class Note:
 
         # Binary -- is this the lowest note in this set of notes
         midi_note_number = self.get_midi_note_number()
-        is_min = [1 if min_pitch is not None and midi_note_number == min_pitch[1] else 0]
+        is_min = [
+            1 if min_pitch is not None and midi_note_number == min_pitch[1] else 0
+        ]
         vectors.append(is_min)
 
         # Octave related to surrounding notes as one-hot
@@ -293,7 +291,9 @@ class Note:
                 range_size = 1
                 max_pitch = (max_pitch[0], max_pitch[1] + 1)
 
-            relative_norm_pitch_height = [(midi_note_number - min_pitch[1]) / range_size]
+            relative_norm_pitch_height = [
+                (midi_note_number - min_pitch[1]) / range_size
+            ]
             vectors.append(relative_norm_pitch_height)
 
         else:
@@ -474,9 +474,13 @@ class Note:
         # Find the offset measure
         offset_measure = onset_measure
         tmp_duration = note_duration + note_start - onset_measure[MEASURE_OFFSET]
-        while tmp_duration >= offset_measure["act_dur"] and not pd.isna(offset_measure["next"]):
+        while tmp_duration >= offset_measure["act_dur"] and not pd.isna(
+            offset_measure["next"]
+        ):
             tmp_duration -= offset_measure["act_dur"]
-            offset_measure = measures_df.loc[measures_df["mc"] == offset_measure["next"]].iloc[0]
+            offset_measure = measures_df.loc[
+                measures_df["mc"] == offset_measure["next"]
+            ].iloc[0]
 
         onset_beat = note_start
         offset_beat = tmp_duration + offset_measure[MEASURE_OFFSET]

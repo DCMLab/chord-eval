@@ -44,13 +44,17 @@ PITCH_TO_STRING = {
         "A#/Bb",
         "B",
     ],
-    PitchType.TPC: {index: string for string, index in STRING_TO_PITCH[PitchType.TPC].items()},
+    PitchType.TPC: {
+        index: string for string, index in STRING_TO_PITCH[PitchType.TPC].items()
+    },
 }
 
 
 for note_string in ["A", "B", "C", "D", "E", "F", "G"]:
     for pitch_type in PitchType:
-        STRING_TO_PITCH[pitch_type][note_string.lower()] = STRING_TO_PITCH[pitch_type][note_string]
+        STRING_TO_PITCH[pitch_type][note_string.lower()] = STRING_TO_PITCH[pitch_type][
+            note_string
+        ]
 
 
 SCALE_INTERVALS = {
@@ -136,26 +140,39 @@ for pitch_type in [PitchType.MIDI, PitchType.TPC]:
 
     # Add major triad 7th chords
     for chord in [ChordType.MAJ_MAJ7, ChordType.MAJ_MIN7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.MAJOR].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.MAJOR
+        ].copy()
 
     # Add minor triad 7th chords
     for chord in [ChordType.MIN_MAJ7, ChordType.MIN_MIN7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.MINOR].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.MINOR
+        ].copy()
 
     # Add diminished triad 7th chords
     for chord in [ChordType.DIM7, ChordType.HALF_DIM7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.DIMINISHED].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.DIMINISHED
+        ].copy()
 
     # Add augmented triad 7th chords
     for chord in [ChordType.AUG_MAJ7, ChordType.AUG_MIN7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.AUGMENTED].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.AUGMENTED
+        ].copy()
 
     # Add major 7ths
     for chord in [ChordType.MAJ_MAJ7, ChordType.MIN_MAJ7, ChordType.AUG_MAJ7]:
         CHORD_PITCHES[pitch_type][chord].append(STRING_TO_PITCH[pitch_type]["B"])
 
     # Add minor 7ths
-    for chord in [ChordType.MAJ_MIN7, ChordType.MIN_MIN7, ChordType.HALF_DIM7, ChordType.AUG_MIN7]:
+    for chord in [
+        ChordType.MAJ_MIN7,
+        ChordType.MIN_MIN7,
+        ChordType.HALF_DIM7,
+        ChordType.AUG_MIN7,
+    ]:
         CHORD_PITCHES[pitch_type][chord].append(
             STRING_TO_PITCH[pitch_type]["B"] - ACCIDENTAL_ADJUSTMENT[pitch_type]
         )
@@ -183,7 +200,9 @@ STRING_TO_CHORD_TYPE = {
 }
 
 
-CHORD_TYPE_TO_STRING = {chord_type: string for string, chord_type in STRING_TO_CHORD_TYPE.items()}
+CHORD_TYPE_TO_STRING = {
+    chord_type: string for string, chord_type in STRING_TO_CHORD_TYPE.items()
+}
 
 STRING_TO_CHORD_TYPE["It"] = ChordType.DIMINISHED
 STRING_TO_CHORD_TYPE["Ger"] = ChordType.DIM7
@@ -234,7 +253,14 @@ DIATONIC_CHORDS = {
             2: set([ChordType.DIMINISHED, ChordType.HALF_DIM7]),
             -3: set([ChordType.MAJOR, ChordType.MAJ_MAJ7]),
             -1: set([ChordType.MINOR, ChordType.MIN_MIN7]),
-            1: set([ChordType.MAJOR, ChordType.MAJ_MIN7, ChordType.MINOR, ChordType.MIN_MIN7]),
+            1: set(
+                [
+                    ChordType.MAJOR,
+                    ChordType.MAJ_MIN7,
+                    ChordType.MINOR,
+                    ChordType.MIN_MIN7,
+                ]
+            ),
             -4: set([ChordType.MAJOR, ChordType.MAJ_MAJ7]),
             -2: set([ChordType.MAJOR, ChordType.MAJ_MIN7]),  # VII
             5: set([ChordType.DIMINISHED, ChordType.DIM7]),  # vii
@@ -255,7 +281,14 @@ DIATONIC_CHORDS = {
             2: set([ChordType.DIMINISHED, ChordType.HALF_DIM7]),
             3: set([ChordType.MAJOR, ChordType.MAJ_MAJ7]),
             5: set([ChordType.MINOR, ChordType.MIN_MIN7]),
-            7: set([ChordType.MAJOR, ChordType.MAJ_MIN7, ChordType.MINOR, ChordType.MIN_MIN7]),
+            7: set(
+                [
+                    ChordType.MAJOR,
+                    ChordType.MAJ_MIN7,
+                    ChordType.MINOR,
+                    ChordType.MIN_MIN7,
+                ]
+            ),
             8: set([ChordType.MAJOR, ChordType.MAJ_MAJ7]),
             10: set([ChordType.MAJOR, ChordType.MAJ_MIN7]),  # VII
             11: set([ChordType.DIMINISHED, ChordType.DIM7]),  # #vii

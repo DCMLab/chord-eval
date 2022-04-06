@@ -2,10 +2,9 @@
 import itertools
 from typing import Dict, List, Tuple, Union
 
+import harmonic_constants as hc
 import numpy as np
 import pandas as pd
-
-import harmonic_constants as hc
 from data_types import NO_REDUCTION, ChordType, KeyMode, PitchType
 
 
@@ -72,12 +71,18 @@ def get_chord_label_list(
                     roots.append(str(root))
 
     else:
-        roots = [get_pitch_string(i, pitch_type) for i in range(hc.NUM_PITCHES[pitch_type])]
+        roots = [
+            get_pitch_string(i, pitch_type) for i in range(hc.NUM_PITCHES[pitch_type])
+        ]
 
     return [
         f"{root}:{get_chord_string(chord_type)}{'' if inv is None else f', inv:{inv}'}"
-        for chord_type, root in itertools.product(sorted(set(reduction.values())), roots)
-        for inv in (range(get_chord_inversion_count(chord_type)) if use_inversions else [None])
+        for chord_type, root in itertools.product(
+            sorted(set(reduction.values())), roots
+        )
+        for inv in (
+            range(get_chord_inversion_count(chord_type)) if use_inversions else [None]
+        )
     ]
 
 
@@ -180,7 +185,9 @@ def get_added_and_removed_pitches(
     chord_root_str = get_pitch_string(chord_root_tpc, PitchType.TPC)
 
     for degree in range(1, 8):
-        interval = get_interval_from_scale_degree(str(degree), True, key_mode, PitchType.TPC)
+        interval = get_interval_from_scale_degree(
+            str(degree), True, key_mode, PitchType.TPC
+        )
         pitch_str = get_pitch_string(interval + key_tonic_tpc, PitchType.TPC)
         if pitch_str[0] == chord_root_str[0]:
             break
@@ -199,12 +206,16 @@ def get_added_and_removed_pitches(
         octave = "+" if int(new_change) >= 8 else ""
 
         # Convert change to be relative to the key tonic, including accidentals
-        change_degree = (int(new_change) + degree - 2) % 7  # -2 since both are 1-indexed
+        change_degree = (
+            int(new_change) + degree - 2
+        ) % 7  # -2 since both are 1-indexed
         change_degree += 1  # Conver back to 1-indexing
         change_degree_str = change[:accidental_count] + str(change_degree)
 
         # Calculate interval above scale degree, including additional octaves
-        interval = get_interval_from_scale_degree(change_degree_str, True, key_mode, PitchType.TPC)
+        interval = get_interval_from_scale_degree(
+            change_degree_str, True, key_mode, PitchType.TPC
+        )
 
         # Store added pitch, including "+" if the pitch is an octave up
         added_pitches.append(octave + str(interval + key_tonic_tpc))
@@ -215,7 +226,9 @@ def get_added_and_removed_pitches(
     ascending_chord_vector = []
 
     for degree in range(1, 8):
-        interval = get_interval_from_scale_degree(str(degree), True, key_mode, PitchType.TPC)
+        interval = get_interval_from_scale_degree(
+            str(degree), True, key_mode, PitchType.TPC
+        )
         pitch_str = get_pitch_string(interval + chord_root_tpc, PitchType.TPC)
 
         for pitch in chord_vector:
@@ -246,7 +259,9 @@ def get_added_and_removed_pitches(
             # Replaces the below pitch
 
             # 2 replaces the 1st chord pitch, 4 replaces the 2nd, etc.
-            removed_pitches.append(str(ascending_chord_vector[int(change[-1]) // 2 - 1]))
+            removed_pitches.append(
+                str(ascending_chord_vector[int(change[-1]) // 2 - 1])
+            )
 
         else:
             # No removed pitch
@@ -313,8 +328,12 @@ def get_chord_from_one_hot_index(
 
     return [
         (root, chord_type, inv)
-        for chord_type, root in itertools.product(sorted(set(reduction.values())), roots)
-        for inv in (range(get_chord_inversion_count(chord_type)) if use_inversions else [0])
+        for chord_type, root in itertools.product(
+            sorted(set(reduction.values())), roots
+        )
+        for inv in (
+            range(get_chord_inversion_count(chord_type)) if use_inversions else [0]
+        )
     ][one_hot_index]
 
 
@@ -375,7 +394,9 @@ def get_chord_one_hot_index(
         raise ValueError(f"Given root ({root_pitch}) is outside of valid range")
     if use_inversion:
         if inversion < 0 or inversion >= get_chord_inversion_count(chord_type):
-            raise ValueError(f"inversion {inversion} outside of valid range for chord {chord_type}")
+            raise ValueError(
+                f"inversion {inversion} outside of valid range for chord {chord_type}"
+            )
         chord_inversions = np.array(
             [get_chord_inversion_count(chord) for chord in chord_types], dtype=int
         )
@@ -439,7 +460,9 @@ def get_key_label_list(
                     tonics.append(str(tonic))
 
     else:
-        tonics = [get_pitch_string(i, pitch_type) for i in range(hc.NUM_PITCHES[pitch_type])]
+        tonics = [
+            get_pitch_string(i, pitch_type) for i in range(hc.NUM_PITCHES[pitch_type])
+        ]
 
     return [
         f"{tonic.lower() if key_mode == KeyMode.MINOR else tonic}:{key_mode}"
@@ -484,7 +507,9 @@ def get_key_from_one_hot_index(
     else:
         tonics = list(range(hc.NUM_PITCHES[pitch_type]))
 
-    return [(tonic, key_mode) for key_mode, tonic in itertools.product(KeyMode, tonics)][one_hot]
+    return [
+        (tonic, key_mode) for key_mode, tonic in itertools.product(KeyMode, tonics)
+    ][one_hot]
 
 
 def get_key_one_hot_index(key_mode: KeyMode, tonic: int, pitch_type: PitchType) -> int:
@@ -542,7 +567,9 @@ def decode_relative_keys(
     # Handle doubly-relative chords iteratively
     for relative in reversed(relative_string.split("/")):
         # Relativeroot is listed relative to local key. We want it absolute.
-        relative_transposition = get_interval_from_numeral(relative, mode, pitch_type=pitch_type)
+        relative_transposition = get_interval_from_numeral(
+            relative, mode, pitch_type=pitch_type
+        )
         mode = KeyMode.MINOR if relative[-1].islower() else KeyMode.MAJOR
         tonic = transpose_pitch(tonic, relative_transposition, pitch_type)
 
@@ -649,7 +676,9 @@ def absolute_to_relative(
         maximum += hc.RELATIVE_TPC_EXTRA
 
     if relative < minimum or relative >= maximum:
-        raise ValueError(f"Resulting relative pitch {relative} is outside of valid range.")
+        raise ValueError(
+            f"Resulting relative pitch {relative} is outside of valid range."
+        )
 
     return relative - minimum
 
@@ -769,12 +798,16 @@ def get_vector_from_chord_type(
     chord_vector[hc.CHORD_PITCHES[pitch_type][chord_type]] = 1
 
     if root is not None:
-        chord_vector = transpose_chord_vector(chord_vector, root - hc.C[pitch_type], pitch_type)
+        chord_vector = transpose_chord_vector(
+            chord_vector, root - hc.C[pitch_type], pitch_type
+        )
 
     return chord_vector
 
 
-def get_interval_from_numeral(numeral: str, mode: KeyMode, pitch_type: PitchType) -> int:
+def get_interval_from_numeral(
+    numeral: str, mode: KeyMode, pitch_type: PitchType
+) -> int:
     """
     Get the interval from the key tonic to the given scale degree numeral.
 
@@ -843,13 +876,17 @@ def get_interval_from_scale_degree(
         scale_degree, in_front=accidentals_prefixed
     )
 
-    interval = hc.SCALE_INTERVALS[mode][pitch_type][hc.SCALE_DEGREE_TO_NUMBER[scale_degree]]
+    interval = hc.SCALE_INTERVALS[mode][pitch_type][
+        hc.SCALE_DEGREE_TO_NUMBER[scale_degree]
+    ]
     interval += accidental_adjustment * hc.ACCIDENTAL_ADJUSTMENT[pitch_type]
 
     return interval
 
 
-def get_scale_degree_from_interval(interval: int, mode: KeyMode, pitch_type: PitchType) -> str:
+def get_scale_degree_from_interval(
+    interval: int, mode: KeyMode, pitch_type: PitchType
+) -> str:
     """
     Get a scale degree from a TPC or MIDI interval.
 
@@ -880,7 +917,10 @@ def get_scale_degree_from_interval(interval: int, mode: KeyMode, pitch_type: Pit
             num_sharps += 1
             interval = (interval - 1) % hc.NUM_PITCHES[PitchType.MIDI]
 
-        return "#" * num_sharps + hc.NUMBER_TO_SCALE_DEGREE[scale_intervals.index(interval)]
+        return (
+            "#" * num_sharps
+            + hc.NUMBER_TO_SCALE_DEGREE[scale_intervals.index(interval)]
+        )
 
     num_sharps = 0
     num_flats = 0
@@ -928,7 +968,8 @@ def transpose_pitch(pitch: int, interval: int, pitch_type: PitchType) -> int:
 
     if pitch < 0 or pitch >= hc.NUM_PITCHES[PitchType.TPC]:
         raise ValueError(
-            f"pitch_type is TPC but transposed pitch {pitch} lies outside of TPC " "range."
+            f"pitch_type is TPC but transposed pitch {pitch} lies outside of TPC "
+            "range."
         )
 
     return pitch
@@ -1024,14 +1065,18 @@ def get_pitch_from_string(pitch_string: str, pitch_type: PitchType) -> int:
     if pitch_type == PitchType.MIDI and "/" in pitch_string:
         pitch_string = pitch_string.split("/")[0]
 
-    accidental_adjustment, pitch_string = get_accidental_adjustment(pitch_string, in_front=False)
+    accidental_adjustment, pitch_string = get_accidental_adjustment(
+        pitch_string, in_front=False
+    )
 
     pitch = hc.STRING_TO_PITCH[pitch_type][pitch_string]
     pitch += accidental_adjustment * hc.ACCIDENTAL_ADJUSTMENT[pitch_type]
 
     if pitch_type == PitchType.MIDI:
         pitch %= hc.NUM_PITCHES[PitchType.MIDI]
-    elif pitch_type == PitchType.TPC and (pitch < 0 or pitch >= hc.NUM_PITCHES[PitchType.TPC]):
+    elif pitch_type == PitchType.TPC and (
+        pitch < 0 or pitch >= hc.NUM_PITCHES[PitchType.TPC]
+    ):
         raise ValueError(
             f"Pitch type is TPC, but returned pitch {pitch} would be outside of valid range."
         )
@@ -1056,7 +1101,9 @@ def get_pitch_string(pitch: int, pitch_type: PitchType) -> str:
         A string representation of the given pitch.
     """
     if pitch_type == PitchType.MIDI:
-        return hc.PITCH_TO_STRING[PitchType.MIDI][pitch % hc.NUM_PITCHES[PitchType.MIDI]]
+        return hc.PITCH_TO_STRING[PitchType.MIDI][
+            pitch % hc.NUM_PITCHES[PitchType.MIDI]
+        ]
 
     accidental = 0
     accidental_string = "#"

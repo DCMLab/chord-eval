@@ -5,7 +5,6 @@ from typing import Dict
 
 import numpy as np
 import pandas as pd
-
 from data_types import KeyMode, PitchType
 from harmonic_constants import (
     MAX_KEY_CHANGE_INTERVAL_TPC,
@@ -318,8 +317,12 @@ class Key:
         """
         try:
             # Global key, absolute
-            global_tonic = get_pitch_from_string(chord_row["globalkey"], pitch_type=tonic_type)
-            global_mode = KeyMode.MINOR if chord_row["globalkey_is_minor"] else KeyMode.MAJOR
+            global_tonic = get_pitch_from_string(
+                chord_row["globalkey"], pitch_type=tonic_type
+            )
+            global_mode = (
+                KeyMode.MINOR if chord_row["globalkey_is_minor"] else KeyMode.MAJOR
+            )
 
             # Local key is listed relative to global. We want it absolute.
             local_tonic, local_mode = decode_relative_keys(
@@ -449,7 +452,9 @@ class Key:
                         "7": KeyMode.MINOR,
                     }[relative_root]
                 except KeyError:
-                    raise ValueError(f"Unknown mode for relative root in a major key: {chord_row}")
+                    raise ValueError(
+                        f"Unknown mode for relative root in a major key: {chord_row}"
+                    )
             else:
                 try:
                     relative_mode = {
@@ -468,7 +473,9 @@ class Key:
                         "#7": KeyMode.MAJOR,
                     }[relative_root]
                 except KeyError:
-                    raise ValueError(f"Unknown mode for relative root in a minor key: {chord_row}")
+                    raise ValueError(
+                        f"Unknown mode for relative root in a minor key: {chord_row}"
+                    )
 
         return Key(
             relative_tonic,

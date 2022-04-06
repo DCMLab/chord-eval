@@ -1,5 +1,4 @@
-from data_types import PitchType, ChordType
-
+from data_types import ChordType, PitchType
 
 TPC_NATURAL_PITCHES = 7
 TPC_ACCIDENTALS = 5  # bb, b, natural, #, ##. natural must be in the exact middle
@@ -52,26 +51,39 @@ for pitch_type in [PitchType.MIDI, PitchType.TPC]:
 
     # Add major triad 7th chords
     for chord in [ChordType.MAJ_MAJ7, ChordType.MAJ_MIN7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.MAJOR].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.MAJOR
+        ].copy()
 
     # Add minor triad 7th chords
     for chord in [ChordType.MIN_MAJ7, ChordType.MIN_MIN7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.MINOR].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.MINOR
+        ].copy()
 
     # Add diminished triad 7th chords
     for chord in [ChordType.DIM7, ChordType.HALF_DIM7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.DIMINISHED].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.DIMINISHED
+        ].copy()
 
     # Add augmented triad 7th chords
     for chord in [ChordType.AUG_MAJ7, ChordType.AUG_MIN7]:
-        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][ChordType.AUGMENTED].copy()
+        CHORD_PITCHES[pitch_type][chord] = CHORD_PITCHES[pitch_type][
+            ChordType.AUGMENTED
+        ].copy()
 
     # Add major 7ths
     for chord in [ChordType.MAJ_MAJ7, ChordType.MIN_MAJ7, ChordType.AUG_MAJ7]:
         CHORD_PITCHES[pitch_type][chord].append(STRING_TO_PITCH[pitch_type]["B"])
 
     # Add minor 7ths
-    for chord in [ChordType.MAJ_MIN7, ChordType.MIN_MIN7, ChordType.HALF_DIM7, ChordType.AUG_MIN7]:
+    for chord in [
+        ChordType.MAJ_MIN7,
+        ChordType.MIN_MIN7,
+        ChordType.HALF_DIM7,
+        ChordType.AUG_MIN7,
+    ]:
         CHORD_PITCHES[pitch_type][chord].append(
             STRING_TO_PITCH[pitch_type]["B"] - ACCIDENTAL_ADJUSTMENT[pitch_type]
         )

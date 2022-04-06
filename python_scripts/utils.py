@@ -2,9 +2,8 @@ import logging
 from typing import List
 
 import numpy as np
-
+from constants import CHORD_PITCHES, NUM_PITCHES, TPC_C
 from data_types import ChordType, PitchType
-from constants import NUM_PITCHES, CHORD_PITCHES, TPC_C
 
 
 def get_chord_pitches(
@@ -102,7 +101,7 @@ def get_chord_pitches(
                 # This finds the pitch in the octave immediately above the bass note
                 # This is correct unless the bass note is replaced by a lower neighbor
                 # The bass-note lower neighbor case is handled below during replacement
-                interval_above_bass = ((new % 12) - (bass_note % 12) % 12)
+                interval_above_bass = (new % 12) - (bass_note % 12) % 12
 
                 new = bass_note + interval_above_bass + octave_up
 

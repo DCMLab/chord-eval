@@ -6,12 +6,7 @@ from typing import List, Tuple
 
 import numpy as np
 import pandas as pd
-
-from corpus_constants import (
-    CHORD_ONSET_BEAT,
-    MEASURE_OFFSET,
-    NOTE_ONSET_BEAT,
-)
+from corpus_constants import CHORD_ONSET_BEAT, MEASURE_OFFSET, NOTE_ONSET_BEAT
 
 
 def remove_unmatched(dataframe: pd.DataFrame, measures: pd.DataFrame) -> pd.DataFrame:
@@ -49,7 +44,9 @@ def remove_unmatched(dataframe: pd.DataFrame, measures: pd.DataFrame) -> pd.Data
     return dataframe.loc[merged_index].copy()
 
 
-def remove_repeats(measures: pd.DataFrame, remove_unreachable: bool = True) -> pd.DataFrame:
+def remove_repeats(
+    measures: pd.DataFrame, remove_unreachable: bool = True
+) -> pd.DataFrame:
     """
     Remove repeats from the given measures DataFrame.
 
@@ -70,7 +67,9 @@ def remove_repeats(measures: pd.DataFrame, remove_unreachable: bool = True) -> p
     next_lengths = measures["next"].apply(len)
 
     # Find potential last measures of each piece
-    last_measures = (next_lengths == 0) | [-1 in n for n in measures["next"]]  # Default case
+    last_measures = (next_lengths == 0) | [
+        -1 in n for n in measures["next"]
+    ]  # Default case
     last_measures |= np.roll(
         measures.index.get_level_values("file_id").to_numpy(), -1
     ) != measures.index.get_level_values("file_id")
@@ -130,7 +129,9 @@ def remove_repeats(measures: pd.DataFrame, remove_unreachable: bool = True) -> p
     return measures
 
 
-def add_chord_metrical_data(chords: pd.DataFrame, measures: pd.DataFrame) -> pd.DataFrame:
+def add_chord_metrical_data(
+    chords: pd.DataFrame, measures: pd.DataFrame
+) -> pd.DataFrame:
     """
     Add 'mc_next' (int), 'mn_onset_next' (Fraction), and 'duration' (Fraction) columns to the given
     chords DataFrame, indicating the metrical position of the next chord as well as the duration
@@ -153,7 +154,9 @@ def add_chord_metrical_data(chords: pd.DataFrame, measures: pd.DataFrame) -> pd.
         A copy of the given chords DataFrame, with 'mc_next' (int), 'mn_onset_next' (Fraction),
         and 'duration' (Fraction) columns added.
     """
-    if isinstance(measures.iloc[0].next, list) or isinstance(measures.iloc[0].next, tuple):
+    if isinstance(measures.iloc[0].next, list) or isinstance(
+        measures.iloc[0].next, tuple
+    ):
         warnings.warn(
             "Repeats have not been unrolled or removed. They will be unrolled here, but "
             "not saved. Unrolling or removing repeats first is faster."
@@ -169,7 +172,9 @@ def add_chord_metrical_data(chords: pd.DataFrame, measures: pd.DataFrame) -> pd.
         right_on=["file_id", "mc"],
     )
     full_merge = full_merge.set_index(["file_id", "chord_id"])
-    chords = chords.assign(on_fixed=full_merge[CHORD_ONSET_BEAT] - full_merge[MEASURE_OFFSET])
+    chords = chords.assign(
+        on_fixed=full_merge[CHORD_ONSET_BEAT] - full_merge[MEASURE_OFFSET]
+    )
 
     # In most cases, next is a simple shift
     chords = chords.assign(
@@ -239,7 +244,9 @@ def add_chord_metrical_data(chords: pd.DataFrame, measures: pd.DataFrame) -> pd.
     # This happens if the measures_df's next pointers are incorrect somehow.
     null_mask = chords["mc_next"].isnull()
     chords.loc[null_mask, "mc_next"] = chords.loc[null_mask, "mc"]
-    chords.loc[null_mask, "mn_onset_next"] = chords.loc[null_mask, "timesig"].apply(Fraction)
+    chords.loc[null_mask, "mn_onset_next"] = chords.loc[null_mask, "timesig"].apply(
+        Fraction
+    )
 
     return chords
 
@@ -282,7 +289,9 @@ def add_note_offsets(notes: pd.DataFrame, measures: pd.DataFrame) -> pd.DataFram
         A copy of the given notes DataFrame with two additional columns: 'offset_mc' (int) and
         'offset_beat' (Fraction) denoting the offset position of each note.
     """
-    if isinstance(measures.iloc[0]["next"], list) or isinstance(measures.iloc[0]["next"], tuple):
+    if isinstance(measures.iloc[0]["next"], list) or isinstance(
+        measures.iloc[0]["next"], tuple
+    ):
         warnings.warn(
             "Repeats have not been unrolled or removed. They will be unrolled here, but "
             "not saved. Unrolling or removing repeats first is faster."
@@ -367,7 +376,9 @@ def add_note_offsets(notes: pd.DataFrame, measures: pd.DataFrame) -> pd.DataFram
         ) & ~last_measures
         note_measures.loc[
             at_end.loc[at_end].index, ["offset_mc", "offset_beat"]
-        ] = changed_note_measures.loc[at_end, ["next", f"{MEASURE_OFFSET}_next"]].to_numpy()
+        ] = changed_note_measures.loc[
+            at_end, ["next", f"{MEASURE_OFFSET}_next"]
+        ].to_numpy()
 
         # Check for any notes which still go beyond the end of a measure
         changed_past_end = (
@@ -472,7 +483,9 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
         in_merged_in_indexed = in_merged.set_index(["file_id", "note_id_in"])
 
         # Move notes that are only tied out into the tied_out_notes df
-        to_move = list(set(in_merged_out_indexed.index) - set(in_merged_in_indexed.index))
+        to_move = list(
+            set(in_merged_out_indexed.index) - set(in_merged_in_indexed.index)
+        )
         tied_out_notes = tied_in_notes.loc[to_move].copy()
         tied_in_notes = tied_in_notes.drop(to_move)
 
@@ -494,12 +507,14 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
         if len(merged) > 0:
             merged.loc[:, "new_dur"] = merged["duration_out"] + merged["duration_in"]
             merged.loc[:, "new_tied"] = pd.NA
-            merged.loc[(merged["tied_out"] == 0) | (merged["tied_in"] == 0), "new_tied"] = (
-                merged["tied_in"] + merged["tied_out"]
-            )
+            merged.loc[
+                (merged["tied_out"] == 0) | (merged["tied_in"] == 0), "new_tied"
+            ] = (merged["tied_in"] + merged["tied_out"])
 
     def remove_finished(
-        tied_out_notes: pd.DataFrame, finished_mask: List, finished_notes_dfs: List[pd.DataFrame]
+        tied_out_notes: pd.DataFrame,
+        finished_mask: List,
+        finished_notes_dfs: List[pd.DataFrame],
     ) -> pd.DataFrame:
         """
         Remove the finished notes (those where the given mask is True) from the given
@@ -568,7 +583,9 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
         merged : pd.DataFrame
             The given dataframe, but with duplicate notes in and out removed.
         """
-        merged_out_dups = merged.set_index(["file_id", "note_id_out"]).index.duplicated(keep=False)
+        merged_out_dups = merged.set_index(["file_id", "note_id_out"]).index.duplicated(
+            keep=False
+        )
         cols_to_log = [
             "file_id",
             "note_id_out",
@@ -581,7 +598,9 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
             "voice_in",
         ]
         if any(merged_out_dups):
-            with pd.option_context("display.max_rows", None, "display.max_columns", None):
+            with pd.option_context(
+                "display.max_rows", None, "display.max_columns", None
+            ):
                 logging.debug(
                     "Some tied_out notes matched multiple tied_in notes and could not"
                     " be disambiguated with voice and staff. Choosing arbitrarily:\n"
@@ -590,9 +609,13 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
 
         merged = merged.drop_duplicates(subset=["file_id", "note_id_out"])
 
-        merged_in_dups = merged.set_index(["file_id", "note_id_in"]).index.duplicated(keep=False)
+        merged_in_dups = merged.set_index(["file_id", "note_id_in"]).index.duplicated(
+            keep=False
+        )
         if any(merged_in_dups):
-            with pd.option_context("display.max_rows", None, "display.max_columns", None):
+            with pd.option_context(
+                "display.max_rows", None, "display.max_columns", None
+            ):
                 logging.debug(
                     "Some tied_in notes matched multiple tied_out notes and could not"
                     " be disambiguated with voice and staff. Choosing arbitrarily:\n"
@@ -618,7 +641,9 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
         if len(new_values) > 0:
             tied_out_notes.loc[
                 new_values.index, ["offset_mc", "offset_beat", "duration", "tied"]
-            ] = new_values.loc[:, ["offset_mc_in", "offset_beat_in", "new_dur", "new_tied"]].values
+            ] = new_values.loc[
+                :, ["offset_mc_in", "offset_beat_in", "new_dur", "new_tied"]
+            ].values
 
     def update_step(
         tied_out_notes: pd.DataFrame,
@@ -693,7 +718,9 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
         # Find unmatched tied_out_notes, remove them from tied_out_notes, and add them to finished
         unmatched = ~tied_out_notes.index.isin(merged_out_indexed.index)
         if any(unmatched):
-            tied_out_notes = remove_finished(tied_out_notes, unmatched, finished_notes_dfs)
+            tied_out_notes = remove_finished(
+                tied_out_notes, unmatched, finished_notes_dfs
+            )
 
         # Find pairs of notes where each is only in merged_notes once
         single_match_out_mask = merged_out_indexed.index.isin(
@@ -773,12 +800,23 @@ def merge_ties(notes: pd.DataFrame) -> pd.DataFrame:
         if len(tied_out_notes) == 0:
             tied_out_notes, tied_in_notes = repopulate_tied_out_notes(tied_in_notes)
 
-    merged_df = pd.concat([unchanging_notes, tied_in_notes] + finished_notes_dfs).sort_index()
+    merged_df = pd.concat(
+        [unchanging_notes, tied_in_notes] + finished_notes_dfs
+    ).sort_index()
 
-    error_notes = merged_df.loc[merged_df["gracenote"].isnull() & ~merged_df["tied"].isnull()]
+    error_notes = merged_df.loc[
+        merged_df["gracenote"].isnull() & ~merged_df["tied"].isnull()
+    ]
     if len(error_notes) > 0:
         with pd.option_context("display.max_rows", None, "display.max_columns", None):
-            columns = ["mc", NOTE_ONSET_BEAT, "offset_mc", "offset_beat", "midi", "tied"]
+            columns = [
+                "mc",
+                NOTE_ONSET_BEAT,
+                "offset_mc",
+                "offset_beat",
+                "midi",
+                "tied",
+            ]
             tied_out_errors = error_notes.loc[error_notes["tied"] == 1, columns]
             tied_in_errors = error_notes.loc[error_notes["tied"] == -1, columns]
             tied_both_errors = error_notes.loc[error_notes["tied"] == 0, columns]

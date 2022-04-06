@@ -2,15 +2,15 @@
 # The code in this directory is adapted from https://github.com/apmcleod/harmonic-inference v1.0.0
 
 import argparse
+import logging
 from fractions import Fraction
 from glob import glob
-import logging
 from pathlib import Path
-from tqdm import tqdm
 
 import piece
+from corpus_reading import aggregate_annotation_dfs, load_clean_corpus_dfs
 from eval_utils import get_labels_df
-from corpus_reading import load_clean_corpus_dfs, aggregate_annotation_dfs
+from tqdm import tqdm
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -24,7 +24,7 @@ if __name__ == "__main__":
             "`-fh`/data/BPS/scores/*.mxl"
         ),
         type=Path,
-        default=Path("FH")
+        default=Path("FH"),
     )
 
     parser.add_argument(
@@ -71,9 +71,9 @@ if __name__ == "__main__":
     for fh_filename in tqdm(glob(str(ARGS.fh) + "/data/BPS/scores/*.mxl")):
         music_xml_path = Path(fh_filename)
         label_csv_path = (
-            music_xml_path.parent.parent /
-            "chords" /
-            Path(str(music_xml_path.stem) + ".csv")
+            music_xml_path.parent.parent
+            / "chords"
+            / Path(str(music_xml_path.stem) + ".csv")
         )
 
         if not label_csv_path.exists():
@@ -86,11 +86,14 @@ if __name__ == "__main__":
         dcml_file_name = f"{number}-{movement[-1]}.tsv"
 
         df = files_df.loc[
-            (files_df["corpus_name"] == dcml_corpus) & (files_df["file_name"] == dcml_file_name)
+            (files_df["corpus_name"] == dcml_corpus)
+            & (files_df["file_name"] == dcml_file_name)
         ]
 
         if len(df) == 0:
-            logging.error(f"No matching DCML file_id found for score {music_xml_path}. Skipping.")
+            logging.error(
+                f"No matching DCML file_id found for score {music_xml_path}. Skipping."
+            )
             continue
 
         # No need to recreate fh labels each time
@@ -128,16 +131,16 @@ if __name__ == "__main__":
         if number == "03":
             dcml_label_df = dcml_label_df.drop(
                 dcml_label_df.index[
-                    (dcml_label_df["mc"].isin([233, 234])) &
-                    (dcml_label_df["duration"] == Fraction(1, 4))
+                    (dcml_label_df["mc"].isin([233, 234]))
+                    & (dcml_label_df["duration"] == Fraction(1, 4))
                 ]
             )
 
         elif number == "17":
             dcml_label_df = dcml_label_df.drop(
                 dcml_label_df.index[
-                    (dcml_label_df["mc"].isin([97, 99, 101])) &
-                    (dcml_label_df["duration"] == Fraction(1, 16))
+                    (dcml_label_df["mc"].isin([97, 99, 101]))
+                    & (dcml_label_df["duration"] == Fraction(1, 16))
                 ]
             )
 
@@ -145,10 +148,10 @@ if __name__ == "__main__":
             # NOTE: This will likely be fixed in the score at some point
             dcml_label_df.loc[
                 (
-                    (dcml_label_df["mc"].isin([21, 23, 158, 160, 162])) &
-                    (dcml_label_df["mn_onset"] == Fraction(11, 8))
+                    (dcml_label_df["mc"].isin([21, 23, 158, 160, 162]))
+                    & (dcml_label_df["mn_onset"] == Fraction(11, 8))
                 ),
-                "duration"
+                "duration",
             ] = Fraction(1, 8)
 
         dcml_label_df.to_csv(
