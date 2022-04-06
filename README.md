@@ -16,14 +16,13 @@ For other OS, click [here](https://github.com/FluidSynth/fluidsynth/wiki/Downloa
 
 ### Conda environment and python packages:
 
-Here are the steps to build a new conda environment with the needed python packages :
-    - Download the 2 text files package_conda.txt and requirements.txt
-    - Run the following commands:
+Here are the steps to build a new conda environment with the needed python packages:
+    - Run the following commands from the base directory of this repo:
 	
 ```
-conda create --name <env> --file /path/to/package_conda.txt
+conda create --name <env> python=3.8.5
 conda activate <env>
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 ## Producing Aligned Scores
