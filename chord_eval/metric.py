@@ -421,8 +421,7 @@ def SPS_distance(
     changes2: str = None,
     program1: int = 0,
     program2: int = 0,
-    pitches1: Tuple[int] = None,
-    pitches2: Tuple[int] = None,
+    pitches: Tuple[int] = None,
     transform: str = "vqt",
     hop_length: int = 512,
     bins_per_octave: int = 60,
@@ -472,15 +471,12 @@ def SPS_distance(
     changes2 : str
         Any alterations to the 2nd chord's pitches.
 
-    pitches1 : Tuple[int]
-        A Tuple of possible absolute MIDI pitch numbers to use in this chord.
+    pitches : Tuple[int]
+        A Tuple of possible absolute MIDI pitch numbers to use in each chord.
         If given, only a subset of these pitches will be included in the generated
         chord. Specifically, those which share a pitch class with any of the
         default chord tones. Note that this means that some default chord tones might
         not be present in the generated chord.
-
-    pitches2 : Tuple[int]
-        The pitches for the 2nd chord.
 
     program1 : int, optional
         The general MIDI program number used by the fluidsynth to synthesize
@@ -543,7 +539,7 @@ def SPS_distance(
         inversion=inversion1,
         changes=changes1,
         program=program1,
-        pitches=pitches1,
+        pitches=pitches,
         transform=transform,
         hop_length=hop_length,
         bins_per_octave=bins_per_octave,
@@ -555,7 +551,7 @@ def SPS_distance(
         chord_type=chord_type2,
         inversion=inversion2,
         changes=changes2,
-        pitches=pitches2,
+        pitches=pitches,
         program=program2,
         transform=transform,
         hop_length=hop_length,
@@ -698,34 +694,34 @@ def voice_leading_distance(
     bass_weight: int = 1,
 ) -> float:
     """
-           Get the voice leading distance between two chords : the number
+    Get the voice leading distance between two chords : the number
     of semitones between the pitches of each chords.
 
-        Parameters
-        ----------
-        root1 : int
-                he root of the given first chord, as MIDI note number. If the chord
+    Parameters
+    ----------
+    root1 : int
+        The root of the given first chord, as MIDI note number. If the chord
         is some inversion, the root pitch will be on this MIDI note, but there
         may be other pitches below it.
 
-        root2 : int
-                The root of the given second chord, as MIDI note number. If the chord
+    root2 : int
+        The root of the given second chord, as MIDI note number. If the chord
         is some inversion, the root pitch will be on this MIDI note, but there
         may be other pitches below it.
 
-        chord_type1 : ChordType
-                The chord type of the given first chord.
+    chord_type1 : ChordType
+        The chord type of the given first chord.
 
-        chord_type2 : ChordType
-                The chord type of the given second chord.
+    chord_type2 : ChordType
+        The chord type of the given second chord.
 
-        inversion1 : int, optional
-                 The inversion of the first chord. The default is 0.
+    inversion1 : int, optional
+        The inversion of the first chord. The default is 0.
 
-        inversion2 : int, optional
-                The inversion of the second chord.. The default is 0.
+    inversion2 : int, optional
+        The inversion of the second chord.. The default is 0.
 
-        changes1 : str
+    changes1 : str
         Any alterations to the 1st chord's pitches, as a semi-colon separated string.
         Each alteration should be in the form "orig:new", where "orig" represents
         the original pitch that has been altered to "new". "orig" can also be blank
@@ -734,55 +730,55 @@ def voice_leading_distance(
         by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
         representation of different octaves so any "+" is ignored.
 
-        changes2 : str
+    changes2 : str
         Any alterations to the 2nd chord's pitches.
 
-        pitch_type : PitchType, optional
-                The pitch type of the given root. If PitchType.MIDI, the pitches are treated
+    pitch_type : PitchType, optional
+        The pitch type of the given root. If PitchType.MIDI, the pitches are treated
         as a MIDI note number with C4 = 60. If PitchType.TPC, the pitches are treated
         as an interval above C along the circle of fifths (so G = 1, F = -1, etc.).
-                The default is PitchType.MIDI.
+        The default is PitchType.MIDI.
 
-        only_bass_tpc : bool, optional
-                If PitchType.TPC, this parameter specify if only the bass is treated with
-                its TPC representation. The other pitch numbers will correspond to their
-                Midi representation. This has been implemented because bass line moves
-                often in fifths.
+    only_bass_tpc : bool, optional
+        If PitchType.TPC, this parameter specify if only the bass is treated with
+        its TPC representation. The other pitch numbers will correspond to their
+        Midi representation. This has been implemented because bass line moves
+        often in fifths.
 
-                The default is True.
+        The default is True.
 
-        duplicate_bass : bool, optional
-                If False, the basses are only compared between each other in the first stage :
-                for a given pair of chord of same length, it ensures that each notes are
-                matched only once.
+    duplicate_bass : bool, optional
+        If False, the basses are only compared between each other in the first stage :
+        for a given pair of chord of same length, it ensures that each notes are
+        matched only once.
 
-                however, given a pair of chords with a different number of notes, the
-                function will first compare the two basses, then compare the remaining
-                sets of notes (without the basses), find the best matching and remove the
-                matched notes of the chord with the more notes and finally compare the new
-                set of the remaining notes against the full small chord (with its bass)
-                until each 'extra' notes are matched.
+        however, given a pair of chords with a different number of notes, the
+        function will first compare the two basses, then compare the remaining
+        sets of notes (without the basses), find the best matching and remove the
+        matched notes of the chord with the more notes and finally compare the new
+        set of the remaining notes against the full small chord (with its bass)
+        until each 'extra' notes are matched.
 
-                Thus, given a pair of chords with a different number of notes, the bass
-                of the chord with the more notes will be matched only once but not the
-                bass of the small chord.
+        Thus, given a pair of chords with a different number of notes, the bass
+        of the chord with the more notes will be matched only once but not the
+        bass of the small chord.
 
-                If True, the basses are first compare between each other but can be matched
-                an other time at each other step : for a given pair of chord of same length,
-                both basses can be matched twice ; for a given pair of chords with a different
-                number of notes the bass of the small chord can be matched even more times.
+        If True, the basses are first compare between each other but can be matched
+        an other time at each other step : for a given pair of chord of same length,
+        both basses can be matched twice ; for a given pair of chords with a different
+        number of notes the bass of the small chord can be matched even more times.
 
-                The default is True.
+        The default is True.
 
-                (The bass_weight only weight the first comparison between the two basses)
+        (The bass_weight only weight the first comparison between the two basses)
 
-        bass_weight : int, optional
-                The weight of the basses distance of the two chords. The default is 1.
+    bass_weight : int, optional
+        The weight of the basses distance of the two chords. The default is 1.
 
-        Returns
-        -------
-        total_steps : int
-                 the number of semitones between the pitches of each chords.
+    Returns
+    -------
+    total_steps : int
+        The number of semitones between the pitches of each chords.
 
     """
     # note number of the pitches in the chord
@@ -1032,7 +1028,7 @@ def get_distance(
         The inversion of the second chord.
         The default is 0.
 
-        changes1 : str
+    changes1 : str
         Any alterations to the 1st chord's pitches, as a semi-colon separated string.
         Each alteration should be in the form "orig:new", where "orig" represents
         the original pitch that has been altered to "new". "orig" can also be blank
@@ -1041,7 +1037,7 @@ def get_distance(
         by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
         representation of different octaves so any "+" is ignored.
 
-        changes2 : str
+    changes2 : str
         Any alterations to the 2nd chord's pitches.
 
     triad_reduction : bool, optional
