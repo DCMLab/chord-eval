@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import itertools
 from functools import lru_cache
 from typing import Tuple
 
@@ -27,8 +28,7 @@ def create_chord(
     pitches: Tuple[int] = None,
 ) -> pretty_midi.PrettyMIDI:
     """
-    Create a pretty_midi object with an instrument and the given chord for a 1s
-        duration.
+    Create a pretty_midi object with an instrument and the given chord for 1 second.
 
     Parameters
     ----------
@@ -36,12 +36,14 @@ def create_chord(
         The root of the given chord, as MIDI note number. If the chord
         is some inversion, the root pitch will be on this MIDI note, but there
         may be other pitches below it.
+
     chord_type : ChordType
         The chord type of the given chord.
+
     inversion : int, optional
         The inversion of the chord. The default is 0.
 
-        changes : str
+    changes : str
         Any alterations to the chord's pitches, as a semi-colon separated string.
         Each alteration should be in the form "orig:new", where "orig" represents
         the original pitch that has been altered to "new". "orig" can also be blank
@@ -94,7 +96,7 @@ def create_chord(
         notes = [pitch for pitch in pitches if np.any(notes % 12 == pitch % 12)]
 
     for note_number in notes:
-        # Note instance of 1s
+        # Note instance of 1 second
         note = pretty_midi.Note(velocity=100, pitch=note_number, start=0, end=1)
         instrument.notes.append(note)
 
@@ -143,12 +145,14 @@ def get_dft_from_MIDI(
     """
     sr = 22050  # Librosa's default sampling rate
 
-    y = midi_object.fluidsynth(fs=sr)  # The sampling rate has to match
-    # Librosa's default sampling rate
+    y = midi_object.fluidsynth(
+        fs=sr
+    )  # The sampling rate should match Librosa's default
 
-    y = y[:sr]  # fuidsynth synthesizes the 1s-duration note and its release
-    # for an additional second. One keep the first second of the
-    # signal.
+    # fuidsynth synthesizes the 1s-duration note and its release for an additional second.
+    # Only keep the first second of the signal.
+    y = y[:sr]
+
     if transform == "stft":
         dft = np.abs(stft(y))
     elif transform == "cqt":
@@ -169,18 +173,18 @@ def get_dft_from_MIDI(
                 bins_per_octave=bins_per_octave,
             )
         )
-    elif transform == "mel" or transform == "melspectrogram":
+    elif transform in ["mel", "melspectrogram"]:
         dft = np.abs(melspectrogram(y, n_mels=n_mels))
     else:
         raise ValueError(
-            "transform must be " "'stft', 'cqt', 'vqt', 'mel' or 'melspectrogram' "
+            "Transform must be 'stft', 'cqt', 'vqt', 'mel' or 'melspectrogram'."
         )
 
     # Return only the middle frame of the spectrogram
-    middle = int(np.floor(dft.shape[1] / 2))
-    dft = dft[:, middle]
+    middle_idx = int(np.floor(dft.shape[1] / 2))
+    dft_middle = dft[:, middle_idx]
 
-    return dft
+    return dft_middle
 
 
 @lru_cache
@@ -269,62 +273,32 @@ def get_dft_from_chord(
     dft_above : np.ndarray
             the discrete Fourier transform of the chord an octave above.
     """
-    # MIDI object of the chord :
-    pm = create_chord(
-        root=root,
-        chord_type=chord_type,
-        inversion=inversion,
-        changes=changes,
-        program=program,
-        pitches=pitches,
-    )
+    # MIDI object of the chord
+    pms = [
+        create_chord(
+            root=r,
+            chord_type=chord_type,
+            inversion=inversion,
+            changes=changes,
+            program=program,
+            pitches=pitches,
+        )
+        for r in [root - 12, root, root + 12]
+    ]
 
-    # Second instance of the chord an octave below the fisrt one.
-    pm_below = create_chord(
-        root=root - 12,
-        chord_type=chord_type,
-        inversion=inversion,
-        changes=changes,
-        program=program,
-        pitches=pitches,
-    )
+    # Spectrum of the synthesized instrument's notes of the MIDI object
+    dfts = [
+        get_dft_from_MIDI(
+            pm,
+            transform=transform,
+            hop_length=hop_length,
+            bins_per_octave=bins_per_octave,
+            n_mels=n_mels,
+        )
+        for pm in pms
+    ]
 
-    # Third instance of the chord an octave above the fisrt one.
-    pm_above = create_chord(
-        root=root + 12,
-        chord_type=chord_type,
-        inversion=inversion,
-        changes=changes,
-        program=program,
-        pitches=pitches,
-    )
-
-    # Spectrum of the synthesized instrument's notes of the MIDI object :
-    dft = get_dft_from_MIDI(
-        pm,
-        transform=transform,
-        hop_length=hop_length,
-        bins_per_octave=bins_per_octave,
-        n_mels=n_mels,
-    )
-
-    dft_below = get_dft_from_MIDI(
-        pm_below,
-        transform=transform,
-        hop_length=hop_length,
-        bins_per_octave=bins_per_octave,
-        n_mels=n_mels,
-    )
-
-    dft_above = get_dft_from_MIDI(
-        pm_above,
-        transform=transform,
-        hop_length=hop_length,
-        bins_per_octave=bins_per_octave,
-        n_mels=n_mels,
-    )
-
-    return dft_below, dft, dft_above
+    return dfts
 
 
 def filter_noise(
@@ -357,13 +331,14 @@ def filter_noise(
     Returns
     -------
     dft_filtered : np.ndarray
-                The filtered discrete Fourier transform
+        The filtered discrete Fourier transform.
 
     """
     noise_floor = medfilt(dft, size_med)
-    dft_filtered = [
-        0 if x < noise_factor * med else x for x, med in zip(dft, noise_floor)
-    ]
+    dft_filtered = np.zeros_like(dft)
+
+    unfiltered_mask = dft >= noise_factor * noise_floor
+    dft_filtered[unfiltered_mask] = dft[unfiltered_mask]
 
     return dft_filtered
 
@@ -388,26 +363,25 @@ def find_peaks(dft: np.ndarray) -> np.ndarray:
     Returns
     -------
     peaks : np.ndarray
-                the filtered discrete Fourier transform.
-
+        The filtered discrete Fourier transform.
     """
-    dft_binary = np.append(np.append([0], dft), [0])
-    dft_binary = [1 if x > 0 else x for x in dft_binary]
-    dft_binary_diff = np.diff(dft_binary)
+    # 1 at the start of a non-zero section, -1 at the end of one
+    dft_binary_diff = np.diff(np.array(np.pad(dft, 1) > 0, dtype=int))
 
-    peaks_start_idx = [idx for idx, diff in enumerate(dft_binary_diff) if diff == 1]
-    peaks_end_idx = [idx for idx, diff in enumerate(dft_binary_diff) if diff == -1]
+    peaks_start_idx = np.where(dft_binary_diff == 1)[0]
+    peaks_end_idx = np.where(dft_binary_diff == -1)[0]
 
-    peak_idx = [
-        idx + start
-        for start, end in zip(peaks_start_idx, peaks_end_idx)
-        for idx, peak in enumerate(dft[start : end - 1])
-        if peak == max(dft[start : end - 1])
-    ]
+    peak_idx = np.array(
+        [
+            start + np.argmax(dft[start:end])
+            for start, end in zip(peaks_start_idx, peaks_end_idx)
+        ]
+    )
 
-    peaks = np.array([x if idx in peak_idx else 0 for idx, x in enumerate(dft)])
+    peaked_dft = np.zeros_like(dft)
+    peaked_dft[peak_idx] = dft[peak_idx]
 
-    return peaks
+    return peaked_dft
 
 
 def SPS_distance(
@@ -529,11 +503,11 @@ def SPS_distance(
     Returns
     -------
     dist : float
-        The cosin distance beween the spectra of the two synthesized chords
+        The cosine distance beween the spectra of the two synthesized chords
         (SPS) (in [0, 1]).
     """
 
-    dft1_below, dft1, dft1_above = get_dft_from_chord(
+    dft1 = get_dft_from_chord(
         root=root1,
         chord_type=chord_type1,
         inversion=inversion1,
@@ -546,7 +520,7 @@ def SPS_distance(
         n_mels=n_mels,
     )
 
-    dft2_below, dft2, dft2_above = get_dft_from_chord(
+    dft2 = get_dft_from_chord(
         root=root2,
         chord_type=chord_type2,
         inversion=inversion2,
@@ -560,40 +534,16 @@ def SPS_distance(
     )
 
     if peak_picking or noise_filtering:
-        dft1 = filter_noise(dft1)
-        dft1_below = filter_noise(dft1_below)
-        dft1_above = filter_noise(dft1_above)
-
-        dft2 = filter_noise(dft2)
-        dft2_below = filter_noise(dft2_below)
-        dft2_above = filter_noise(dft2_above)
+        dft1 = [filter_noise(dft) for dft in dft1]
+        dft2 = [filter_noise(dft) for dft in dft2]
 
         if peak_picking:
-            dft1 = find_peaks(dft1)
-            dft1_below = find_peaks(dft1_below)
-            dft1_above = find_peaks(dft1_above)
+            dft1 = [find_peaks(dft) for dft in dft1]
+            dft2 = [find_peaks(dft) for dft in dft2]
 
-            dft2 = find_peaks(dft2)
-            dft2_below = find_peaks(dft2_below)
-            dft2_above = find_peaks(dft2_above)
+    sps = min([distance.cosine(d1, d2) for d1, d2 in itertools.product(dft1, dft2)])
 
-    # SPS
-    dist = [distance.cosine(dft1_below, dft2_below)]
-    dist.append(distance.cosine(dft1_below, dft2))
-    dist.append(distance.cosine(dft1_below, dft2_above))
-
-    dist.append(distance.cosine(dft1, dft2_below))
-    dist.append(distance.cosine(dft1, dft2))
-    dist.append(distance.cosine(dft1, dft2_above))
-
-    dist.append(distance.cosine(dft1_above, dft2_below))
-    dist.append(distance.cosine(dft1_above, dft2))
-    dist.append(distance.cosine(dft1_above, dft2_above))
-
-    # Return the smaller distance
-    dist = min(dist)
-
-    return dist
+    return sps
 
 
 def get_smallest_interval(note1: int, note2: int) -> int:
@@ -990,19 +940,19 @@ def get_distance(
     changes1: str = None,
     changes2: str = None,
     triad_reduction: bool = False,
-    **kwargs
+    **kwargs,
 ) -> float:
     """
     Get the required distance between two chords : either the SPS, the voice leading,
-        the tone by tone distance by calling the SPS_distance, voice_leading_distance
-        or the tone_by_tone_distance function respectively, or the binary distance.
-        voice.
+    the tone by tone distance by calling the SPS_distance, voice_leading_distance
+    or the tone_by_tone_distance function respectively, or the binary distance.
+    voice.
 
     Parameters
     ----------
-        distance : str
-                The name of the metric to use. It can be either 'SPS', 'voice leading',
-                'tone by tone' or 'binary'.
+    distance : str
+        The name of the metric to use. It can be either 'SPS', 'voice leading',
+        'tone by tone' or 'binary'.
 
     root1 : int
         The root of the given first chord, as MIDI note number. If the chord
@@ -1047,12 +997,11 @@ def get_distance(
 
     **kwargs : TYPE
         Additional argument for the type of metric used.
-                If dsitance is 'SPS', this will be arguments for the SPS_distance function
-                If dsitance is 'voice leading', this will be arguments for the
-                voice_leading_distance function
-                If dsitance is 'tone_by_tone', this will be arguments for the
-                tone_by_tone_distance function
-
+        If distance is 'SPS', this will be arguments for the SPS_distance function.
+        If distance is 'voice leading', this will be arguments for the
+        voice_leading_distance function.
+        If distance is 'tone_by_tone', this will be arguments for the
+        tone_by_tone_distance function.
 
     Raises
     ------
@@ -1080,7 +1029,7 @@ def get_distance(
             inversion2=inversion2,
             changes1=changes1,
             changes2=changes2,
-            **kwargs
+            **kwargs,
         )
 
     elif distance == "voice leading":
@@ -1093,7 +1042,7 @@ def get_distance(
             inversion2=inversion2,
             changes1=changes1,
             changes2=changes2,
-            **kwargs
+            **kwargs,
         )
 
     elif distance == "tone by tone":
@@ -1106,7 +1055,7 @@ def get_distance(
             inversion2=inversion2,
             changes1=changes1,
             changes2=changes2,
-            **kwargs
+            **kwargs,
         )
 
     elif distance == "binary":
@@ -1121,5 +1070,5 @@ def get_distance(
 
     else:
         raise ValueError(
-            "distance must be " "'SPS', 'voice leading', 'tone by tone' or 'binary'."
+            "distance must be 'SPS', 'voice leading', 'tone by tone' or 'binary'."
         )
