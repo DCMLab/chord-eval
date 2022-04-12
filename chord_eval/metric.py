@@ -5,6 +5,7 @@ import itertools
 from functools import lru_cache
 from typing import Tuple
 
+import numpy as np
 import pandas as pd
 from scipy.spatial import distance
 
@@ -387,12 +388,18 @@ def tone_by_tone_distance(
     inversion2: int = 0,
     changes1: str = None,
     changes2: str = None,
-    root_weight: int = 1,
-    bass_weight: int = 1,
+    root_bonus: int = 0,
+    bass_bonus: int = 0,
 ) -> float:
     """
-    Get the tone by tone distance between two chords : the number
-    of matched pitches between the chords over the maximum number of matched pitch.
+    Get the tone by tone distance between two chords: The average of the proporion
+    of pitch classes in each chord that are unmatched in the other chord.
+
+    For example, for C major and A minor triads, 1/3 of each one's pitch classes
+    are unmatched, so the tone-by-tone distance is 1/3.
+
+    For C major and C7, 0 of the C major's pitch classes are unmatched, and 1/4 of
+    the C7's pitch classes are unmatched, so the distance is 1/8.
 
 
     Parameters
@@ -421,7 +428,7 @@ def tone_by_tone_distance(
         The inversion of the second chord.
         The default is 0.
 
-        changes1 : str
+    changes1 : str
         Any alterations to the 1st chord's pitches, as a semi-colon separated string.
         Each alteration should be in the form "orig:new", where "orig" represents
         the original pitch that has been altered to "new". "orig" can also be blank
@@ -430,24 +437,97 @@ def tone_by_tone_distance(
         by ":+1", using MIDI pitch). Note that TPC pitch does not allow for the
         representation of different octaves so any "+" is ignored.
 
-        changes2 : str
+    changes2 : str
         Any alterations to the 2nd chord's pitches.
 
-    root_weight : int, optional
-        The weight of the matching of the two chords' root.
-        The default is 1.
+    root_bonus : int, optional
+        Give additional accuracy to chords whose root notes match (and penalize those whose
+        do not). 1 will give an additional bonus or penalty of equal weighting as each other
+        note.
 
-    base_weight : int, optional
-        The weight of the matching of the two chords' bass (the lowest note of
-                chord).
-        The default is 1.
+        For example, for a C major vs C minor comparison:
+            - Default distance (root_bonus == 0): 1/3 (each chord matches 2/3 of their notes
+              with the other chord).
+            - With root_bonus == 1: 1/4 (each chord matches 2/3 of their notes with the other
+              chord, plus an additional 1 "bonus match" up to 3/4 for their roots matching).
+
+        For example, for C major vs Cmin7 comparison:
+            - Default distance: 5 / 12 (0.417 -- the average of 1/3 from the C major triad and
+              2/4 from the Cmin7).
+            - With root_bonus == 1: 13/40 (0.325 -- the average of 1/4 from the C major triad
+              and 2/5 from the Cmin7).
+
+        For example, for C major vs A minor:
+            - Default distance: 1/3
+            - With root_bonus == 1: 1/2
+
+    bass_bonus : int, optional
+        Give additional accuracy to chords whose bass notes match. 1 will give an additional
+        bonus of equal weighting as each other note.
+
+        For example, for a C major vs C minor comparison:
+            - Default distance (bass_bonus == 0): 1/3 (each chord matches 2/3 of their notes
+              with the other chord).
+            - With bass_bonus == 1: 1/4 (each chord matches 2/3 of their notes with the other
+              chord, plus an additional 1 "bonus match" up to 3/4 for their bass notes matching).
+
+        For example, for C major vs Cmin7 comparison:
+            - Default distance: 5 / 12 (0.417 -- the average of 1/3 from the C major triad and
+              2/4 from the Cmin7).
+            - With bass_bonus == 1: 13/40 (0.325 -- the average of 1/4 from the C major triad
+              and 2/5 from the Cmin7).
+
+        For example, for C major vs A minor:
+            - Default distance: 1/3
+            - With bass_bonus == 1: 1/2
 
     Returns
     -------
-    dist : float
+    distance : float
         The tone by tone distance between two chords.
-
     """
+
+    def one_sided_tbt(
+        note_set1: set,
+        note_set2: set,
+        root_matches: bool,
+        bass_matches: bool,
+        root_bonus: int,
+        bass_bonus: int,
+    ) -> float:
+        """
+        Get the one-sided tbt. That is, the proportion of chord 1's notes which are missing
+        from chord2, including root and bass bonus.
+
+        Parameters
+        ----------
+        note_set1 : set
+            The set of pitch classes contained in chord 1.
+        note_set2 : np.ndarray
+            The set of pitch classes in chord 2.
+        root_matches : bool
+            True if the chord roots match. False otherwise.
+        bass_matches : bool
+            True if the chord bass notes match. False otherwise.
+        root_bonus : int
+            The root bonus to use (see the tone_by_tone_distance function's comments for details).
+        bass_bonus : int
+            The bass bonus to use (see the tone_by_tone_distance function's comments for details).
+
+        Returns
+        -------
+        distance : float
+            The one-sided tone-by-tone distance.
+        """
+        matches = len(note_set1.intersection(note_set2))
+
+        if root_matches:
+            matches += root_bonus
+        if bass_matches:
+            matches += bass_bonus
+
+        return 1 - matches / (len(note_set1) + bass_bonus + root_bonus)
+
     notes1 = (
         get_chord_pitches(
             root=root1,
@@ -470,16 +550,31 @@ def tone_by_tone_distance(
         % 12
     )
 
-    matches = sum([1 if note in notes2 else 0 for note in notes1])
+    root_matches = root1 == root2
+    bass_matches = notes1[0] == notes2[0]
 
-    if root1 == root2:
-        matches += root_weight - 1  # don't count the root match one more time
-    if notes1[0] == notes2[0]:
-        matches += bass_weight - 1  # don't count the bass match one more time
+    distance = np.mean(
+        [
+            one_sided_tbt(
+                set(notes1),
+                set(notes2),
+                root_matches,
+                bass_matches,
+                root_bonus,
+                bass_bonus,
+            ),
+            one_sided_tbt(
+                set(notes2),
+                set(notes1),
+                root_matches,
+                bass_matches,
+                root_bonus,
+                bass_bonus,
+            ),
+        ]
+    )
 
-    dist = 1 - matches / (max(len(notes1), len(notes2)) + root_weight + bass_weight - 2)
-
-    return dist
+    return distance
 
 
 def get_distance(
