@@ -1,6 +1,0 @@
-ms3==0.4.10
-seaborn
-music21
-networkx
-pretty_midi
-librosa
