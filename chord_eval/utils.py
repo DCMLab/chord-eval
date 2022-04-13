@@ -277,7 +277,7 @@ def get_dft_from_chord(
             program=program,
             pitches=pitches,
         )
-        for r in [root - 12, root, root + 12]
+        for r in ([root - 12, root, root + 12] if pitches is None else [root])
     ]
 
     # Spectrum of the synthesized instrument's notes of the MIDI object
