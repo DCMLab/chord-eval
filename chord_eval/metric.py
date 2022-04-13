@@ -6,7 +6,6 @@ from functools import lru_cache
 from typing import Tuple
 
 import numpy as np
-import pandas as pd
 from scipy.spatial import distance
 
 from chord_eval.constants import TRIAD_REDUCTION
@@ -286,24 +285,20 @@ def voice_leading_distance(
 
     """
     # note number of the pitches in the chord
-    notes1 = pd.Series(
-        get_chord_pitches(
-            root=root1,
-            chord_type=chord_type1,
-            pitch_type=pitch_type,
-            inversion=inversion1,
-            changes=changes1,
-        )
+    notes1 = get_chord_pitches(
+        root=root1,
+        chord_type=chord_type1,
+        pitch_type=pitch_type,
+        inversion=inversion1,
+        changes=changes1,
     )
 
-    notes2 = pd.Series(
-        get_chord_pitches(
-            root=root2,
-            chord_type=chord_type2,
-            pitch_type=pitch_type,
-            inversion=inversion2,
-            changes=changes2,
-        )
+    notes2 = get_chord_pitches(
+        root=root2,
+        chord_type=chord_type2,
+        pitch_type=pitch_type,
+        inversion=inversion2,
+        changes=changes2,
     )
 
     # Bass weighted similarity
@@ -313,24 +308,20 @@ def voice_leading_distance(
     if pitch_type == PitchType.TPC and only_bass_tpc:
         pitch_type = PitchType.MIDI
 
-        notes1 = pd.Series(
-            get_chord_pitches(
-                root=root1,
-                chord_type=chord_type1,
-                pitch_type=pitch_type,
-                inversion=inversion1,
-                changes=changes1,
-            )
+        notes1 = get_chord_pitches(
+            root=root1,
+            chord_type=chord_type1,
+            pitch_type=pitch_type,
+            inversion=inversion1,
+            changes=changes1,
         )
 
-        notes2 = pd.Series(
-            get_chord_pitches(
-                root=root2,
-                chord_type=chord_type2,
-                pitch_type=pitch_type,
-                inversion=inversion2,
-                changes=changes2,
-            )
+        notes2 = get_chord_pitches(
+            root=root2,
+            chord_type=chord_type2,
+            pitch_type=pitch_type,
+            inversion=inversion2,
+            changes=changes2,
         )
 
     # Specify if the bass can be duplicated
