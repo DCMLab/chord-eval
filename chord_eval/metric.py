@@ -390,6 +390,7 @@ def tone_by_tone_distance(
     changes2: str = None,
     root_bonus: int = 0,
     bass_bonus: int = 0,
+    pitch_type: PitchType = PitchType.MIDI,
 ) -> float:
     """
     Get the tone by tone distance between two chords: The average of the proporion
@@ -481,6 +482,10 @@ def tone_by_tone_distance(
             - Default distance: 1/3
             - With bass_bonus == 1: 1/2
 
+    pitch_type : PitchType
+        The pitch type in which root notes are encoded, and by which tone-by-tone distance
+        should be calculated.
+
     Returns
     -------
     distance : float
@@ -528,27 +533,25 @@ def tone_by_tone_distance(
 
         return 1 - matches / (len(note_set1) + bass_bonus + root_bonus)
 
-    notes1 = (
-        get_chord_pitches(
-            root=root1,
-            chord_type=chord_type1,
-            pitch_type=PitchType.MIDI,
-            inversion=inversion1,
-            changes=changes1,
-        )
-        % 12
+    notes1 = get_chord_pitches(
+        root=root1,
+        chord_type=chord_type1,
+        pitch_type=PitchType.MIDI,
+        inversion=inversion1,
+        changes=changes1,
     )
+    if pitch_type == PitchType.MIDI:
+        notes1 %= 12
 
-    notes2 = (
-        get_chord_pitches(
-            root=root2,
-            chord_type=chord_type2,
-            pitch_type=PitchType.MIDI,
-            inversion=inversion2,
-            changes=changes2,
-        )
-        % 12
+    notes2 = get_chord_pitches(
+        root=root2,
+        chord_type=chord_type2,
+        pitch_type=PitchType.MIDI,
+        inversion=inversion2,
+        changes=changes2,
     )
+    if pitch_type == PitchType.MIDI:
+        notes2 %= 12
 
     root_matches = root1 == root2
     bass_matches = notes1[0] == notes2[0]
