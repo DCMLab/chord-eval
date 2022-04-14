@@ -689,7 +689,8 @@ class Distance:
         """
         return Distance(
             custom_distance=[
-                min(d1, d2) for d1, d2 in zip(self.distance, other_distance.distance)
+                min(d1, d2) if -1 not in [d1, d2] else max(d1, d2)
+                for d1, d2 in zip(self.distance, other_distance.distance)
             ]
         )
 
