@@ -565,13 +565,12 @@ def find_notes_matching(
         A List of matched pairs of ids from notes1 and notes2.
 
     """
-    # Matrix that keep the similarity between each pair of notes
+    # Matrix that keep the distance between each pair of notes
     similarities = np.zeros((len(notes1), len(notes2)))
 
     for idx1, pitch1 in enumerate(notes1):
         for idx2, pitch2 in enumerate(notes2):
-            similarity = -distance.distance_between(pitch1, pitch2)
-            similarities[idx1, idx2] = similarity
+            similarities[idx1, idx2] = distance.distance_between(pitch1, pitch2)
 
     # Graph for the matching
     G = nx.Graph()
@@ -584,20 +583,17 @@ def find_notes_matching(
         ]
     )
 
-    matching = nx.max_weight_matching(G, maxcardinality=True)
+    matching = nx.bipartite.minimum_weight_full_matching(G)
 
     # Subtract the length of the first chord from the 2nd node IDs
     match_ids = [
-        (
-            (pair[0], pair[1] - len(notes1))
-            if pair[0] < pair[1]
-            else (pair[1], pair[0] - len(notes1))
-        )
-        for pair in matching
+        ((pair[0], pair[1] - len(notes1)))
+        for pair in matching.items()
+        if pair[0] < pair[1]
     ]
 
     # Total distance
-    total_steps = -sum([similarities[pair[0], pair[1]] for pair in match_ids])
+    total_steps = int(sum([similarities[pair[0], pair[1]] for pair in match_ids]))
 
     return total_steps, match_ids
 
