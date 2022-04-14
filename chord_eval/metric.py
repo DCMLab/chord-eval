@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import itertools
+import logging
 from functools import lru_cache
 from typing import Tuple
 
@@ -11,12 +12,12 @@ from scipy.spatial import distance
 from chord_eval.constants import TRIAD_REDUCTION
 from chord_eval.data_types import ChordType, PitchType
 from chord_eval.utils import (
+    Distance,
     filter_noise,
     find_notes_matching,
     find_peaks,
     get_chord_pitches,
     get_dft_from_chord,
-    get_smallest_interval,
 )
 
 
@@ -182,7 +183,7 @@ def SPS_distance(
 
 
 @lru_cache
-def voice_leading_distance(
+def spatial_distance(
     root1: int,
     root2: int,
     chord_type1: ChordType,
@@ -191,9 +192,8 @@ def voice_leading_distance(
     inversion2: int = 0,
     changes1: str = None,
     changes2: str = None,
-    pitch_type: PitchType = PitchType.MIDI,
-    only_bass_tpc: bool = True,
-    duplicate_bass: bool = True,
+    distance: Distance = Distance(),
+    bass_distance: Distance = None,
     bass_weight: int = 1,
 ) -> float:
     """
@@ -236,44 +236,13 @@ def voice_leading_distance(
     changes2 : str
         Any alterations to the 2nd chord's pitches.
 
-    pitch_type : PitchType, optional
-        The pitch type of the given root. If PitchType.MIDI, the pitches are treated
-        as a MIDI note number with C4 = 60. If PitchType.TPC, the pitches are treated
-        as an interval above C along the circle of fifths (so G = 1, F = -1, etc.).
-        The default is PitchType.MIDI.
+    distance : Distance
+        The Distance measurement to use between notes. By default, this is
+        semitone distance.
 
-    only_bass_tpc : bool, optional
-        If PitchType.TPC, this parameter specify if only the bass is treated with
-        its TPC representation. The other pitch numbers will correspond to their
-        Midi representation. This has been implemented because bass line moves
-        often in fifths.
-
-        The default is True.
-
-    duplicate_bass : bool, optional
-        If False, the basses are only compared between each other in the first stage :
-        for a given pair of chord of same length, it ensures that each notes are
-        matched only once.
-
-        however, given a pair of chords with a different number of notes, the
-        function will first compare the two basses, then compare the remaining
-        sets of notes (without the basses), find the best matching and remove the
-        matched notes of the chord with the more notes and finally compare the new
-        set of the remaining notes against the full small chord (with its bass)
-        until each 'extra' notes are matched.
-
-        Thus, given a pair of chords with a different number of notes, the bass
-        of the chord with the more notes will be matched only once but not the
-        bass of the small chord.
-
-        If True, the basses are first compare between each other but can be matched
-        an other time at each other step : for a given pair of chord of same length,
-        both basses can be matched twice ; for a given pair of chords with a different
-        number of notes the bass of the small chord can be matched even more times.
-
-        The default is True.
-
-        (The bass_weight only weight the first comparison between the two basses)
+    bass_distance : Distance
+        The Distance measurement to use between bass notes, if not the same as the
+        distance parameter.
 
     bass_weight : int, optional
         The weight of the basses distance of the two chords. The default is 1.
@@ -281,14 +250,26 @@ def voice_leading_distance(
     Returns
     -------
     total_steps : int
-        The number of semitones between the pitches of each chords.
-
+        The spatial distance between the pitches of the two chords.
     """
+    assert (
+        distance.is_valid()
+    ), "Given distance is not valid (some distances are negative)."
+    if bass_distance is None:
+        bass_distance = distance
+    else:
+        if not bass_distance.is_valid():
+            logging.warning(
+                "bass_distance is not valid (some values are negative). "
+                "Defaulting to given distance."
+            )
+            bass_distance = distance
+
     # note number of the pitches in the chord
     notes1 = get_chord_pitches(
         root=root1,
         chord_type=chord_type1,
-        pitch_type=pitch_type,
+        pitch_type=PitchType.MIDI,
         inversion=inversion1,
         changes=changes1,
     )
@@ -296,77 +277,48 @@ def voice_leading_distance(
     notes2 = get_chord_pitches(
         root=root2,
         chord_type=chord_type2,
-        pitch_type=pitch_type,
+        pitch_type=PitchType.MIDI,
         inversion=inversion2,
         changes=changes2,
     )
 
-    # Bass weighted similarity
-    bass_steps = get_smallest_interval(notes1[0], notes2[0])
+    # Bass distance
+    bass_steps = bass_distance.distance_between(notes1[0], notes2[0]) * bass_weight
 
-    # Specify if the bass only is in its TPC representation
-    if pitch_type == PitchType.TPC and only_bass_tpc:
-        pitch_type = PitchType.MIDI
+    # Other pitches
+    upper_steps, match_ids = find_notes_matching(notes1, notes2, distance)
 
-        notes1 = get_chord_pitches(
-            root=root1,
-            chord_type=chord_type1,
-            pitch_type=pitch_type,
-            inversion=inversion1,
-            changes=changes1,
-        )
+    # If the bass notes have been matched together, do not count again
+    if (0, 0) in match_ids:
+        upper_steps -= distance.distance_between(notes1[0], notes2[0])
 
-        notes2 = get_chord_pitches(
-            root=root2,
-            chord_type=chord_type2,
-            pitch_type=pitch_type,
-            inversion=inversion2,
-            changes=changes2,
-        )
-
-    # Specify if the bass can be duplicated
-    if duplicate_bass:
-        total_steps, matching = find_notes_matching(notes1, notes2)
-
-        # if the basses have been matched together, do not count the bass_step
-        # an other time
-        if (0, 0) in matching:
-            total_steps += (bass_weight - 1) * bass_steps
-        else:
-            total_steps += bass_weight * bass_steps
-
-    else:
-        total_steps, matching = find_notes_matching(notes1[1:], notes2[1:])
-        total_steps += bass_weight * bass_steps
-        matching = [(0, 0)] + [(pair[0] + 1, pair[1] + 1) for pair in matching]
-
-    # Tackle different chord length
+    # Handle chords of different lengths
     if len(notes1) != len(notes2):
+        big_chord, bc_idx, small_chord = (
+            (notes1, 0, notes2) if len(notes1) > len(notes2) else (notes2, 1, notes1)
+        )
 
-        # Find which chord is the one with the more notes and keep track of its index
-        if len(notes1) > len(notes2):
-            big_chord = notes1
-            bc_idx = 0
-            short_chord = notes2
-        elif len(notes1) < len(notes2):
-            big_chord = notes2
-            bc_idx = 1
-            short_chord = notes1
+        # Remove all pitches from the biggest chord that have already been matched
+        big_chord = [
+            big_chord[idx]
+            for idx in range(len(big_chord))
+            if idx not in set([pair[bc_idx] for pair in match_ids] + [0])
+        ]
 
-        # Remove all the pitches in the biggest chord that have already been
-        # matched
-        for pair in matching:
-            idx = pair[bc_idx]
-            big_chord.drop(idx, inplace=True)
+        # Find corresponding note in the smaller chord for each additional big chord note
+        upper_steps += sum(
+            [
+                min(
+                    [
+                        distance.distance_between(bc_pitch, sc_pitch)
+                        for sc_pitch in small_chord
+                    ]
+                )
+                for bc_pitch in big_chord
+            ]
+        )
 
-        # Find corresponding note in the chord with fewer note for every 'extra'
-        # note
-        for note_b in big_chord:
-            total_steps += min(
-                [get_smallest_interval(note_b, note_s) for note_s in short_chord]
-            )
-
-    return total_steps
+    return int(upper_steps + bass_steps)
 
 
 @lru_cache
@@ -397,14 +349,13 @@ def tone_by_tone_distance(
     Parameters
     ----------
     root1 : int
-        The root of the given first chord, as MIDI note number. If the chord
-        is some inversion, the root pitch will be on this MIDI note, but there
+        The root of the given first chord, either as a MIDI note number or as
+        a TPC note number (interval above C in fifths with F = -1, C = 0, G = 1, etc.).
+        If the chord is some inversion, the root pitch will be on this pitch, but there
         may be other pitches below it.
 
     root2 : int
-        The root of the given second chord, as MIDI note number. If the chord
-        is some inversion, the root pitch will be on this MIDI note, but there
-        may be other pitches below it.
+        The root of the 2nd chord.
 
     chord_type1 : ChordType
         The chord type of the given first chord.
@@ -474,8 +425,9 @@ def tone_by_tone_distance(
             - With bass_bonus == 1: 1/2
 
     pitch_type : PitchType
-        The pitch type in which root notes are encoded, and by which tone-by-tone distance
-        should be calculated.
+        The pitch type in which root notes are encoded, and using which tone-by-tone distance
+        should be calculated. With MIDI (default), enharmonic equivalence is assumed. Otherwise,
+        C# and Db count as different pitches.
 
     Returns
     -------
@@ -597,14 +549,13 @@ def get_distance(
         'tone by tone' or 'binary'.
 
     root1 : int
-        The root of the given first chord, as MIDI note number. If the chord
-        is some inversion, the root pitch will be on this MIDI note, but there
-        may be other pitches below it.
+        The root pitch of the given first chord. With distance == "tone by tone",
+        this may be either a MIDI pitch class or a TPC pitch class (see the
+        tone_by_tone_distance function documentation for details). Otherwise,
+        thei should be a MIDI pitch class.
 
     root2 : int
-        The root of the given second chord, as MIDI note number. If the chord
-        is some inversion, the root pitch will be on this MIDI note, but there
-        may be other pitches below it.
+        The root of the given second chord.
 
     chord_type1 : ChordType
         The chord type of the given first chord.
@@ -640,8 +591,7 @@ def get_distance(
     **kwargs : TYPE
         Additional argument for the type of metric used.
         If distance is 'SPS', this will be arguments for the SPS_distance function.
-        If distance is 'voice leading', this will be arguments for the
-        voice_leading_distance function.
+        If distance is 'spatial', this will be arguments for the spatial_distance function.
         If distance is 'tone_by_tone', this will be arguments for the
         tone_by_tone_distance function.
 
@@ -674,8 +624,8 @@ def get_distance(
             **kwargs,
         )
 
-    elif distance == "voice leading":
-        return voice_leading_distance(
+    elif distance == "spatial":
+        return spatial_distance(
             root1=root1,
             root2=root2,
             chord_type1=chord_type1,
@@ -712,5 +662,5 @@ def get_distance(
 
     else:
         raise ValueError(
-            "distance must be 'SPS', 'voice leading', 'tone by tone' or 'binary'."
+            "distance must be 'SPS', 'spatial', 'tone by tone' or 'binary'."
         )
