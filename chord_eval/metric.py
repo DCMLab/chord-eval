@@ -183,7 +183,7 @@ def SPS_distance(
 
 
 @lru_cache
-def spatial_distance(
+def mechanical_distance(
     root1: int,
     root2: int,
     chord_type1: ChordType,
@@ -250,7 +250,7 @@ def spatial_distance(
     Returns
     -------
     total_steps : int
-        The spatial distance between the pitches of the two chords.
+        The mechanical distance between the pitches of the two chords.
     """
     assert (
         distance.is_valid()
@@ -591,7 +591,7 @@ def get_distance(
     **kwargs : TYPE
         Additional argument for the type of metric used.
         If distance is 'SPS', this will be arguments for the SPS_distance function.
-        If distance is 'spatial', this will be arguments for the spatial_distance function.
+        If distance is 'mechanical', this will be arguments for the mechanical_distance function.
         If distance is 'tone_by_tone', this will be arguments for the
         tone_by_tone_distance function.
 
@@ -624,8 +624,8 @@ def get_distance(
             **kwargs,
         )
 
-    elif distance == "spatial":
-        return spatial_distance(
+    elif distance == "mechanical":
+        return mechanical_distance(
             root1=root1,
             root2=root2,
             chord_type1=chord_type1,
@@ -662,5 +662,5 @@ def get_distance(
 
     else:
         raise ValueError(
-            "distance must be 'SPS', 'spatial', 'tone by tone' or 'binary'."
+            "distance must be 'SPS', 'mechanical', 'tone by tone' or 'binary'."
         )
