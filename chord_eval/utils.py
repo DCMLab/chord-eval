@@ -84,7 +84,8 @@ def create_chord(
         inversion=inversion,
         changes=changes,
     )
-    notes += 60  # centered around C4
+    # Use copy so that caching works correctly
+    notes = np.copy(notes) + 60  # centered around C4
 
     if pitches is not None:
         notes = [pitch for pitch in pitches if np.any(notes % 12 == pitch % 12)]
@@ -112,7 +113,7 @@ def get_dft_from_MIDI(
 
     Parameters
     ----------
-    midi_data : pretty_midi.PrettyMIDI
+    midi_object : pretty_midi.PrettyMIDI
         MIDI object that should contain at least one instrument which should
         contain a program and at least one note.
     transform : str

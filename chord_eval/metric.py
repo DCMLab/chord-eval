@@ -144,12 +144,12 @@ def SPS_distance(
     """
 
     dft1 = get_dft_from_chord(
-        root=root1,
-        chord_type=chord_type1,
+        root1,
+        chord_type1,
         inversion=inversion1,
         changes=changes1,
-        program=program1,
         pitches=pitches,
+        program=program1,
         transform=transform,
         hop_length=hop_length,
         bins_per_octave=bins_per_octave,
@@ -157,8 +157,8 @@ def SPS_distance(
     )
 
     dft2 = get_dft_from_chord(
-        root=root2,
-        chord_type=chord_type2,
+        root2,
+        chord_type2,
         inversion=inversion2,
         changes=changes2,
         pitches=pitches,
