@@ -331,8 +331,8 @@ def tone_by_tone_distance(
     inversion2: int = 0,
     changes1: str = None,
     changes2: str = None,
-    root_bonus: int = 0,
-    bass_bonus: int = 0,
+    root_bonus: int = 1,
+    bass_bonus: int = 1,
     pitch_type: PitchType = PitchType.MIDI,
 ) -> float:
     """
