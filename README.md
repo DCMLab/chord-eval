@@ -59,4 +59,4 @@ Three metrics are implemented:
        
    2. The voice leading metric: The similarity measure is the number of semitones there are between each pair of pitches in the two chords (The match between basses can be weighted).
        
-   3. The Spectral Pitche Simalirity (SPS) metric: The similarity measure is the cosine distance between the two spectrum of each chord. 
+   3. The Spectral Pitch Simalirity (SPS) metric: The similarity measure is the cosine distance between the two spectrum of each chord. 
