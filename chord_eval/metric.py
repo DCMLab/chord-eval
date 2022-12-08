@@ -538,14 +538,14 @@ def get_distance(
 ) -> float:
     """
     Get the required distance between two chords : either the SPS, the voice leading,
-    the tone by tone distance by calling the SPS_distance, voice_leading_distance
+    the tone by tone distance by calling the SPS_distance, mechanical_distance
     or the tone_by_tone_distance function respectively, or the binary distance.
     voice.
 
     Parameters
     ----------
     distance : str
-        The name of the metric to use. It can be either 'SPS', 'voice leading',
+        The name of the metric to use. It can be either 'SPS', 'mechanical',
         'tone by tone' or 'binary'.
 
     root1 : int
@@ -598,13 +598,13 @@ def get_distance(
     Raises
     ------
     ValueError
-        if distance is something else than SPS', 'voice leading', 'tone by tone'
+        if distance is something other than 'SPS', 'mechanical', 'tone by tone'
                 or 'binary'.
 
     Returns
     -------
     float
-        The corresponding distance between tĥe two chords.
+        The corresponding distance between the two chords.
 
     """
     if triad_reduction:
